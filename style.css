@@ -1,0 +1,227 @@
+/* ============================================================
+   LAND OF DAWN CUP — shared design system
+   Palette: near-black void + royal violet + victory gold
+   Display type: Rajdhani / Body type: Inter
+   Signature device: single cut corner on every panel
+   ============================================================ */
+
+:root{
+  --void: #0a0912;
+  --void-2: #0e0c18;
+  --panel: #14111f;
+  --panel-hi: #1c1730;
+  --edge: rgba(139, 107, 255, 0.22);
+  --edge-hi: rgba(245, 185, 46, 0.55);
+
+  --gold: #f5b92e;
+  --gold-deep: #c9860a;
+  --violet: #8b6bff;
+  --violet-deep: #5b3de0;
+
+  --ink: #f3f0fa;
+  --ink-dim: #a49dc4;
+  --ink-faint: #766f96;
+
+  --cut: 22px;
+  --font-display: 'Rajdhani', 'Segoe UI', sans-serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+}
+
+*{ box-sizing: border-box; margin:0; padding:0; }
+
+html{ scroll-behavior: smooth; }
+
+body{
+  font-family: var(--font-body);
+  background:
+    radial-gradient(1100px 500px at 85% -10%, rgba(139,107,255,0.16), transparent 60%),
+    radial-gradient(900px 500px at -10% 110%, rgba(245,185,46,0.08), transparent 55%),
+    var(--void);
+  color: var(--ink);
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+a{ color: inherit; }
+
+/* ---------- layout shell ---------- */
+
+.shell{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 20px 60px;
+}
+
+/* ---------- top navigation ---------- */
+
+.topbar{
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(10, 9, 18, 0.88);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid var(--edge);
+}
+
+.topbar-inner{
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.brand{
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.5px;
+  text-decoration: none;
+  color: var(--ink);
+  white-space: nowrap;
+}
+.brand .brand-accent{ color: var(--gold); }
+.brand .brand-tag{
+  font-family: var(--font-body);
+  font-weight: 500;
+  font-size: 11px;
+  color: var(--ink-faint);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-left: 1px solid var(--edge);
+  padding-left: 8px;
+  margin-left: 2px;
+}
+
+.navlist{
+  display: flex;
+  gap: 4px;
+  list-style: none;
+  flex-wrap: wrap;
+}
+
+.navlist a{
+  position: relative;
+  display: block;
+  padding: 9px 16px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--ink-dim);
+  text-decoration: none;
+  clip-path: polygon(10px 0, 100% 0, calc(100% - 10px) 100%, 0 100%);
+  transition: color 0.2s ease, background 0.2s ease;
+}
+.navlist a:hover{ color: var(--ink); background: rgba(139,107,255,0.12); }
+.navlist a.active{
+  color: var(--void);
+  background: linear-gradient(100deg, var(--gold), #ffd873);
+  font-weight: 700;
+}
+
+@media (max-width: 760px){
+  .topbar-inner{ flex-direction: column; align-items: flex-start; }
+  .navlist{ width: 100%; }
+  .navlist a{ flex: 1; text-align: center; padding: 10px 8px; font-size: 13px; }
+}
+
+/* ---------- cut-corner panel (signature motif) ---------- */
+
+.panel{
+  background: var(--panel);
+  border: 1px solid var(--edge);
+  clip-path: polygon(var(--cut) 0, 100% 0, 100% 100%, 0 100%, 0 var(--cut));
+  position: relative;
+}
+.panel::before{
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: var(--cut); height: var(--cut);
+  background: linear-gradient(135deg, var(--gold), var(--violet));
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+  opacity: 0.9;
+}
+
+/* ---------- page heading block ---------- */
+
+.page-head{
+  padding: 40px 4px 26px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.page-head h1{
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(28px, 4vw, 40px);
+  letter-spacing: 0.3px;
+}
+.page-head .kicker{
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--gold);
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+.page-head p.sub{
+  color: var(--ink-dim);
+  font-size: 15px;
+  max-width: 46ch;
+  margin-top: 8px;
+}
+
+/* ---------- buttons ---------- */
+
+.btn{
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  padding: 14px 26px;
+  text-decoration: none;
+  clip-path: polygon(14px 0, 100% 0, calc(100% - 14px) 100%, 0 100%);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn:hover{ transform: translateY(-2px); }
+.btn-primary{
+  background: linear-gradient(100deg, var(--gold), #ffd873);
+  color: #1a1306;
+  box-shadow: 0 8px 24px rgba(245, 185, 46, 0.25);
+}
+.btn-primary:hover{ box-shadow: 0 10px 30px rgba(245, 185, 46, 0.4); }
+.btn-ghost{
+  background: transparent;
+  border: 1.5px solid var(--violet);
+  color: var(--ink);
+}
+.btn-ghost:hover{ background: rgba(139,107,255,0.12); }
+
+/* ---------- footer ---------- */
+
+.site-footer{
+  max-width: 1120px;
+  margin: 40px auto 0;
+  padding: 20px 20px 0;
+  border-top: 1px solid var(--edge);
+  color: var(--ink-faint);
+  font-size: 13px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.site-footer .footer-mark{ color: var(--violet); font-family: var(--font-display); font-weight: 700; }

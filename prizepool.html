@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prize Pool — Land of Dawn Cup</title>
+  <link rel="icon" type="image/png" href="https://i.ibb.co/1tw26CJC/image.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/assets/style.css">
+  <style>
+    .total-card{
+      padding: 34px 30px;
+      text-align: center;
+      background: linear-gradient(100deg, rgba(245,185,46,0.14), rgba(139,107,255,0.08));
+      margin-bottom: 22px;
+    }
+    .total-title{
+      font-family: var(--font-display);
+      font-size: 13px;
+      color: var(--ink-dim);
+      letter-spacing: 1.5px;
+    }
+    .total-amount{
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: clamp(34px, 6vw, 52px);
+      color: var(--gold);
+      text-shadow: 0 0 30px rgba(245,185,46,0.35);
+      margin-top: 4px;
+    }
+
+    .podium{
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      align-items: end;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+    .podium-slot{ display: flex; flex-direction: column; align-items: center; }
+    .podium-medal{ font-size: 28px; margin-bottom: 8px; }
+    .podium-team{ font-family: var(--font-display); font-weight: 600; font-size: 13px; color: var(--ink-dim); margin-bottom: 10px; }
+    .podium-bar{
+      width: 100%;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding-top: 14px;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 15px;
+      clip-path: polygon(14px 0, 100% 0, 100% 100%, 0 100%);
+    }
+    .p1 .podium-bar{ height: 150px; background: linear-gradient(180deg, #ffe08a, var(--gold-deep)); color: #241a04; order: 2; }
+    .p2 .podium-bar{ height: 112px; background: linear-gradient(180deg, #e7e4f2, #9b96b8); color: #1c1a26; }
+    .p3 .podium-bar{ height: 86px; background: linear-gradient(180deg, #f0a76a, #a85a1f); color: #241405; }
+    .p1{ order: 2; }
+    .p2{ order: 1; }
+    .p3{ order: 3; }
+
+    .prize-list{ display: flex; flex-direction: column; gap: 10px; }
+    .prize-item{
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 16px 22px;
+    }
+    .prize-rank{ font-family: var(--font-display); font-weight: 700; font-size: 15px; }
+    .prize-val{ font-family: var(--font-display); font-weight: 600; font-size: 14.5px; color: var(--ink-dim); }
+    .rank-1 .prize-rank{ color: var(--gold); }
+    .rank-1 .prize-val{ color: var(--gold); }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="/index.html" class="brand">LAND OF <span class="brand-accent">DAWN</span> CUP<span class="brand-tag">Turnamen MLBB</span></a>
+      <ul class="navlist">
+        <li><a href="/index.html">Beranda</a></li>
+        <li><a href="/tim.html">Tim Peserta</a></li>
+        <li><a href="/jadwal.html">Jadwal Match</a></li>
+        <li><a href="/prizepool.html" class="active">Prize Pool</a></li>
+        <li><a href="/rules.html">Peraturan</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="page-head">
+      <div>
+        <div class="kicker">Total Hadiah</div>
+        <h1>Prize Pool</h1>
+      </div>
+    </div>
+
+    <div class="panel total-card">
+      <div class="total-title">TOTAL HADIAH TUNAI</div>
+      <div class="total-amount">Rp 10.000.000</div>
+    </div>
+
+    <div class="podium">
+      <div class="podium-slot p2">
+        <div class="podium-medal">🥈</div>
+        <div class="podium-team">Juara 2</div>
+        <div class="podium-bar">2nd</div>
+      </div>
+      <div class="podium-slot p1">
+        <div class="podium-medal">🥇</div>
+        <div class="podium-team">Juara 1</div>
+        <div class="podium-bar">1st</div>
+      </div>
+      <div class="podium-slot p3">
+        <div class="podium-medal">🥉</div>
+        <div class="podium-team">Juara 3</div>
+        <div class="podium-bar">3rd</div>
+      </div>
+    </div>
+
+    <div class="prize-list">
+      <div class="panel prize-item rank-1">
+        <span class="prize-rank">Juara 1</span>
+        <span class="prize-val">Rp 5.000.000 + Trophy</span>
+      </div>
+      <div class="panel prize-item">
+        <span class="prize-rank">Juara 2</span>
+        <span class="prize-val">Rp 3.000.000 + Sertifikat</span>
+      </div>
+      <div class="panel prize-item">
+        <span class="prize-rank">Juara 3</span>
+        <span class="prize-val">Rp 2.000.000 + Sertifikat</span>
+      </div>
+    </div>
+
+    <footer class="site-footer">
+      <div><span class="footer-mark">LAND OF DAWN CUP</span> — Turnamen Mobile Legends: Bang Bang</div>
+      <div>Diselenggarakan oleh panitia turnamen</div>
+    </footer>
+  </main>
+
+</body>
+</html>
