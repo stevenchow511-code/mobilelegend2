@@ -3,75 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prizepool - Tournament MLBB</title>
-  <link rel="icon" type="image/png" href="https://i.ibb.co/1tw26CJC/image.png">
-  <style>
-    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', 'Segoe UI', sans-serif; }
-    body { background: #030712; color: #f3f4f6; min-height: 100vh; padding: 20px; }
-
-    .container { max-width: 1100px; margin: 0 auto; display: flex; gap: 20px; }
-    .main-content { flex: 1; background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 24px; }
-
-    .page-header { border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 12px; margin-bottom: 20px; }
-    .page-title { font-size: 20px; font-weight: 800; color: #00f2fe; text-transform: uppercase; letter-spacing: 1px; }
-
-    .total-prize-card { background: linear-gradient(135deg, rgba(0, 242, 254, 0.15), rgba(79, 172, 254, 0.05)); border: 1px solid #00f2fe; padding: 24px; border-radius: 14px; text-align: center; margin-bottom: 20px; }
-    .total-title { font-size: 13px; color: #9ca3af; text-transform: uppercase; letter-spacing: 2px; font-weight: 700; }
-    .total-amount { font-size: 32px; font-weight: 900; color: #00f2fe; text-shadow: 0 0 20px rgba(0, 242, 254, 0.4); margin-top: 5px; }
-
-    .prize-list { display: flex; flex-direction: column; gap: 10px; }
-    .prize-item { display: flex; justify-content: space-between; align-items: center; background: rgba(31, 41, 55, 0.4); border: 1px solid rgba(255,255,255,0.05); padding: 16px 20px; border-radius: 10px; font-weight: 700; }
-    .prize-rank { font-size: 15px; }
-    .prize-val { font-size: 15px; }
-
-    .rank-1 { border-left: 4px solid #f59e0b; color: #fbbf24; }
-    .rank-2 { border-left: 4px solid #9ca3af; color: #e5e7eb; }
-    .rank-3 { border-left: 4px solid #d97706; color: #f59e0b; }
-
-    .sidebar-menu { width: 240px; background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; flex-direction: column; gap: 8px; height: fit-content; }
-    .menu-item { padding: 14px 18px; color: #9ca3af; font-weight: 700; font-size: 13px; border-radius: 10px; text-decoration: none; background: rgba(255,255,255,0.02); border: 1px solid transparent; transition: all 0.3s ease; letter-spacing: 0.5px; }
-    .menu-item:hover, .menu-item.active { color: #ffffff; background: linear-gradient(90deg, rgba(0, 242, 254, 0.15), rgba(79, 172, 254, 0.05)); border-color: #00f2fe; box-shadow: 0 0 15px rgba(0, 242, 254, 0.2); transform: translateX(4px); }
-
-    @media (max-width: 768px) { .container { flex-direction: column; } .sidebar-menu { width: 100%; order: -1; } }
-  </style>
+  <title>Prizepool - MLBB Arena</title>
+  <link rel="icon" type="image/png" href="https://fav.luvtoberi.com/fav/favweb4d.webp">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
   <div class="container">
-    <div class="main-content">
-      <div class="page-header">
-        <h2 class="page-title">🏆 Prizepool Turnamen</h2>
-      </div>
+    <div class="sidebar-menu">
+      <div class="brand-logo" style="font-family:'Orbitron',sans-serif; font-size:16px; font-weight:900; color:#fff; text-align:center; padding-bottom:15px; border-bottom:1px solid rgba(255,255,255,0.1); letter-spacing:2px; background:linear-gradient(135deg,#fff,#00f2fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">MLBB ARENA</div>
+      <a href="index.html" class="menu-item">1.BERANDA</a>
+      <a href="tim.html" class="menu-item">2.DAFTAR TIM</a>
+      <a href="jadwal.html" class="menu-item">3.JADWAL MATCH</a>
+      <a href="prizepool.html" class="menu-item active">4.PRIZEPOOL</a>
+      <a href="rules.html" class="menu-item">5.RULES TURNAMEN</a>
+    </div>
 
+    <div class="main-content">
       <div class="total-prize-card">
-        <div class="total-title">Total Hadiah Tunai</div>
+        <div class="total-title">TOTAL PRIZEPOOL</div>
         <div class="total-amount">Rp 10.000.000</div>
       </div>
-
       <div class="prize-list">
-        <div class="prize-item rank-1">
-          <span class="prize-rank">🥇 JUARA 1</span>
-          <span class="prize-val">Rp 5.000.000 + Trophy</span>
-        </div>
-        <div class="prize-item rank-2">
-          <span class="prize-rank">🥈 JUARA 2</span>
-          <span class="prize-val">Rp 3.000.000 + Sertifikat</span>
-        </div>
-        <div class="prize-item rank-3">
-          <span class="prize-rank">🥉 JUARA 3</span>
-          <span class="prize-val">Rp 2.000.000 + Sertifikat</span>
-        </div>
+        <div class="prize-item rank-1"><span>🥇 JUARA 1</span> <span>Rp 5.000.000 + Trophy</span></div>
+        <div class="prize-item rank-2"><span>🥈 JUARA 2</span> <span>Rp 3.000.000</span></div>
+        <div class="prize-item rank-3"><span>🥉 JUARA 3</span> <span>Rp 2.000.000</span></div>
       </div>
     </div>
-
-    <div class="sidebar-menu">
-      <a href="/index.html" class="menu-item">BERANDA</a>
-      <a href="/tim.html" class="menu-item">TIM PARTICIPANT</a>
-      <a href="/jadwal.html" class="menu-item">JADWAL MATCH</a>
-      <a href="/prizepool.html" class="menu-item active">PRIZEPOOL</a>
-      <a href="/rules.html" class="menu-item">RULES TURNAMEN</a>
-    </div>
   </div>
-
 </body>
 </html>
