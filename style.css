@@ -18,7 +18,7 @@ body {
   padding: 30px 15px;
 }
 
-.container {
+..container {
   max-width: 1200px;
   margin: 0 auto;
   display: flex;
@@ -26,6 +26,33 @@ body {
   align-items: flex-start;
   gap: 24px;
   width: 100%;
+}
+
+.sidebar-menu {
+  width: 260px;
+  flex-shrink: 0; /* Mencegah sidebar tertekan/gepeng */
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.6);
+}
+
+.main-content {
+  flex: 1; /* Konten utama akan mengisi sisa ruang secara proporsional */
+  min-width: 0; /* Mencegah elemen meluap melebihi layar */
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 28px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
 }
 
 /* Sidebar Menu Modern */
