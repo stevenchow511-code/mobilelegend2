@@ -457,4 +457,59 @@ body {
     width: 100%;
   }
 }
+/* --- EFEK CONTAINER ROSTER DROPDOWN --- */
+.roster-dropdown {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease-in-out;
+  margin-top: 0;
+}
 
+/* Saat Tim Diklik / Aktif */
+.team-card-wrapper.active .roster-dropdown {
+  max-height: 300px;
+  opacity: 1;
+  margin-top: 10px; /* Jarak antara tombol tim & container roster */
+}
+
+/* Kotak Container Roster */
+.roster-inner {
+  background: rgba(15, 23, 42, 0.75);
+  border: 1px solid rgba(0, 242, 254, 0.3);
+  border-radius: 12px;
+  padding: 14px 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4), inset 0 0 10px rgba(0, 242, 254, 0.05);
+  backdrop-filter: blur(8px);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.roster-header {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  font-weight: 800;
+  color: #00f2fe;
+  letter-spacing: 1.5px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+  padding-bottom: 6px;
+}
+
+.roster-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #94a3b8;
+  padding: 3px 0;
+}
+
+.roster-row strong {
+  color: #ffffff;
+  font-family: 'Rajdhani', sans-serif;
+  font-weight: 700;
+  font-size: 14px;
+}
