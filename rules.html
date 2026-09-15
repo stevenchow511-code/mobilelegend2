@@ -3,107 +3,51 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Peraturan — Land of Dawn Cup</title>
+  <title>Peraturan - Tournament MLBB</title>
   <link rel="icon" type="image/png" href="https://i.ibb.co/1tw26CJC/image.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/style.css">
   <style>
-    .rule-list{ display: flex; flex-direction: column; gap: 12px; }
-    .rule-item{
-      display: flex;
-      gap: 18px;
-      padding: 18px 22px;
-      align-items: flex-start;
-    }
-    .rule-num{
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 26px;
-      color: var(--violet);
-      line-height: 1;
-      min-width: 34px;
-    }
-    .rule-body h3{
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 16.5px;
-      margin-bottom: 4px;
-    }
-    .rule-body p{
-      font-size: 14px;
-      line-height: 1.65;
-      color: var(--ink-dim);
-    }
-    .rule-item.severe .rule-num{ color: var(--gold); }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', 'Segoe UI', sans-serif; }
+    body { background: #030712; color: #f3f4f6; min-height: 100vh; padding: 20px; }
+
+    .container { max-width: 1100px; margin: 0 auto; display: flex; gap: 20px; }
+    .main-content { flex: 1; background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 24px; }
+
+    .page-header { border-bottom: 1px solid rgba(255, 255, 255, 0.1); padding-bottom: 12px; margin-bottom: 20px; }
+    .page-title { font-size: 20px; font-weight: 800; color: #00f2fe; text-transform: uppercase; letter-spacing: 1px; }
+
+    .rule-item { background: rgba(31, 41, 55, 0.3); border-left: 3px solid #00f2fe; padding: 14px 18px; border-radius: 0 10px 10px 0; margin-bottom: 12px; font-size: 14px; line-height: 1.6; color: #d1d5db; }
+    .rule-item strong { color: #ffffff; }
+
+    .sidebar-menu { width: 240px; background: rgba(17, 24, 39, 0.7); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 16px; padding: 14px; display: flex; flex-direction: column; gap: 8px; height: fit-content; }
+    .menu-item { padding: 14px 18px; color: #9ca3af; font-weight: 700; font-size: 13px; border-radius: 10px; text-decoration: none; background: rgba(255,255,255,0.02); border: 1px solid transparent; transition: all 0.3s ease; letter-spacing: 0.5px; }
+    .menu-item:hover, .menu-item.active { color: #ffffff; background: linear-gradient(90deg, rgba(0, 242, 254, 0.15), rgba(79, 172, 254, 0.05)); border-color: #00f2fe; box-shadow: 0 0 15px rgba(0, 242, 254, 0.2); transform: translateX(4px); }
+
+    @media (max-width: 768px) { .container { flex-direction: column; } .sidebar-menu { width: 100%; order: -1; } }
   </style>
 </head>
 <body>
 
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a href="/index.html" class="brand">LAND OF <span class="brand-accent">DAWN</span> CUP<span class="brand-tag">Turnamen MLBB</span></a>
-      <ul class="navlist">
-        <li><a href="/index.html">Beranda</a></li>
-        <li><a href="/tim.html">Tim Peserta</a></li>
-        <li><a href="/jadwal.html">Jadwal Match</a></li>
-        <li><a href="/prizepool.html">Prize Pool</a></li>
-        <li><a href="/rules.html" class="active">Peraturan</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <main class="shell">
-    <div class="page-head">
-      <div>
-        <div class="kicker">Wajib Dibaca</div>
-        <h1>Peraturan Turnamen</h1>
+  <div class="container">
+    <div class="main-content">
+      <div class="page-header">
+        <h2 class="page-title">📜 Peraturan Turnamen</h2>
       </div>
+
+      <div class="rule-item"><strong>1. Fair Play:</strong> Dilarang keras menggunakan cheat, script, atau aplikasi pihak ketiga. Melanggar = Diskualifikasi Permanen.</div>
+      <div class="rule-item"><strong>2. Keterlambatan:</strong> Toleransi waktu maksimal 10 menit dari jadwal pertandingan. Lebih dari itu dianggap WO.</div>
+      <div class="rule-item"><strong>3. Koneksi & Pause:</strong> Masalah jaringan pribadi bukan tanggung jawab panitia. Pause maksimal 3 menit per tim.</div>
+      <div class="rule-item"><strong>4. Etika:</strong> Dilarang melakukan taunting berlebihan atau ujaran kebencian/toxic berlebih di dalam match.</div>
+      <div class="rule-item"><strong>5. Keputusan Panitia:</strong> Keputusan panitia bersifat mutlak dan tidak dapat diganggu gugat.</div>
     </div>
 
-    <div class="rule-list">
-      <div class="panel rule-item severe">
-        <span class="rule-num">01</span>
-        <div class="rule-body">
-          <h3>Fair Play</h3>
-          <p>Dilarang keras menggunakan cheat, script, atau aplikasi pihak ketiga. Pelanggaran berakibat diskualifikasi permanen.</p>
-        </div>
-      </div>
-      <div class="panel rule-item">
-        <span class="rule-num">02</span>
-        <div class="rule-body">
-          <h3>Keterlambatan</h3>
-          <p>Toleransi waktu maksimal 10 menit dari jadwal pertandingan. Lebih dari itu dianggap walkover (WO).</p>
-        </div>
-      </div>
-      <div class="panel rule-item">
-        <span class="rule-num">03</span>
-        <div class="rule-body">
-          <h3>Koneksi & Pause</h3>
-          <p>Masalah jaringan pribadi bukan tanggung jawab panitia. Pause maksimal 3 menit per tim.</p>
-        </div>
-      </div>
-      <div class="panel rule-item">
-        <span class="rule-num">04</span>
-        <div class="rule-body">
-          <h3>Etika</h3>
-          <p>Dilarang melakukan taunting berlebihan atau ujaran kebencian/toxic berlebih di dalam match.</p>
-        </div>
-      </div>
-      <div class="panel rule-item">
-        <span class="rule-num">05</span>
-        <div class="rule-body">
-          <h3>Keputusan Panitia</h3>
-          <p>Keputusan panitia bersifat mutlak dan tidak dapat diganggu gugat.</p>
-        </div>
-      </div>
+    <div class="sidebar-menu">
+      <a href="/index.html" class="menu-item">BERANDA</a>
+      <a href="/tim.html" class="menu-item">TIM PARTICIPANT</a>
+      <a href="/jadwal.html" class="menu-item">JADWAL MATCH</a>
+      <a href="/prizepool.html" class="menu-item">PRIZEPOOL</a>
+      <a href="/rules.html" class="menu-item active">RULES TURNAMEN</a>
     </div>
-
-    <footer class="site-footer">
-      <div><span class="footer-mark">LAND OF DAWN CUP</span> — Turnamen Mobile Legends: Bang Bang</div>
-      <div>Diselenggarakan oleh panitia turnamen</div>
-    </footer>
-  </main>
+  </div>
 
 </body>
 </html>

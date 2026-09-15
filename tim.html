@@ -3,94 +3,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tim Peserta — Land of Dawn Cup</title>
-  <link rel="icon" type="image/png" href="https://i.ibb.co/1tw26CJC/image.png">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/style.css">
-  <style>
-    .team-grid{
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-      gap: 16px;
-    }
-    .team-card{
-      padding: 22px 18px;
-      position: relative;
-      overflow: hidden;
-      min-height: 110px;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      transition: border-color 0.25s ease, transform 0.25s ease;
-    }
-    .team-card:hover{ transform: translateY(-3px); border-color: var(--edge-hi); }
-    .team-initial{
-      position: absolute;
-      top: -18px; right: -6px;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 84px;
-      line-height: 1;
-      color: transparent;
-      -webkit-text-stroke: 1px rgba(139,107,255,0.28);
-      user-select: none;
-    }
-    .team-seed{
-      font-family: var(--font-display);
-      font-size: 12px;
-      color: var(--ink-faint);
-      letter-spacing: 1px;
-      margin-bottom: 4px;
-    }
-    .team-name{
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 18px;
-      color: var(--ink);
-    }
-  </style>
+  <title>Tim Participant - MLBB Arena</title>
+  <link rel="icon" type="image/png" href="https://fav.luvtoberi.com/fav/favweb4d.webp">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a href="/index.html" class="brand">LAND OF <span class="brand-accent">DAWN</span> CUP<span class="brand-tag">Turnamen MLBB</span></a>
-      <ul class="navlist">
-        <li><a href="/index.html">Beranda</a></li>
-        <li><a href="/tim.html" class="active">Tim Peserta</a></li>
-        <li><a href="/jadwal.html">Jadwal Match</a></li>
-        <li><a href="/prizepool.html">Prize Pool</a></li>
-        <li><a href="/rules.html">Peraturan</a></li>
-      </ul>
+  <div class="container">
+    <div class="sidebar-menu">
+      <div class="brand-logo" style="font-family:'Orbitron',sans-serif; font-size:16px; font-weight:900; color:#fff; text-align:center; padding-bottom:15px; border-bottom:1px solid rgba(255,255,255,0.1); letter-spacing:2px; background:linear-gradient(135deg,#fff,#00f2fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">MLBB ARENA</div>
+      <a href="index.html" class="menu-item">🏠 BERANDA</a>
+      <a href="tim.html" class="menu-item active">🛡️ TIM PARTICIPANT</a>
+      <a href="jadwal.html" class="menu-item">📅 JADWAL MATCH</a>
+      <a href="prizepool.html" class="menu-item">🏆 PRIZEPOOL</a>
+      <a href="rules.html" class="menu-item">📜 RULES TURNAMEN</a>
     </div>
-  </header>
 
-  <main class="shell">
-    <div class="page-head">
-      <div>
-        <div class="kicker">8 Tim Bertanding</div>
-        <h1>Tim Peserta</h1>
-        <p class="sub">Skuad-skuad terbaik yang akan bertarung memperebutkan takhta Land of Dawn Cup.</p>
+    <div class="main-content">
+      <div class="page-header">
+        <h2 class="page-title">PARTICIPATING TEAMS</h2>
+      </div>
+      <div class="team-grid">
+        <div class="team-card"><div class="team-badge">01</div> EVOS ESPORTS</div>
+        <div class="team-card"><div class="team-badge">02</div> RRQ HOSHI</div>
+        <div class="team-card"><div class="team-badge">03</div> ONIC ESPORTS</div>
+        <div class="team-card"><div class="team-badge">04</div> ALTER EGO</div>
+        <div class="team-card"><div class="team-badge">05</div> BTR ALPHA</div>
+        <div class="team-card"><div class="team-badge">06</div> REBELION ZION</div>
       </div>
     </div>
-
-    <div class="team-grid">
-      <div class="panel team-card"><span class="team-initial">O</span><div class="team-seed">Seed 01</div><div class="team-name">ONIC Esports</div></div>
-      <div class="panel team-card"><span class="team-initial">R</span><div class="team-seed">Seed 02</div><div class="team-name">RRQ Hoshi</div></div>
-      <div class="panel team-card"><span class="team-initial">E</span><div class="team-seed">Seed 03</div><div class="team-name">EVOS Legends</div></div>
-      <div class="panel team-card"><span class="team-initial">A</span><div class="team-seed">Seed 04</div><div class="team-name">Alter Ego</div></div>
-      <div class="panel team-card"><span class="team-initial">B</span><div class="team-seed">Seed 05</div><div class="team-name">Bigetron Alpha</div></div>
-      <div class="panel team-card"><span class="team-initial">G</span><div class="team-seed">Seed 06</div><div class="team-name">Geek Fam</div></div>
-      <div class="panel team-card"><span class="team-initial">A</span><div class="team-seed">Seed 07</div><div class="team-name">Aura Fire</div></div>
-      <div class="panel team-card"><span class="team-initial">R</span><div class="team-seed">Seed 08</div><div class="team-name">Rebellion Esports</div></div>
-    </div>
-
-    <footer class="site-footer">
-      <div><span class="footer-mark">LAND OF DAWN CUP</span> — Turnamen Mobile Legends: Bang Bang</div>
-      <div>Diselenggarakan oleh panitia turnamen</div>
-    </footer>
-  </main>
-
+  </div>
 </body>
 </html>

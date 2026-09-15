@@ -3,140 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Land of Dawn Cup — Turnamen MLBB</title>
+  <title>Tournament MLBB - Official Portal</title>
   <link rel="icon" type="image/png" href="https://fav.luvtoberi.com/fav/favweb4d.webp">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/style.css">
-  <style>
-    .hero{ margin-top: 28px; }
-    .hero-frame{
-      position: relative;
-      clip-path: polygon(34px 0, 100% 0, 100% calc(100% - 34px), calc(100% - 34px) 100%, 0 100%, 0 34px);
-      border: 1px solid var(--edge-hi);
-    }
-    .hero-frame::after{
-      content: '';
-      position: absolute; inset: 0;
-      background: linear-gradient(180deg, transparent 55%, rgba(10,9,18,0.9) 100%);
-      pointer-events: none;
-    }
-    .hero-img{ width: 100%; display: block; }
-    .hero-caption{
-      position: absolute; left: 28px; bottom: 22px; right: 28px;
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: clamp(20px, 3.4vw, 30px);
-      letter-spacing: 0.3px;
-      text-shadow: 0 2px 12px rgba(0,0,0,0.6);
-    }
-    .hero-caption span{ color: var(--gold); }
-
-    .cta-row{ display: flex; gap: 14px; margin-top: 22px; flex-wrap: wrap; }
-    .cta-row .btn{ flex: 1; min-width: 200px; }
-
-    .stat-strip{
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-top: 34px;
-    }
-    .stat-card{ padding: 20px 18px; }
-    .stat-num{
-      font-family: var(--font-display);
-      font-weight: 700;
-      font-size: 26px;
-      color: var(--gold);
-      line-height: 1;
-    }
-    .stat-label{
-      font-size: 12.5px;
-      color: var(--ink-dim);
-      margin-top: 6px;
-      letter-spacing: 0.2px;
-    }
-    @media (max-width: 720px){
-      .stat-strip{ grid-template-columns: repeat(2, 1fr); }
-    }
-
-    .info-band{
-      margin-top: 34px;
-      padding: 26px 26px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 20px;
-      flex-wrap: wrap;
-      background: linear-gradient(100deg, rgba(139,107,255,0.14), rgba(245,185,46,0.06));
-    }
-    .info-band h3{
-      font-family: var(--font-display);
-      font-size: 19px;
-      font-weight: 700;
-    }
-    .info-band p{ color: var(--ink-dim); font-size: 14px; margin-top: 4px; max-width: 42ch; }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <header class="topbar">
-    <div class="topbar-inner">
-      <a href="/index.html" class="brand">LAND OF <span class="brand-accent">DAWN</span> CUP<span class="brand-tag">Turnamen MLBB</span></a>
-      <ul class="navlist">
-        <li><a href="/index.html" class="active">Beranda</a></li>
-        <li><a href="/tim.html">Tim Peserta</a></li>
-        <li><a href="/jadwal.html">Jadwal Match</a></li>
-        <li><a href="/prizepool.html">Prize Pool</a></li>
-        <li><a href="/rules.html">Peraturan</a></li>
-      </ul>
-    </div>
-  </header>
-
-  <main class="shell">
-    <div class="hero">
-      <div class="hero-frame">
-        <img class="hero-img" src="https://i.ibb.co/kg9qtctS/image.png" alt="Banner Turnamen">
-        <div class="hero-caption">Perebutkan takhta <span>Land of Dawn</span></div>
-      </div>
-
-      <div class="cta-row">
-        <a href="http://wadahsuix.com/" target="_blank" class="btn btn-primary">Masuk / Login</a>
-        <a href="http://wadahsuix.com/" target="_blank" class="btn btn-ghost">Daftar Sekarang</a>
-      </div>
+  <div class="container">
+    
+    <!-- Sidebar Menu Exclusivity -->
+    <div class="sidebar-menu">
+      <div class="brand-logo">MLBB ARENA</div>
+      <a href="index.html" class="menu-item active">🏠 BERANDA</a>
+      <a href="tim.html" class="menu-item">🛡️ TIM PARTICIPANT</a>
+      <a href="jadwal.html" class="menu-item">📅 JADWAL MATCH</a>
+      <a href="prizepool.html" class="menu-item">🏆 PRIZEPOOL</a>
+      <a href="rules.html" class="menu-item">📜 RULES TURNAMEN</a>
     </div>
 
-    <div class="stat-strip">
-      <div class="panel stat-card">
-        <div class="stat-num">8</div>
-        <div class="stat-label">Tim Terdaftar</div>
+    <!-- Main Content Exclusivity -->
+    <div class="main-content">
+      
+      <div class="page-header">
+        <h2 class="page-title">SEASON 1 CHAMPIONSHIP</h2>
+        <span class="live-badge">● REGISTRATION LIVE</span>
       </div>
-      <div class="panel stat-card">
-        <div class="stat-num">Rp 10 Jt</div>
-        <div class="stat-label">Total Prizepool</div>
+
+      <!-- Hero Banner Neon Frame -->
+      <div class="banner-wrapper">
+        <img class="banner-img" src="https://i.ibb.co.com/mFHbM2zP/image.png" alt="Banner Turnamen">
       </div>
-      <div class="panel stat-card">
-        <div class="stat-num">2</div>
-        <div class="stat-label">Match Hari Ini</div>
+
+   
+
+      <!-- Futuristic Highlight Cards -->
+      <div class="feature-grid">
+        <div class="feature-card">
+          <div class="feature-title">TOTAL PRIZEPOOL</div>
+          <div class="feature-val">Rp 10.000.000</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">SLOT TERSEDIA</div>
+          <div class="feature-val" style="color: #f59e0b; text-shadow: 0 0 10px rgba(245, 158, 11, 0.5);">64 TIM</div>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">SYSTEM MATCH</div>
+          <div class="feature-val" style="color: #10b981; text-shadow: 0 0 10px rgba(16, 185, 129, 0.5);">5v5 DRAFT</div>
+        </div>
       </div>
-      <div class="panel stat-card">
-        <div class="stat-num">Single Elim.</div>
-        <div class="stat-label">Format Turnamen</div>
+
+      <!-- Official Sponsors Bar -->
+      <div class="sponsor-section">
+        <div class="sponsor-title">OFFICIAL SPONSORS & PARTNERS</div>
+        <div class="sponsor-grid">
+          <div class="sponsor-card"><span class="sponsor-icon"></span>MOONTON</div>
+          <div class="sponsor-card"><span class="sponsor-icon" style="background:#f59e0b; box-shadow:0 0 8px #f59e0b;"></span>TELKOMSEL</div>
+          <div class="sponsor-card"><span class="sponsor-icon" style="background:#10b981; box-shadow:0 0 8px #10b981;"></span>GOPAY</div>
+          <div class="sponsor-card"><span class="sponsor-icon" style="background:#ef4444; box-shadow:0 0 8px #ef4444;"></span>ROG ESPORTS</div>
+          <div class="sponsor-card"><span class="sponsor-icon"></span>DANA</div>
+        </div>
       </div>
+
     </div>
 
-    <div class="panel info-band">
-      <div>
-        <h3>Belum tahu jadwal mainmu?</h3>
-        <p>Cek susunan pertandingan dan jam tanding tiap tim di halaman jadwal match.</p>
-      </div>
-      <a href="/jadwal.html" class="btn btn-primary">Lihat Jadwal</a>
-    </div>
-
-    <footer class="site-footer">
-      <div><span class="footer-mark">LAND OF DAWN CUP</span> — Turnamen Mobile Legends: Bang Bang</div>
-      <div>Diselenggarakan oleh panitia turnamen</div>
-    </footer>
-  </main>
+  </div>
 
 </body>
 </html>
