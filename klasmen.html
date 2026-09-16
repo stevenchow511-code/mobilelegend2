@@ -1,18 +1,23 @@
+```html
 <!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Klasemen | MLBB GROUP D</title>
+
   <link rel="stylesheet" href="style.css">
 
   <style>
     /* =========================
        KLASEMEN PAGE
     ========================= */
+
     .standings-intro {
       margin-bottom: 20px;
     }
+
     .standings-intro h2 {
       margin: 0 0 8px;
       font-family: 'Orbitron', sans-serif;
@@ -20,6 +25,7 @@
       color: #00f2fe;
       text-transform: uppercase;
     }
+
     .standings-intro p {
       margin: 0;
       color: rgba(255,255,255,0.65);
@@ -30,12 +36,14 @@
     /* =========================
        GROUP SELECTOR
     ========================= */
+
     .group-selector {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 15px;
       margin-bottom: 22px;
     }
+
     .group-btn {
       position: relative;
       padding: 20px 15px;
@@ -48,16 +56,26 @@
       transition: all 0.25s ease;
       overflow: hidden;
     }
+
     .group-btn:hover {
       transform: translateY(-3px);
       border-color: #00f2fe;
       box-shadow: 0 0 20px rgba(0, 242, 254, 0.18);
     }
+
     .group-btn.active {
       border-color: #00f2fe;
-      background: linear-gradient(135deg, rgba(0,242,254,0.18), rgba(0,120,160,0.10));
-      box-shadow: 0 0 15px rgba(0,242,254,0.20), inset 0 0 15px rgba(0,242,254,0.05);
+      background: linear-gradient(
+        135deg,
+        rgba(0,242,254,0.18),
+        rgba(0,120,160,0.10)
+      );
+
+      box-shadow:
+        0 0 15px rgba(0,242,254,0.20),
+        inset 0 0 15px rgba(0,242,254,0.05);
     }
+
     .group-btn .group-name {
       display: block;
       font-family: 'Orbitron', sans-serif;
@@ -66,9 +84,11 @@
       color: #fff;
       margin-bottom: 5px;
     }
+
     .group-btn.active .group-name {
       color: #00f2fe;
     }
+
     .group-btn .group-info {
       display: block;
       font-family: 'Rajdhani', sans-serif;
@@ -79,6 +99,7 @@
     /* =========================
        CURRENT GROUP
     ========================= */
+
     .current-group {
       display: flex;
       align-items: center;
@@ -90,6 +111,7 @@
       border: 1px solid rgba(0,242,254,0.18);
       background: rgba(0,0,0,0.20);
     }
+
     .current-group h3 {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
@@ -97,6 +119,7 @@
       color: #00f2fe;
       text-transform: uppercase;
     }
+
     .current-group span {
       font-family: 'Rajdhani', sans-serif;
       font-size: 15px;
@@ -106,6 +129,7 @@
     /* =========================
        TABLE
     ========================= */
+
     .table-wrapper {
       width: 100%;
       overflow-x: auto;
@@ -113,12 +137,14 @@
       border: 1px solid rgba(0,242,254,0.18);
       background: rgba(0,0,0,0.18);
     }
+
     .standings-table {
       width: 100%;
       min-width: 720px;
       border-collapse: collapse;
       font-family: 'Rajdhani', sans-serif;
     }
+
     .standings-table th {
       padding: 14px 10px;
       background: rgba(0,242,254,0.08);
@@ -129,6 +155,7 @@
       border-bottom: 1px solid rgba(0,242,254,0.18);
       white-space: nowrap;
     }
+
     .standings-table td {
       padding: 14px 10px;
       text-align: center;
@@ -137,21 +164,26 @@
       font-size: 16px;
       font-weight: 600;
     }
+
     .standings-table tr:last-child td {
       border-bottom: none;
     }
+
     .standings-table tbody tr {
       transition: all 0.2s ease;
     }
+
     .standings-table tbody tr:hover {
       background: rgba(0,242,254,0.05);
     }
+
     .position {
       width: 55px;
       font-family: 'Orbitron', sans-serif;
       font-weight: 800;
       color: #00f2fe !important;
     }
+
     .team-name {
       text-align: left !important;
       font-family: 'Orbitron', sans-serif;
@@ -159,11 +191,13 @@
       color: #fff !important;
       white-space: nowrap;
     }
+
     .points {
       font-family: 'Orbitron', sans-serif;
       color: #00f2fe !important;
       font-weight: 900 !important;
     }
+
     .status {
       display: inline-block;
       padding: 5px 10px;
@@ -172,16 +206,19 @@
       font-weight: 700;
       white-space: nowrap;
     }
+
     .status-progress {
       color: #00f2fe;
       background: rgba(0,242,254,0.10);
       border: 1px solid rgba(0,242,254,0.25);
     }
+
     .status-qualified {
       color: #7dffb2;
       background: rgba(125,255,178,0.08);
       border: 1px solid rgba(125,255,178,0.25);
     }
+
     .status-eliminated {
       color: #ff7777;
       background: rgba(255,70,70,0.08);
@@ -191,18 +228,22 @@
     /* =========================
        PLAYER STATS
     ========================= */
+
     .player-section {
       margin-top: 28px;
     }
+
     .player-section-title {
       display: flex;
       align-items: center;
       gap: 10px;
       margin-bottom: 14px;
     }
+
     .player-section-title .icon {
       font-size: 22px;
     }
+
     .player-section-title h3 {
       margin: 0;
       font-family: 'Orbitron', sans-serif;
@@ -210,29 +251,40 @@
       color: #00f2fe;
       text-transform: uppercase;
     }
+
     .player-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 15px;
     }
+
     .player-card {
       position: relative;
       padding: 18px;
       border-radius: 14px;
       border: 1px solid rgba(0,242,254,0.16);
-      background: linear-gradient(145deg, rgba(0,30,45,0.75), rgba(0,0,0,0.30));
+      background: linear-gradient(
+        145deg,
+        rgba(0,30,45,0.75),
+        rgba(0,0,0,0.30)
+      );
       overflow: hidden;
       transition: all 0.25s ease;
     }
+
     .player-card:hover {
       transform: translateY(-4px);
       border-color: #00f2fe;
       box-shadow: 0 0 22px rgba(0,242,254,0.16);
     }
+
     .player-card.first {
       border-color: rgba(0,242,254,0.55);
-      box-shadow: 0 0 18px rgba(0,242,254,0.12), inset 0 0 20px rgba(0,242,254,0.04);
+      box-shadow:
+        0 0 18px rgba(0,242,254,0.12),
+        inset 0 0 20px rgba(0,242,254,0.04);
     }
+
     .player-rank {
       position: absolute;
       top: 12px;
@@ -242,6 +294,7 @@
       font-weight: 900;
       color: #00f2fe;
     }
+
     .player-avatar {
       width: 58px;
       height: 58px;
@@ -255,6 +308,7 @@
       border: 1px solid rgba(0,242,254,0.25);
       box-shadow: 0 0 14px rgba(0,242,254,0.10);
     }
+
     .player-name {
       font-family: 'Orbitron', sans-serif;
       font-size: 14px;
@@ -262,12 +316,14 @@
       color: #fff;
       margin-bottom: 5px;
     }
+
     .player-team {
       font-family: 'Rajdhani', sans-serif;
       color: rgba(255,255,255,0.55);
       font-size: 14px;
       margin-bottom: 13px;
     }
+
     .player-stat {
       display: flex;
       align-items: center;
@@ -275,11 +331,13 @@
       padding-top: 10px;
       border-top: 1px solid rgba(255,255,255,0.07);
     }
+
     .player-stat span:first-child {
       color: rgba(255,255,255,0.55);
       font-family: 'Rajdhani', sans-serif;
       font-size: 14px;
     }
+
     .player-stat span:last-child {
       color: #00f2fe;
       font-family: 'Orbitron', sans-serif;
@@ -290,24 +348,28 @@
     /* =========================
        INFO
     ========================= */
+
     .standings-info {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 15px;
       margin-top: 25px;
     }
+
     .info-box {
       padding: 17px;
       border-radius: 12px;
       background: rgba(0,0,0,0.20);
       border: 1px solid rgba(0,242,254,0.12);
     }
+
     .info-box h4 {
       margin: 0 0 8px;
       color: #00f2fe;
       font-family: 'Orbitron', sans-serif;
       font-size: 13px;
     }
+
     .info-box p {
       margin: 0;
       color: rgba(255,255,255,0.62);
@@ -319,13 +381,33 @@
     /* =========================
        MOBILE
     ========================= */
+
     @media (max-width: 768px) {
-      .group-selector { grid-template-columns: 1fr; }
-      .player-grid { grid-template-columns: 1fr; }
-      .standings-info { grid-template-columns: 1fr; }
-      .current-group { align-items: flex-start; flex-direction: column; }
-      .group-btn { padding: 17px 12px; }
-      .group-btn .group-name { font-size: 19px; }
+
+      .group-selector {
+        grid-template-columns: 1fr;
+      }
+
+      .player-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .standings-info {
+        grid-template-columns: 1fr;
+      }
+
+      .current-group {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .group-btn {
+        padding: 17px 12px;
+      }
+
+      .group-btn .group-name {
+        font-size: 19px;
+      }
     }
   </style>
 </head>
@@ -334,70 +416,182 @@
 
 <div class="container">
 
-  <!-- SIDEBAR -->
+  <!-- =========================
+       SIDEBAR
+  ========================= -->
+
   <aside class="sidebar-menu">
-    <div class="menu-brand">MLBB GROUP D</div>
-    <a href="index.html" class="menu-item">1. BERANDA</a>
-    <a href="tim.html" class="menu-item">2. DAFTAR TIM</a>
-    <a href="jadwal.html" class="menu-item">3. JADWAL MATCH</a>
-    <a href="klasemen.html" class="menu-item active">4. KLASEMEN</a>
-    <a href="prizepool.html" class="menu-item">5. PRIZEPOOL</a>
-    <a href="rules.html" class="menu-item">6. RULES TURNAMEN</a>
+
+    <div class="menu-brand">
+      MLBB GROUP D
+    </div>
+
+    <a href="index.html" class="menu-item">
+      1. BERANDA
+    </a>
+
+    <a href="tim.html" class="menu-item">
+      2. DAFTAR TIM
+    </a>
+
+    <a href="jadwal.html" class="menu-item">
+      3. JADWAL MATCH
+    </a>
+
+    <a href="klasemen.html" class="menu-item active">
+      4. KLASEMEN
+    </a>
+
+    <a href="prizepool.html" class="menu-item">
+      5. PRIZEPOOL
+    </a>
+
+    <a href="rules.html" class="menu-item">
+      6. RULES TURNAMEN
+    </a>
+
   </aside>
 
-  <!-- MAIN CONTENT -->
+
+  <!-- =========================
+       MAIN
+  ========================= -->
+
   <main class="main-content">
 
     <div class="page-header">
-      <div class="page-title">SEASON 1 TOURNAMENT MLBB GROUP D</div>
-      <div class="live-badge">● LIVE</div>
+
+      <div class="page-title">
+        SEASON 1 TOURNAMENT MLBB GROUP D
+      </div>
+
+      <div class="live-badge">
+        ● LIVE
+      </div>
+
     </div>
+
 
     <!-- BANNER -->
+
     <div class="banner-wrapper">
-      <img src="https://i.ibb.co.com/mFHbM2zP/image.png" alt="MLBB Tournament Banner">
+
+      <img
+        src="https://i.ibb.co.com/mFHbM2zP/image.png"
+        alt="MLBB Tournament Banner"
+      >
+
     </div>
+
 
     <!-- MARQUEE -->
+
     <div class="marquee-bar">
+
       <div class="marquee-track">
-        🏆 PRIZEPOOL BESAR &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
-        ⚔️ GROUP A & GROUP B &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
-        🎮 MOBILE LEGENDS &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
-        🔥 TOURNAMENT SEASON 1 &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
-        🏆 PRIZEPOOL BESAR &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
+
+        🏆 PRIZEPOOL BESAR
+        &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
+
+        ⚔️ GROUP A & GROUP B
+        &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
+
+        🎮 MOBILE LEGENDS
+        &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
+
+        🔥 TOURNAMENT SEASON 1
+        &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
+
+        🏆 PRIZEPOOL BESAR
+        &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
+
       </div>
+
     </div>
+
 
     <!-- INTRO -->
+
     <div class="standings-intro">
-      <h2>KLASEMEN TURNAMEN</h2>
-      <p>Pilih grup untuk melihat klasemen dan statistik pemain.</p>
+
+      <h2>
+        KLASEMEN TURNAMEN
+      </h2>
+
+      <p>
+        Pilih grup untuk melihat klasemen dan statistik pemain.
+      </p>
+
     </div>
+
 
     <!-- GROUP BUTTON -->
+
     <div class="group-selector">
-      <button class="group-btn active" id="groupAButton" onclick="showGroup('A')">
-        <span class="group-name">GROUP A</span>
-        <span class="group-info">Lihat Klasemen & Statistik</span>
+
+      <button
+        class="group-btn active"
+        id="groupAButton"
+        onclick="showGroup('A')"
+      >
+
+        <span class="group-name">
+          GROUP A
+        </span>
+
+        <span class="group-info">
+          Lihat Klasemen & Statistik
+        </span>
+
       </button>
-      <button class="group-btn" id="groupBButton" onclick="showGroup('B')">
-        <span class="group-name">GROUP B</span>
-        <span class="group-info">Lihat Klasemen & Statistik</span>
+
+
+      <button
+        class="group-btn"
+        id="groupBButton"
+        onclick="showGroup('B')"
+      >
+
+        <span class="group-name">
+          GROUP B
+        </span>
+
+        <span class="group-info">
+          Lihat Klasemen & Statistik
+        </span>
+
       </button>
+
     </div>
+
 
     <!-- CURRENT GROUP -->
+
     <div class="current-group">
-      <h3 id="currentGroupTitle">KLASEMEN GROUP A</h3>
-      <span id="teamCount">0 Teams</span>
+
+      <h3 id="currentGroupTitle">
+        KLASEMEN GROUP A
+      </h3>
+
+      <span id="teamCount">
+        4 Teams
+      </span>
+
     </div>
 
-    <!-- TABLE KLASEMEN -->
+
+    <!-- =========================
+         STANDINGS TABLE
+    ========================= -->
+
     <div class="table-wrapper">
+
       <table class="standings-table">
+
         <thead>
+
           <tr>
+
             <th>POS</th>
             <th>TEAM</th>
             <th>MP</th>
@@ -406,199 +600,618 @@
             <th>GAME W/L</th>
             <th>PTS</th>
             <th>STATUS</th>
+
           </tr>
+
         </thead>
+
         <tbody id="standingsBody">
         </tbody>
+
       </table>
+
     </div>
 
-    <!-- TOP MVP -->
+
+    <!-- =========================
+         TOP MVP
+    ========================= -->
+
     <section class="player-section">
+
       <div class="player-section-title">
-        <div class="icon">🏆</div>
-        <h3>TOP MVP</h3>
+
+        <div class="icon">
+          🏆
+        </div>
+
+        <h3>
+          TOP MVP
+        </h3>
+
       </div>
-      <div class="player-grid" id="mvpGrid"></div>
+
+
+      <div
+        class="player-grid"
+        id="mvpGrid"
+      >
+      </div>
+
     </section>
 
-    <!-- TOP SAVAGE -->
+
+    <!-- =========================
+         TOP SAVAGE
+    ========================= -->
+
     <section class="player-section">
+
       <div class="player-section-title">
-        <div class="icon">⚡</div>
-        <h3>TOP SAVAGE</h3>
+
+        <div class="icon">
+          ⚡
+        </div>
+
+        <h3>
+          TOP SAVAGE
+        </h3>
+
       </div>
-      <div class="player-grid" id="savageGrid"></div>
+
+
+      <div
+        class="player-grid"
+        id="savageGrid"
+      >
+      </div>
+
     </section>
 
-    <!-- INFO BOX -->
+
+    <!-- INFO -->
+
     <div class="standings-info">
+
       <div class="info-box">
-        <h4>SISTEM POINT</h4>
+
+        <h4>
+          SISTEM POINT
+        </h4>
+
         <p>
-          Menang mendapatkan 3 poin. Kalah mendapatkan 0 poin.
-          Urutan klasemen ditentukan berdasarkan poin, kemenangan, dan Game W/L.
+          Menang mendapatkan 3 poin.
+          Kalah mendapatkan 0 poin.
+          Urutan klasemen dapat ditentukan berdasarkan
+          jumlah kemenangan dan Game W/L.
         </p>
+
       </div>
+
+
       <div class="info-box">
-        <h4>KETERANGAN</h4>
+
+        <h4>
+          KETERANGAN
+        </h4>
+
         <p>
-          MP = Match Played &nbsp;•&nbsp; W = Win &nbsp;•&nbsp; L = Loss &nbsp;•&nbsp; PTS = Points
+          MP = Match Played &nbsp;•&nbsp;
+          W = Win &nbsp;•&nbsp;
+          L = Loss &nbsp;•&nbsp;
+          PTS = Points
         </p>
+
       </div>
+
     </div>
 
   </main>
+
 </div>
 
-<!-- ==================================================
-     LOGIKA JAVASCRIPT & REALTIME FIREBASE
-================================================== -->
+
 <script>
-  // Global Store penampung data Firebase
-  window.dbData = {
-    A: { teams: [], mvp: [], savage: [] },
-    B: { teams: [], mvp: [], savage: [] }
-  };
-  window.activeGroup = 'A';
 
-  // Sort Tim berdasarkan Point -> Win -> Game W/L Difference
-  function sortTeams(data) {
-    if(!data) return [];
-    return [...data].sort((a, b) => {
-      const ptsA = Number(a.points || a.pts || 0);
-      const ptsB = Number(b.points || b.pts || 0);
-      if (ptsB !== ptsA) return ptsB - ptsA;
+  /* ==================================================
+     GROUP A
+  ================================================== */
 
-      const wA = Number(a.w || 0);
-      const wB = Number(b.w || 0);
-      if (wB !== wA) return wB - wA;
+  const groupA = {
 
-      const gwA = Number(a.gw || 0);
-      const glA = Number(a.gl || 0);
-      const gwB = Number(b.gw || 0);
-      const glB = Number(b.gl || 0);
-      return (gwB - glB) - (gwA - glA);
-    });
-  }
+    teams: [
 
-  // Render Card Player MVP / Savage
-  function createPlayerCards(data, containerId, statName) {
-    const container = document.getElementById(containerId);
-    container.innerHTML = "";
-    if(!data || data.length === 0) return;
+      {
+        team: "EVOS GLORY",
+        mp: 3,
+        w: 2,
+        l: 1,
+        gw: 5,
+        gl: 3,
+        points: 6,
+        status: "progress"
+      },
 
-    data.forEach((player, index) => {
-      const card = document.createElement("div");
-      card.className = "player-card" + (index === 0 ? " first" : "");
+      {
+        team: "RRQ HOSHI",
+        mp: 3,
+        w: 2,
+        l: 1,
+        gw: 5,
+        gl: 2,
+        points: 6,
+        status: "progress"
+      },
 
-      card.innerHTML = `
-        <div class="player-rank">#${index + 1}</div>
-        <div class="player-avatar">${index === 0 ? "👑" : "🎮"}</div>
-        <div class="player-name">${player.name || '-'}</div>
-        <div class="player-team">${player.team || '-'}</div>
-        <div class="player-stat">
-          <span>${statName}</span>
-          <span>${player.value || 0}</span>
-        </div>
-      `;
-      container.appendChild(card);
-    });
-  }
+      {
+        team: "ONIC ESPORTS",
+        mp: 3,
+        w: 1,
+        l: 2,
+        gw: 3,
+        gl: 5,
+        points: 3,
+        status: "progress"
+      },
 
-  // Render Tampilan Group (A atau B)
-  function showGroup(group) {
-    window.activeGroup = group;
-    const data = window.dbData[group] || { teams: [], mvp: [], savage: [] };
-
-    // Update Button State
-    document.getElementById("groupAButton").classList.toggle("active", group === "A");
-    document.getElementById("groupBButton").classList.toggle("active", group === "B");
-
-    // Update Header Text
-    document.getElementById("currentGroupTitle").textContent = "KLASEMEN GROUP " + group;
-    document.getElementById("teamCount").textContent = (data.teams ? data.teams.length : 0) + " Teams";
-
-    // Render Table Body
-    const sortedTeams = sortTeams(data.teams);
-    const body = document.getElementById("standingsBody");
-    body.innerHTML = "";
-
-    sortedTeams.forEach((team, index) => {
-      let statusText = "BERJALAN";
-      let statusClass = "status-progress";
-
-      if (team.status === "qualified" || team.status === "LOLOS") {
-        statusText = "LOLOS";
-        statusClass = "status-qualified";
-      } else if (team.status === "eliminated" || team.status === "ELIMINASI") {
-        statusText = "ELIMINASI";
-        statusClass = "status-eliminated";
+      {
+        team: "ALTER EGO",
+        mp: 3,
+        w: 1,
+        l: 2,
+        gw: 2,
+        gl: 5,
+        points: 3,
+        status: "progress"
+      },
+	  
+	  {
+        team: "ALTER EGO",
+        mp: 3,
+        w: 1,
+        l: 2,
+        gw: 2,
+        gl: 5,
+        points: 3,
+        status: "progress"
       }
 
-      const row = document.createElement("tr");
-      row.innerHTML = `
-        <td class="position">${index + 1}</td>
-        <td class="team-name">${team.team || team.name || '-'}</td>
-        <td>${team.mp || 0}</td>
-        <td>${team.w || 0}</td>
-        <td>${team.l || 0}</td>
-        <td>${team.gwl ? team.gwl : (team.gw || 0) + ' - ' + (team.gl || 0)}</td>
-        <td class="points">${team.points || team.pts || 0}</td>
-        <td><span class="status ${statusClass}">${statusText}</span></td>
-      `;
-      body.appendChild(row);
+    ],
+
+
+    mvp: [
+
+      {
+        name: "PLAYER MVP 1",
+        team: "EVOS GLORY",
+        value: 8
+      },
+
+      {
+        name: "PLAYER MVP 2",
+        team: "RRQ HOSHI",
+        value: 6
+      },
+
+      {
+        name: "PLAYER MVP 3",
+        team: "ONIC ESPORTS",
+        value: 5
+      }
+
+    ],
+
+
+    savage: [
+
+      {
+        name: "PLAYER SAVAGE 1",
+        team: "EVOS GLORY",
+        value: 3
+      },
+
+      {
+        name: "PLAYER SAVAGE 2",
+        team: "RRQ HOSHI",
+        value: 2
+      },
+
+      {
+        name: "PLAYER SAVAGE 3",
+        team: "ONIC ESPORTS",
+        value: 1
+      }
+
+    ]
+
+  };
+
+
+  /* ==================================================
+     GROUP B
+  ================================================== */
+
+  const groupB = {
+
+    teams: [
+
+      {
+        team: "BIGETRON",
+        mp: 3,
+        w: 3,
+        l: 0,
+        gw: 6,
+        gl: 1,
+        points: 9,
+        status: "progress"
+      },
+
+      {
+        team: "DEWA UNITED",
+        mp: 3,
+        w: 2,
+        l: 1,
+        gw: 5,
+        gl: 3,
+        points: 6,
+        status: "progress"
+      },
+
+      {
+        team: "GEEK FAM",
+        mp: 3,
+        w: 1,
+        l: 2,
+        gw: 3,
+        gl: 5,
+        points: 3,
+        status: "progress"
+      },
+
+      {
+        team: "NAVI",
+        mp: 3,
+        w: 0,
+        l: 3,
+        gw: 1,
+        gl: 6,
+        points: 0,
+        status: "progress"
+      },
+	 
+    {
+        team: "ALTER EGO",
+        mp: 3,
+        w: 1,
+        l: 2,
+        gw: 2,
+        gl: 5,
+        points: 3,
+        status: "progress"
+      }
+
+    ],
+
+
+    mvp: [
+
+      {
+        name: "PLAYER MVP 1",
+        team: "BIGETRON",
+        value: 9
+      },
+
+      {
+        name: "PLAYER MVP 2",
+        team: "DEWA UNITED",
+        value: 7
+      },
+
+      {
+        name: "PLAYER MVP 3",
+        team: "GEEK FAM",
+        value: 4
+      }
+
+    ],
+
+
+    savage: [
+
+      {
+        name: "PLAYER SAVAGE 1",
+        team: "BIGETRON",
+        value: 4
+      },
+
+      {
+        name: "PLAYER SAVAGE 2",
+        team: "DEWA UNITED",
+        value: 2
+      },
+
+      {
+        name: "PLAYER SAVAGE 3",
+        team: "GEEK FAM",
+        value: 1
+      }
+
+    ]
+
+  };
+
+
+  /* ==================================================
+     SORT TEAM
+  ================================================== */
+
+  function sortTeams(data) {
+
+    return [...data].sort((a, b) => {
+
+      if (b.points !== a.points) {
+        return b.points - a.points;
+      }
+
+      if (b.w !== a.w) {
+        return b.w - a.w;
+      }
+
+      return (b.gw - b.gl) - (a.gw - a.gl);
+
     });
 
-    // Render Top Players
-    createPlayerCards(data.mvp || [], "mvpGrid", "MVP");
-    createPlayerCards(data.savage || [], "savageGrid", "SAVAGE");
   }
-</script>
 
-<!-- Firebase Module SDK -->
-<script type="module">
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
-  import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
-  // TODO: MASUKKAN KONFIGURASI FIREBASE MILIKMU DI SINI
-const firebaseConfig = {
-  apiKey: "AIzaSyDrjVWvZe30I0YnD6Nk_6hJd7qtAEK5l_8",
-  authDomain: "mlbb---group-d.firebaseapp.com",
-  databaseURL: "https://mlbb---group-d-default-rtdb.asia-southeast1.firebasedatabase.app",
-  projectId: "mlbb---group-d",
-  storageBucket: "mlbb---group-d.appspot.com",
-  messagingSenderId: "550492341450",
-  appId: "1:550492341450:web:ab7ecc97067a29fdab2033"
-};
+  /* ==================================================
+     CREATE PLAYER CARD
+  ================================================== */
 
-  const app = initializeApp(firebaseConfig);
-  const db = getDatabase(app);
+  function createPlayerCards(data, containerId, statName) {
 
-  // Realtime Sync Data Group A
-  onValue(ref(db, 'klasemen/group_a'), (snapshot) => {
-    const data = snapshot.val();
-    if (data) {
-      window.dbData.A.teams = data.teams ? Object.values(data.teams) : (Array.isArray(data) ? data : Object.values(data));
-      window.dbData.A.mvp = data.mvp ? Object.values(data.mvp) : [];
-      window.dbData.A.savage = data.savage ? Object.values(data.savage) : [];
-      
-      if (window.activeGroup === 'A') showGroup('A');
-    }
-  });
+    const container =
+      document.getElementById(containerId);
 
-  // Realtime Sync Data Group B
-  onValue(ref(db, 'klasemen/group_b'), (snapshot) => {
-    const data = snapshot.val();
-    if (data) {
-      window.dbData.B.teams = data.teams ? Object.values(data.teams) : (Array.isArray(data) ? data : Object.values(data));
-      window.dbData.B.mvp = data.mvp ? Object.values(data.mvp) : [];
-      window.dbData.B.savage = data.savage ? Object.values(data.savage) : [];
-      
-      if (window.activeGroup === 'B') showGroup('B');
-    }
-  });
+    container.innerHTML = "";
+
+
+    data.forEach((player, index) => {
+
+      const card =
+        document.createElement("div");
+
+
+      card.className =
+        "player-card" +
+        (index === 0 ? " first" : "");
+
+
+      card.innerHTML = `
+
+        <div class="player-rank">
+          #${index + 1}
+        </div>
+
+        <div class="player-avatar">
+          ${index === 0 ? "👑" : "🎮"}
+        </div>
+
+        <div class="player-name">
+          ${player.name}
+        </div>
+
+        <div class="player-team">
+          ${player.team}
+        </div>
+
+        <div class="player-stat">
+
+          <span>
+            ${statName}
+          </span>
+
+          <span>
+            ${player.value}
+          </span>
+
+        </div>
+
+      `;
+
+
+      container.appendChild(card);
+
+    });
+
+  }
+
+
+  /* ==================================================
+     SHOW GROUP
+  ================================================== */
+
+  function showGroup(group) {
+
+    const data =
+      group === "A"
+        ? groupA
+        : groupB;
+
+
+    /* =========================
+       BUTTON
+    ========================= */
+
+    document
+      .getElementById("groupAButton")
+      .classList.remove("active");
+
+    document
+      .getElementById("groupBButton")
+      .classList.remove("active");
+
+
+    document
+      .getElementById(
+        group === "A"
+          ? "groupAButton"
+          : "groupBButton"
+      )
+      .classList.add("active");
+
+
+    /* =========================
+       TITLE
+    ========================= */
+
+    document
+      .getElementById("currentGroupTitle")
+      .textContent =
+        "KLASEMEN GROUP " + group;
+
+
+    document
+      .getElementById("teamCount")
+      .textContent =
+        data.teams.length + " Teams";
+
+
+    /* =========================
+       TABLE
+    ========================= */
+
+    const sortedTeams =
+      sortTeams(data.teams);
+
+
+    const body =
+      document.getElementById(
+        "standingsBody"
+      );
+
+
+    body.innerHTML = "";
+
+
+    sortedTeams.forEach(
+      (team, index) => {
+
+        let statusText = "BERJALAN";
+
+        let statusClass =
+          "status-progress";
+
+
+        if (
+          team.status === "qualified"
+        ) {
+
+          statusText = "LOLOS";
+
+          statusClass =
+            "status-qualified";
+
+        }
+
+
+        if (
+          team.status === "eliminated"
+        ) {
+
+          statusText = "ELIMINASI";
+
+          statusClass =
+            "status-eliminated";
+
+        }
+
+
+        const row =
+          document.createElement("tr");
+
+
+        row.innerHTML = `
+
+          <td class="position">
+            ${index + 1}
+          </td>
+
+          <td class="team-name">
+            ${team.team}
+          </td>
+
+          <td>
+            ${team.mp}
+          </td>
+
+          <td>
+            ${team.w}
+          </td>
+
+          <td>
+            ${team.l}
+          </td>
+
+          <td>
+            ${team.gw} - ${team.gl}
+          </td>
+
+          <td class="points">
+            ${team.points}
+          </td>
+
+          <td>
+
+            <span
+              class="status ${statusClass}"
+            >
+              ${statusText}
+            </span>
+
+          </td>
+
+        `;
+
+
+        body.appendChild(row);
+
+      }
+    );
+
+
+    /* =========================
+       MVP
+    ========================= */
+
+    createPlayerCards(
+      data.mvp,
+      "mvpGrid",
+      "MVP"
+    );
+
+
+    /* =========================
+       SAVAGE
+    ========================= */
+
+    createPlayerCards(
+      data.savage,
+      "savageGrid",
+      "SAVAGE"
+    );
+
+  }
+
+
+  /* ==================================================
+     DEFAULT GROUP A
+  ================================================== */
+
+  showGroup("A");
+
 </script>
 
 </body>
 </html>
+```
