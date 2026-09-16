@@ -3,1488 +3,602 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Klasemen Group D - Official Portal</title>
-
-  <link rel="icon" type="image/png" href="...">
-
+  <title>Klasemen | MLBB GROUP D</title>
   <link rel="stylesheet" href="style.css">
 
   <style>
-
-    /* =========================================
-       KLASEMEN - TAMBAHAN KHUSUS
-       Mengikuti style.css utama website
-    ========================================= */
-
+    /* =========================
+       KLASEMEN PAGE
+    ========================= */
     .standings-intro {
-      background:
-        linear-gradient(
-          135deg,
-          rgba(0, 242, 254, 0.12),
-          rgba(79, 172, 254, 0.04)
-        );
-
-      border: 1px solid rgba(0, 242, 254, 0.35);
-
-      border-radius: 12px;
-
-      padding: 20px;
-
       margin-bottom: 20px;
-
-      text-align: center;
-
-      box-shadow:
-        0 0 20px rgba(0, 242, 254, 0.08);
     }
-
-    .standings-title {
+    .standings-intro h2 {
+      margin: 0 0 8px;
       font-family: 'Orbitron', sans-serif;
-
-      font-size: 24px;
-
-      font-weight: 900;
-
-      color: #00f2fe;
-
-      text-shadow:
-        0 0 15px rgba(0, 242, 254, 0.5);
-
-      letter-spacing: 2px;
-
-      margin-bottom: 6px;
-    }
-
-    .standings-subtitle {
-      color: #94a3b8;
-
-      font-size: 13px;
-
-      letter-spacing: 1px;
-    }
-
-
-    /* =========================================
-       SUMMARY
-    ========================================= */
-
-    .standing-summary {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(4, 1fr);
-
-      gap: 12px;
-
-      margin-bottom: 20px;
-
-    }
-
-    .summary-card {
-
-      background:
-        rgba(30, 41, 59, 0.5);
-
-      border: 1px solid
-        rgba(255, 255, 255, 0.08);
-
-      border-radius: 10px;
-
-      padding: 15px;
-
-      text-align: center;
-
-      transition: all 0.3s ease;
-
-    }
-
-    .summary-card:hover {
-
-      border-color:
-        rgba(0, 242, 254, 0.45);
-
-      background:
-        rgba(0, 242, 254, 0.06);
-
-      transform: translateY(-2px);
-
-      box-shadow:
-        0 0 15px
-        rgba(0, 242, 254, 0.1);
-
-    }
-
-    .summary-number {
-
-      font-family: 'Orbitron', sans-serif;
-
       font-size: 22px;
-
-      font-weight: 900;
-
       color: #00f2fe;
-
-      text-shadow:
-        0 0 10px rgba(0, 242, 254, 0.4);
-
+      text-transform: uppercase;
+    }
+    .standings-intro p {
+      margin: 0;
+      color: rgba(255,255,255,0.65);
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 16px;
     }
 
-    .summary-label {
-
-      margin-top: 5px;
-
-      font-size: 10px;
-
-      color: #64748b;
-
-      font-weight: 700;
-
-      letter-spacing: 1px;
-
-    }
-
-
-    /* =========================================
-       TABLE CONTAINER
-    ========================================= */
-
-    .standings-container {
-
-      background:
-        rgba(30, 41, 59, 0.4);
-
-      border: 1px solid
-        rgba(255, 255, 255, 0.08);
-
-      border-radius: 12px;
-
-      overflow: hidden;
-
-      box-shadow:
-        0 10px 25px rgba(0, 0, 0, 0.25);
-
-    }
-
-
-    /* =========================================
-       TABLE HEADER
-    ========================================= */
-
-    .standings-header {
-
+    /* =========================
+       GROUP SELECTOR
+    ========================= */
+    .group-selector {
       display: grid;
-
-      grid-template-columns:
-        55px
-        minmax(180px, 1fr)
-        60px
-        60px
-        60px
-        90px
-        80px
-        105px;
-
-      align-items: center;
-
-      background:
-        linear-gradient(
-          90deg,
-          rgba(0, 242, 254, 0.12),
-          rgba(79, 172, 254, 0.03)
-        );
-
-      border-bottom:
-        1px solid rgba(0, 242, 254, 0.2);
-
-      padding: 13px 15px;
-
-      color: #64748b;
-
-      font-family: 'Orbitron', sans-serif;
-
-      font-size: 9px;
-
-      font-weight: 800;
-
-      letter-spacing: 1px;
-
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-bottom: 22px;
+    }
+    .group-btn {
+      position: relative;
+      padding: 20px 15px;
+      border: 1px solid rgba(0, 242, 254, 0.25);
+      border-radius: 14px;
+      background: rgba(0, 20, 35, 0.65);
+      color: #fff;
+      cursor: pointer;
       text-align: center;
-
+      transition: all 0.25s ease;
+      overflow: hidden;
+    }
+    .group-btn:hover {
+      transform: translateY(-3px);
+      border-color: #00f2fe;
+      box-shadow: 0 0 20px rgba(0, 242, 254, 0.18);
+    }
+    .group-btn.active {
+      border-color: #00f2fe;
+      background: linear-gradient(135deg, rgba(0,242,254,0.18), rgba(0,120,160,0.10));
+      box-shadow: 0 0 15px rgba(0,242,254,0.20), inset 0 0 15px rgba(0,242,254,0.05);
+    }
+    .group-btn .group-name {
+      display: block;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 22px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+    .group-btn.active .group-name {
+      color: #00f2fe;
+    }
+    .group-btn .group-info {
+      display: block;
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 14px;
+      color: rgba(255,255,255,0.55);
     }
 
-    .standings-header div:nth-child(2) {
-      text-align: left;
-    }
-
-
-    /* =========================================
-       TEAM ROW
-    ========================================= */
-
-    .standing-row {
-
-      display: grid;
-
-      grid-template-columns:
-        55px
-        minmax(180px, 1fr)
-        60px
-        60px
-        60px
-        90px
-        80px
-        105px;
-
+    /* =========================
+       CURRENT GROUP
+    ========================= */
+    .current-group {
+      display: flex;
       align-items: center;
-
-      padding: 15px;
-
-      border-bottom:
-        1px solid rgba(255, 255, 255, 0.05);
-
-      transition:
-        all 0.3s ease;
-
-      animation:
-        rowAppear 0.5s ease both;
-
+      justify-content: space-between;
+      gap: 15px;
+      margin-bottom: 15px;
+      padding: 15px 18px;
+      border-radius: 12px;
+      border: 1px solid rgba(0,242,254,0.18);
+      background: rgba(0,0,0,0.20);
+    }
+    .current-group h3 {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 18px;
+      color: #00f2fe;
+      text-transform: uppercase;
+    }
+    .current-group span {
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 15px;
+      color: rgba(255,255,255,0.60);
     }
 
-    .standing-row:last-child {
+    /* =========================
+       TABLE
+    ========================= */
+    .table-wrapper {
+      width: 100%;
+      overflow-x: auto;
+      border-radius: 14px;
+      border: 1px solid rgba(0,242,254,0.18);
+      background: rgba(0,0,0,0.18);
+    }
+    .standings-table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+      font-family: 'Rajdhani', sans-serif;
+    }
+    .standings-table th {
+      padding: 14px 10px;
+      background: rgba(0,242,254,0.08);
+      color: #00f2fe;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 11px;
+      text-transform: uppercase;
+      border-bottom: 1px solid rgba(0,242,254,0.18);
+      white-space: nowrap;
+    }
+    .standings-table td {
+      padding: 14px 10px;
+      text-align: center;
+      color: rgba(255,255,255,0.85);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 16px;
+      font-weight: 600;
+    }
+    .standings-table tr:last-child td {
       border-bottom: none;
     }
-
-    .standing-row:hover {
-
-      background:
-        rgba(0, 242, 254, 0.06);
-
-      box-shadow:
-        inset 4px 0 0 #00f2fe;
-
+    .standings-table tbody tr {
+      transition: all 0.2s ease;
     }
-
-    @keyframes rowAppear {
-
-      from {
-
-        opacity: 0;
-
-        transform:
-          translateY(8px);
-
-      }
-
-      to {
-
-        opacity: 1;
-
-        transform:
-          translateY(0);
-
-      }
-
+    .standings-table tbody tr:hover {
+      background: rgba(0,242,254,0.05);
     }
-
-
-    /* =========================================
-       POSITION
-    ========================================= */
-
     .position {
-
-      text-align: center;
-
+      width: 55px;
       font-family: 'Orbitron', sans-serif;
-
-      font-size: 17px;
-
-      font-weight: 900;
-
-      color: #64748b;
-
+      font-weight: 800;
+      color: #00f2fe !important;
     }
-
-    .position.first {
-
-      color: #fbbf24;
-
-      text-shadow:
-        0 0 12px
-        rgba(251, 191, 36, 0.6);
-
-    }
-
-    .position.second {
-
-      color: #d1d5db;
-
-    }
-
-    .position.third {
-
-      color: #d97706;
-
-    }
-
-
-    /* =========================================
-       TEAM INFO
-    ========================================= */
-
-    .standing-team {
-
-      display: flex;
-
-      align-items: center;
-
-      gap: 12px;
-
-      min-width: 0;
-
-    }
-
-    .team-logo {
-
-      width: 42px;
-
-      height: 42px;
-
-      flex-shrink: 0;
-
-      border-radius: 8px;
-
-      display: flex;
-
-      align-items: center;
-
-      justify-content: center;
-
-      background:
-        linear-gradient(
-          135deg,
-          #00f2fe,
-          #4facfe
-        );
-
-      color: #030712;
-
-      font-family: 'Orbitron', sans-serif;
-
-      font-size: 12px;
-
-      font-weight: 900;
-
-      box-shadow:
-        0 0 12px
-        rgba(0, 242, 254, 0.25);
-
-    }
-
-    .team-details {
-
-      min-width: 0;
-
-    }
-
     .team-name {
-
-      color: #ffffff;
-
-      font-size: 14px;
-
-      font-weight: 800;
-
+      text-align: left !important;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 13px !important;
+      color: #fff !important;
       white-space: nowrap;
-
-      overflow: hidden;
-
-      text-overflow: ellipsis;
-
     }
-
-    .team-tag {
-
-      color: #64748b;
-
-      font-size: 10px;
-
-      margin-top: 2px;
-
-      font-weight: 600;
-
-      letter-spacing: 1px;
-
-    }
-
-
-    /* =========================================
-       NUMBERS
-    ========================================= */
-
-    .table-number {
-
-      text-align: center;
-
-      color: #cbd5e1;
-
-      font-size: 14px;
-
-      font-weight: 700;
-
-    }
-
-    .table-number.win {
-
-      color: #10b981;
-
-    }
-
-    .table-number.loss {
-
-      color: #ef4444;
-
-    }
-
-
-    /* =========================================
-       GAME SCORE
-    ========================================= */
-
-    .game-score {
-
-      text-align: center;
-
-      font-family: 'Orbitron', sans-serif;
-
-      font-size: 11px;
-
-      font-weight: 700;
-
-      color: #cbd5e1;
-
-    }
-
-    .game-score .gw {
-
-      color: #10b981;
-
-    }
-
-    .game-score .gl {
-
-      color: #ef4444;
-
-    }
-
-
-    /* =========================================
-       POINT
-    ========================================= */
-
     .points {
-
-      text-align: center;
-
       font-family: 'Orbitron', sans-serif;
-
-      font-size: 18px;
-
-      font-weight: 900;
-
-      color: #00f2fe;
-
-      text-shadow:
-        0 0 10px
-        rgba(0, 242, 254, 0.4);
-
+      color: #00f2fe !important;
+      font-weight: 900 !important;
     }
-
-
-    /* =========================================
-       STATUS
-    ========================================= */
-
     .status {
-
-      display: inline-flex;
-
-      justify-content: center;
-
-      align-items: center;
-
-      padding: 5px 9px;
-
+      display: inline-block;
+      padding: 5px 10px;
       border-radius: 20px;
-
-      font-family: 'Orbitron', sans-serif;
-
-      font-size: 8px;
-
-      font-weight: 800;
-
-      letter-spacing: .5px;
-
-    }
-
-    .status-progress {
-
-      color: #00f2fe;
-
-      background:
-        rgba(0, 242, 254, 0.08);
-
-      border:
-        1px solid rgba(0, 242, 254, 0.3);
-
-    }
-
-    .status-qualified {
-
-      color: #10b981;
-
-      background:
-        rgba(16, 185, 129, 0.08);
-
-      border:
-        1px solid rgba(16, 185, 129, 0.3);
-
-    }
-
-    .status-eliminated {
-
-      color: #ef4444;
-
-      background:
-        rgba(239, 68, 68, 0.08);
-
-      border:
-        1px solid rgba(239, 68, 68, 0.3);
-
-    }
-
-
-    /* =========================================
-       LEGEND
-    ========================================= */
-
-    .standings-info {
-
-      margin-top: 15px;
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(2, 1fr);
-
-      gap: 12px;
-
-    }
-
-    .info-box {
-
-      background:
-        rgba(15, 23, 42, 0.6);
-
-      border:
-        1px solid rgba(255, 255, 255, 0.06);
-
-      border-radius: 10px;
-
-      padding: 14px 16px;
-
-    }
-
-    .info-box-title {
-
-      color: #00f2fe;
-
-      font-family: 'Orbitron', sans-serif;
-
-      font-size: 10px;
-
-      font-weight: 800;
-
-      letter-spacing: 1px;
-
-      margin-bottom: 7px;
-
-    }
-
-    .info-box p {
-
-      color: #64748b;
-
       font-size: 12px;
-
-      line-height: 1.5;
-
+      font-weight: 700;
+      white-space: nowrap;
+    }
+    .status-progress {
+      color: #00f2fe;
+      background: rgba(0,242,254,0.10);
+      border: 1px solid rgba(0,242,254,0.25);
+    }
+    .status-qualified {
+      color: #7dffb2;
+      background: rgba(125,255,178,0.08);
+      border: 1px solid rgba(125,255,178,0.25);
+    }
+    .status-eliminated {
+      color: #ff7777;
+      background: rgba(255,70,70,0.08);
+      border: 1px solid rgba(255,70,70,0.25);
     }
 
-    .legend {
-
-      display: flex;
-
-      gap: 12px;
-
-      flex-wrap: wrap;
-
-      margin-top: 8px;
-
+    /* =========================
+       PLAYER STATS
+    ========================= */
+    .player-section {
+      margin-top: 28px;
     }
-
-    .legend-item {
-
+    .player-section-title {
       display: flex;
-
       align-items: center;
-
-      gap: 5px;
-
-      color: #94a3b8;
-
-      font-size: 11px;
-
+      gap: 10px;
+      margin-bottom: 14px;
     }
-
-    .legend-dot {
-
-      width: 7px;
-
-      height: 7px;
-
+    .player-section-title .icon {
+      font-size: 22px;
+    }
+    .player-section-title h3 {
+      margin: 0;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 18px;
+      color: #00f2fe;
+      text-transform: uppercase;
+    }
+    .player-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 15px;
+    }
+    .player-card {
+      position: relative;
+      padding: 18px;
+      border-radius: 14px;
+      border: 1px solid rgba(0,242,254,0.16);
+      background: linear-gradient(145deg, rgba(0,30,45,0.75), rgba(0,0,0,0.30));
+      overflow: hidden;
+      transition: all 0.25s ease;
+    }
+    .player-card:hover {
+      transform: translateY(-4px);
+      border-color: #00f2fe;
+      box-shadow: 0 0 22px rgba(0,242,254,0.16);
+    }
+    .player-card.first {
+      border-color: rgba(0,242,254,0.55);
+      box-shadow: 0 0 18px rgba(0,242,254,0.12), inset 0 0 20px rgba(0,242,254,0.04);
+    }
+    .player-rank {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 13px;
+      font-weight: 900;
+      color: #00f2fe;
+    }
+    .player-avatar {
+      width: 58px;
+      height: 58px;
+      margin-bottom: 12px;
       border-radius: 50%;
-
-      background: #00f2fe;
-
-      box-shadow:
-        0 0 7px #00f2fe;
-
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 25px;
+      background: rgba(0,242,254,0.08);
+      border: 1px solid rgba(0,242,254,0.25);
+      box-shadow: 0 0 14px rgba(0,242,254,0.10);
+    }
+    .player-name {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      color: #fff;
+      margin-bottom: 5px;
+    }
+    .player-team {
+      font-family: 'Rajdhani', sans-serif;
+      color: rgba(255,255,255,0.55);
+      font-size: 14px;
+      margin-bottom: 13px;
+    }
+    .player-stat {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.07);
+    }
+    .player-stat span:first-child {
+      color: rgba(255,255,255,0.55);
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 14px;
+    }
+    .player-stat span:last-child {
+      color: #00f2fe;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 18px;
+      font-weight: 900;
     }
 
-    .legend-dot.green {
-
-      background: #10b981;
-
-      box-shadow:
-        0 0 7px #10b981;
-
+    /* =========================
+       INFO
+    ========================= */
+    .standings-info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      margin-top: 25px;
+    }
+    .info-box {
+      padding: 17px;
+      border-radius: 12px;
+      background: rgba(0,0,0,0.20);
+      border: 1px solid rgba(0,242,254,0.12);
+    }
+    .info-box h4 {
+      margin: 0 0 8px;
+      color: #00f2fe;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 13px;
+    }
+    .info-box p {
+      margin: 0;
+      color: rgba(255,255,255,0.62);
+      font-family: 'Rajdhani', sans-serif;
+      font-size: 15px;
+      line-height: 1.5;
     }
 
-    .legend-dot.red {
-
-      background: #ef4444;
-
-      box-shadow:
-        0 0 7px #ef4444;
-
-    }
-
-
-    /* =========================================
+    /* =========================
        MOBILE
-    ========================================= */
-
+    ========================= */
     @media (max-width: 768px) {
-
-      .standing-summary {
-
-        grid-template-columns:
-          repeat(2, 1fr);
-
-      }
-
-      .standings-container {
-
-        overflow-x: auto;
-
-      }
-
-      .standings-header,
-      .standing-row {
-
-        min-width: 760px;
-
-      }
-
-      .standings-info {
-
-        grid-template-columns: 1fr;
-
-      }
-
+      .group-selector { grid-template-columns: 1fr; }
+      .player-grid { grid-template-columns: 1fr; }
+      .standings-info { grid-template-columns: 1fr; }
+      .current-group { align-items: flex-start; flex-direction: column; }
+      .group-btn { padding: 17px 12px; }
+      .group-btn .group-name { font-size: 19px; }
     }
-
-
-    @media (max-width: 480px) {
-
-      .standings-title {
-
-        font-size: 19px;
-
-      }
-
-      .standings-subtitle {
-
-        font-size: 11px;
-
-      }
-
-      .summary-number {
-
-        font-size: 18px;
-
-      }
-
-      .summary-label {
-
-        font-size: 9px;
-
-      }
-
-    }
-
   </style>
 </head>
 
 <body>
 
-  <div class="container">
+<div class="container">
 
+  <!-- SIDEBAR -->
+  <aside class="sidebar-menu">
+    <div class="menu-brand">MLBB GROUP D</div>
+    <a href="index.html" class="menu-item">1. BERANDA</a>
+    <a href="tim.html" class="menu-item">2. DAFTAR TIM</a>
+    <a href="jadwal.html" class="menu-item">3. JADWAL MATCH</a>
+    <a href="klasemen.html" class="menu-item active">4. KLASEMEN</a>
+    <a href="prizepool.html" class="menu-item">5. PRIZEPOOL</a>
+    <a href="rules.html" class="menu-item">6. RULES TURNAMEN</a>
+  </aside>
 
-    <!-- =====================================
-         SIDEBAR
-    ====================================== -->
+  <!-- MAIN CONTENT -->
+  <main class="main-content">
 
-    <div class="sidebar-menu">
-
-      <div class="brand-logo">
-        MLBB GROUP D
-      </div>
-
-      <a href="index.html" class="menu-item">
-        1.BERANDA
-      </a>
-
-      <a href="tim.html" class="menu-item">
-        2.DAFTAR TIM
-      </a>
-
-      <a href="jadwal.html" class="menu-item">
-        3.JADWAL MATCH
-      </a>
-
-      <a href="klasemen.html" class="menu-item active">
-        4.KLASEMEN
-      </a>
-
-      <a href="prizepool.html" class="menu-item">
-        5.PRIZEPOOL
-      </a>
-
-      <a href="rules.html" class="menu-item">
-        6.RULES TURNAMEN
-      </a>
-
+    <div class="page-header">
+      <div class="page-title">SEASON 1 TOURNAMENT MLBB GROUP D</div>
+      <div class="live-badge">● LIVE</div>
     </div>
 
-
-    <!-- =====================================
-         MAIN CONTENT
-    ====================================== -->
-
-    <div class="main-content">
-
-
-      <!-- HEADER -->
-
-      <div class="page-header">
-
-        <h2 class="page-title">
-          SEASON 1 TOURNAMENT MLBB GROUP D SL
-        </h2>
-
-        <span class="live-badge">
-          ●LIVE
-        </span>
-
-      </div>
-
-
-      <!-- INTRO -->
-
-      <div class="standings-intro">
-
-        <div class="standings-title">
-          KLASEMEN GROUP D
-        </div>
-
-        <div class="standings-subtitle">
-          OFFICIAL TOURNAMENT STANDINGS • SEASON 1
-        </div>
-
-      </div>
-
-
-      <!-- SUMMARY -->
-
-      <div class="standing-summary">
-
-
-        <div class="summary-card">
-
-          <div
-            class="summary-number"
-            id="totalTeams">
-            0
-          </div>
-
-          <div class="summary-label">
-            TOTAL TIM
-          </div>
-
-        </div>
-
-
-        <div class="summary-card">
-
-          <div
-            class="summary-number"
-            id="totalMatches">
-            0
-          </div>
-
-          <div class="summary-label">
-            MATCH SELESAI
-          </div>
-
-        </div>
-
-
-        <div class="summary-card">
-
-          <div
-            class="summary-number"
-            id="totalGames">
-            0
-          </div>
-
-          <div class="summary-label">
-            TOTAL GAME
-          </div>
-
-        </div>
-
-
-        <div class="summary-card">
-
-          <div class="summary-number">
-            GROUP D
-          </div>
-
-          <div class="summary-label">
-            CURRENT STAGE
-          </div>
-
-        </div>
-
-
-      </div>
-
-
-      <!-- =====================================
-           STANDINGS TABLE
-      ====================================== -->
-
-      <div class="standings-container">
-
-
-        <!-- HEADER -->
-
-        <div class="standings-header">
-
-          <div>
-            POS
-          </div>
-
-          <div>
-            TEAM
-          </div>
-
-          <div>
-            MP
-          </div>
-
-          <div>
-            W
-          </div>
-
-          <div>
-            L
-          </div>
-
-          <div>
-            GAME W/L
-          </div>
-
-          <div>
-            PTS
-          </div>
-
-          <div>
-            STATUS
-          </div>
-
-        </div>
-
-
-        <!-- DATA -->
-
-        <div id="standingsList"></div>
-
-
-      </div>
-
-
-      <!-- =====================================
-           INFORMATION
-      ====================================== -->
-
-      <div class="standings-info">
-
-
-        <div class="info-box">
-
-          <div class="info-box-title">
-            POINT SYSTEM
-          </div>
-
-          <p>
-            Poin klasemen dihitung berdasarkan
-            hasil kemenangan pertandingan.
-            Silakan sesuaikan sistem poin dengan
-            peraturan resmi turnamen.
-          </p>
-
-        </div>
-
-
-        <div class="info-box">
-
-          <div class="info-box-title">
-            STATUS GROUP
-          </div>
-
-          <p>
-            Pantau posisi setiap tim selama
-            pertandingan Group D berlangsung.
-          </p>
-
-          <div class="legend">
-
-            <div class="legend-item">
-
-              <span class="legend-dot"></span>
-
-              IN PROGRESS
-
-            </div>
-
-            <div class="legend-item">
-
-              <span class="legend-dot green"></span>
-
-              QUALIFIED
-
-            </div>
-
-            <div class="legend-item">
-
-              <span class="legend-dot red"></span>
-
-              ELIMINATED
-
-            </div>
-
-          </div>
-
-        </div>
-
-
-      </div>
-
-
-      <!-- =====================================
-           MARQUEE
-      ====================================== -->
-
-      <div class="marquee-bar">
-
-        <div class="marquee-track">
-
-
-          <div class="marquee-item">
-
-            <span class="m-icon">
-              🏆
-            </span>
-
-            KLASEMEN GROUP D:
-
-            <strong class="m-val">
-              SEASON 1
-            </strong>
-
-          </div>
-
-
-          <div class="marquee-item">
-
-            <span class="m-icon">
-              🎮
-            </span>
-
-            MODE MATCH:
-
-            <strong
-              class="m-val"
-              style="color:#10b981;">
-
-              5V5 DRAFT PICK
-
-            </strong>
-
-          </div>
-
-
-          <div class="marquee-item">
-
-            <span class="m-icon">
-              ⚡
-            </span>
-
-            STATUS:
-
-            <strong
-              class="m-val"
-              style="color:#ef4444;">
-
-              SEDANG BERLANGSUNG
-
-            </strong>
-
-          </div>
-
-
-          <!-- DUPLICATE -->
-
-          <div class="marquee-item">
-
-            <span class="m-icon">
-              🏆
-            </span>
-
-            KLASEMEN GROUP D:
-
-            <strong class="m-val">
-              SEASON 1
-            </strong>
-
-          </div>
-
-
-          <div class="marquee-item">
-
-            <span class="m-icon">
-              🎮
-            </span>
-
-            MODE MATCH:
-
-            <strong
-              class="m-val"
-              style="color:#10b981;">
-
-              5V5 DRAFT PICK
-
-            </strong>
-
-          </div>
-
-
-          <div class="marquee-item">
-
-            <span class="m-icon">
-              ⚡
-            </span>
-
-            STATUS:
-
-            <strong
-              class="m-val"
-              style="color:#ef4444;">
-
-              SEDANG BERLANGSUNG
-
-            </strong>
-
-          </div>
-
-
-        </div>
-
-      </div>
-
-
+    <!-- BANNER -->
+    <div class="banner-wrapper">
+      <img src="https://i.ibb.co.com/mFHbM2zP/image.png" alt="MLBB Tournament Banner">
     </div>
 
-  </div>
+    <!-- MARQUEE -->
+    <div class="marquee-bar">
+      <div class="marquee-track">
+        🏆 PRIZEPOOL BESAR &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
+        ⚔️ GROUP A & GROUP B &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
+        🎮 MOBILE LEGENDS &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
+        🔥 TOURNAMENT SEASON 1 &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
+        🏆 PRIZEPOOL BESAR &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
+      </div>
+    </div>
 
+    <!-- INTRO -->
+    <div class="standings-intro">
+      <h2>KLASEMEN TURNAMEN</h2>
+      <p>Pilih grup untuk melihat klasemen dan statistik pemain.</p>
+    </div>
 
-  <!-- =====================================
-       JAVASCRIPT
-  ====================================== -->
+    <!-- GROUP BUTTON -->
+    <div class="group-selector">
+      <button class="group-btn active" id="groupAButton" onclick="showGroup('A')">
+        <span class="group-name">GROUP A</span>
+        <span class="group-info">Lihat Klasemen & Statistik</span>
+      </button>
+      <button class="group-btn" id="groupBButton" onclick="showGroup('B')">
+        <span class="group-name">GROUP B</span>
+        <span class="group-info">Lihat Klasemen & Statistik</span>
+      </button>
+    </div>
 
-  <script>
+    <!-- CURRENT GROUP -->
+    <div class="current-group">
+      <h3 id="currentGroupTitle">KLASEMEN GROUP A</h3>
+      <span id="teamCount">0 Teams</span>
+    </div>
 
-    /*
-      ============================================
-      DATA KLASEMEN
+    <!-- TABLE KLASEMEN -->
+    <div class="table-wrapper">
+      <table class="standings-table">
+        <thead>
+          <tr>
+            <th>POS</th>
+            <th>TEAM</th>
+            <th>MP</th>
+            <th>W</th>
+            <th>L</th>
+            <th>GAME W/L</th>
+            <th>PTS</th>
+            <th>STATUS</th>
+          </tr>
+        </thead>
+        <tbody id="standingsBody">
+        </tbody>
+      </table>
+    </div>
 
-      CUKUP UBAH BAGIAN INI SAJA
-      ============================================
+    <!-- TOP MVP -->
+    <section class="player-section">
+      <div class="player-section-title">
+        <div class="icon">🏆</div>
+        <h3>TOP MVP</h3>
+      </div>
+      <div class="player-grid" id="mvpGrid"></div>
+    </section>
 
-      mp     = Match Played
-      w      = Win
-      l      = Lose
-      gw     = Game Win
-      gl     = Game Lose
-      points = Total Poin
-      status = progress / qualified / eliminated
-    */
+    <!-- TOP SAVAGE -->
+    <section class="player-section">
+      <div class="player-section-title">
+        <div class="icon">⚡</div>
+        <h3>TOP SAVAGE</h3>
+      </div>
+      <div class="player-grid" id="savageGrid"></div>
+    </section>
 
+    <!-- INFO BOX -->
+    <div class="standings-info">
+      <div class="info-box">
+        <h4>SISTEM POINT</h4>
+        <p>
+          Menang mendapatkan 3 poin. Kalah mendapatkan 0 poin.
+          Urutan klasemen ditentukan berdasarkan poin, kemenangan, dan Game W/L.
+        </p>
+      </div>
+      <div class="info-box">
+        <h4>KETERANGAN</h4>
+        <p>
+          MP = Match Played &nbsp;•&nbsp; W = Win &nbsp;•&nbsp; L = Loss &nbsp;•&nbsp; PTS = Points
+        </p>
+      </div>
+    </div>
 
-    const teams = [
+  </main>
+</div>
 
-      {
-        name: "EVOS GLORY",
-        tag: "EVOS",
-        logo: "EV",
-        mp: 3,
-        w: 2,
-        l: 1,
-        gw: 5,
-        gl: 3,
-        points: 6,
-        status: "progress"
-      },
+<!-- ==================================================
+     LOGIKA JAVASCRIPT & REALTIME FIREBASE
+================================================== -->
+<script>
+  // Global Store penampung data Firebase
+  window.dbData = {
+    A: { teams: [], mvp: [], savage: [] },
+    B: { teams: [], mvp: [], savage: [] }
+  };
+  window.activeGroup = 'A';
 
+  // Sort Tim berdasarkan Point -> Win -> Game W/L Difference
+  function sortTeams(data) {
+    if(!data) return [];
+    return [...data].sort((a, b) => {
+      const ptsA = Number(a.points || a.pts || 0);
+      const ptsB = Number(b.points || b.pts || 0);
+      if (ptsB !== ptsA) return ptsB - ptsA;
 
-      {
-        name: "RRQ HOSHI",
-        tag: "RRQ",
-        logo: "RR",
-        mp: 3,
-        w: 2,
-        l: 1,
-        gw: 5,
-        gl: 2,
-        points: 6,
-        status: "progress"
-      },
+      const wA = Number(a.w || 0);
+      const wB = Number(b.w || 0);
+      if (wB !== wA) return wB - wA;
 
-
-      {
-        name: "ONIC ESPORTS",
-        tag: "ONIC",
-        logo: "ON",
-        mp: 3,
-        w: 1,
-        l: 2,
-        gw: 3,
-        gl: 5,
-        points: 3,
-        status: "progress"
-      },
-
-
-      {
-        name: "ALTER EGO",
-        tag: "AE",
-        logo: "AE",
-        mp: 3,
-        w: 1,
-        l: 2,
-        gw: 2,
-        gl: 5,
-        points: 3,
-        status: "progress"
-      }
-
-    ];
-
-
-    /* =========================================
-       SORTING
-    ========================================= */
-
-    teams.sort(function(a, b) {
-
-      if (b.points !== a.points) {
-
-        return b.points - a.points;
-
-      }
-
-      if (b.w !== a.w) {
-
-        return b.w - a.w;
-
-      }
-
-      return b.gw - a.gw;
-
+      const gwA = Number(a.gw || 0);
+      const glA = Number(a.gl || 0);
+      const gwB = Number(b.gw || 0);
+      const glB = Number(b.gl || 0);
+      return (gwB - glB) - (gwA - glA);
     });
+  }
 
+  // Render Card Player MVP / Savage
+  function createPlayerCards(data, containerId, statName) {
+    const container = document.getElementById(containerId);
+    container.innerHTML = "";
+    if(!data || data.length === 0) return;
 
-    /* =========================================
-       STATUS
-    ========================================= */
+    data.forEach((player, index) => {
+      const card = document.createElement("div");
+      card.className = "player-card" + (index === 0 ? " first" : "");
 
-    function getStatus(status) {
-
-      if (status === "qualified") {
-
-        return "QUALIFIED";
-
-      }
-
-      if (status === "eliminated") {
-
-        return "ELIMINATED";
-
-      }
-
-      return "IN PROGRESS";
-
-    }
-
-
-    /* =========================================
-       RENDER
-    ========================================= */
-
-    const list =
-      document.getElementById("standingsList");
-
-
-    teams.forEach(function(team, index) {
-
-
-      const position =
-        index + 1;
-
-
-      let positionClass = "";
-
-
-      if (position === 1) {
-
-        positionClass = "first";
-
-      }
-
-      else if (position === 2) {
-
-        positionClass = "second";
-
-      }
-
-      else if (position === 3) {
-
-        positionClass = "third";
-
-      }
-
-
-      const row =
-        document.createElement("div");
-
-
-      row.className =
-        "standing-row";
-
-
-      row.style.animationDelay =
-        (index * 0.08) + "s";
-
-
-      row.innerHTML = `
-
-
-        <!-- POSITION -->
-
-        <div
-          class="position ${positionClass}">
-
-          ${position}
-
+      card.innerHTML = `
+        <div class="player-rank">#${index + 1}</div>
+        <div class="player-avatar">${index === 0 ? "👑" : "🎮"}</div>
+        <div class="player-name">${player.name || '-'}</div>
+        <div class="player-team">${player.team || '-'}</div>
+        <div class="player-stat">
+          <span>${statName}</span>
+          <span>${player.value || 0}</span>
         </div>
-
-
-        <!-- TEAM -->
-
-        <div class="standing-team">
-
-
-          <div class="team-logo">
-
-            ${team.logo}
-
-          </div>
-
-
-          <div class="team-details">
-
-            <div class="team-name">
-
-              ${team.name}
-
-            </div>
-
-
-            <div class="team-tag">
-
-              ${team.tag}
-
-            </div>
-
-          </div>
-
-
-        </div>
-
-
-        <!-- MP -->
-
-        <div class="table-number">
-
-          ${team.mp}
-
-        </div>
-
-
-        <!-- WIN -->
-
-        <div class="table-number win">
-
-          ${team.w}
-
-        </div>
-
-
-        <!-- LOSE -->
-
-        <div class="table-number loss">
-
-          ${team.l}
-
-        </div>
-
-
-        <!-- GAME -->
-
-        <div class="game-score">
-
-          <span class="gw">
-            ${team.gw}
-          </span>
-
-          -
-
-          <span class="gl">
-            ${team.gl}
-          </span>
-
-        </div>
-
-
-        <!-- POINT -->
-
-        <div class="points">
-
-          ${team.points}
-
-        </div>
-
-
-        <!-- STATUS -->
-
-        <div style="text-align:center;">
-
-          <span
-            class="status status-${team.status}">
-
-            ${getStatus(team.status)}
-
-          </span>
-
-        </div>
-
-
       `;
+      container.appendChild(card);
+    });
+  }
 
+  // Render Tampilan Group (A atau B)
+  function showGroup(group) {
+    window.activeGroup = group;
+    const data = window.dbData[group] || { teams: [], mvp: [], savage: [] };
 
-      list.appendChild(row);
+    // Update Button State
+    document.getElementById("groupAButton").classList.toggle("active", group === "A");
+    document.getElementById("groupBButton").classList.toggle("active", group === "B");
 
+    // Update Header Text
+    document.getElementById("currentGroupTitle").textContent = "KLASEMEN GROUP " + group;
+    document.getElementById("teamCount").textContent = (data.teams ? data.teams.length : 0) + " Teams";
+
+    // Render Table Body
+    const sortedTeams = sortTeams(data.teams);
+    const body = document.getElementById("standingsBody");
+    body.innerHTML = "";
+
+    sortedTeams.forEach((team, index) => {
+      let statusText = "BERJALAN";
+      let statusClass = "status-progress";
+
+      if (team.status === "qualified" || team.status === "LOLOS") {
+        statusText = "LOLOS";
+        statusClass = "status-qualified";
+      } else if (team.status === "eliminated" || team.status === "ELIMINASI") {
+        statusText = "ELIMINASI";
+        statusClass = "status-eliminated";
+      }
+
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td class="position">${index + 1}</td>
+        <td class="team-name">${team.team || team.name || '-'}</td>
+        <td>${team.mp || 0}</td>
+        <td>${team.w || 0}</td>
+        <td>${team.l || 0}</td>
+        <td>${team.gwl ? team.gwl : (team.gw || 0) + ' - ' + (team.gl || 0)}</td>
+        <td class="points">${team.points || team.pts || 0}</td>
+        <td><span class="status ${statusClass}">${statusText}</span></td>
+      `;
+      body.appendChild(row);
     });
 
+    // Render Top Players
+    createPlayerCards(data.mvp || [], "mvpGrid", "MVP");
+    createPlayerCards(data.savage || [], "savageGrid", "SAVAGE");
+  }
+</script>
 
-    /* =========================================
-       SUMMARY CALCULATION
-    ========================================= */
+<!-- Firebase Module SDK -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+  import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
 
-    document.getElementById(
-      "totalTeams"
-    ).textContent = teams.length;
+  // TODO: MASUKKAN KONFIGURASI FIREBASE MILIKMU DI SINI
+const firebaseConfig = {
+  apiKey: "AIzaSyDrjVWvZe30I0YnD6Nk_6hJd7qtAEK5l_8",
+  authDomain: "mlbb---group-d.firebaseapp.com",
+  projectId: "mlbb---group-d",
+  storageBucket: "mlbb---group-d.firebasestorage.app",
+  messagingSenderId: "550492341450",
+  appId: "1:550492341450:web:ab7ecc97067a29fdab2033",
+  measurementId: "G-SH722MK2FS"
+};
 
+  const app = initializeApp(firebaseConfig);
+  const db = getDatabase(app);
 
-    const totalMatches =
-      teams.reduce(
-        function(total, team) {
+  // Realtime Sync Data Group A
+  onValue(ref(db, 'klasemen/group_a'), (snapshot) => {
+    const data = snapshot.val();
+    if (data) {
+      window.dbData.A.teams = data.teams ? Object.values(data.teams) : (Array.isArray(data) ? data : Object.values(data));
+      window.dbData.A.mvp = data.mvp ? Object.values(data.mvp) : [];
+      window.dbData.A.savage = data.savage ? Object.values(data.savage) : [];
+      
+      if (window.activeGroup === 'A') showGroup('A');
+    }
+  });
 
-          return total + team.mp;
-
-        },
-        0
-      ) / 2;
-
-
-    document.getElementById(
-      "totalMatches"
-    ).textContent =
-      Math.floor(totalMatches);
-
-
-    const totalGames =
-      teams.reduce(
-        function(total, team) {
-
-          return total + team.gw;
-
-        },
-        0
-      );
-
-
-    document.getElementById(
-      "totalGames"
-    ).textContent =
-      totalGames;
-
-  </script>
+  // Realtime Sync Data Group B
+  onValue(ref(db, 'klasemen/group_b'), (snapshot) => {
+    const data = snapshot.val();
+    if (data) {
+      window.dbData.B.teams = data.teams ? Object.values(data.teams) : (Array.isArray(data) ? data : Object.values(data));
+      window.dbData.B.mvp = data.mvp ? Object.values(data.mvp) : [];
+      window.dbData.B.savage = data.savage ? Object.values(data.savage) : [];
+      
+      if (window.activeGroup === 'B') showGroup('B');
+    }
+  });
+</script>
 
 </body>
 </html>
