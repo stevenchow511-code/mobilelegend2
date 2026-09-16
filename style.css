@@ -559,3 +559,84 @@ body {
 .schedule-day-group {
   margin-bottom: 25px;
 }
+/* ==========================================
+   DROPDOWN RESULT BOX (PERSIS DESAIN GAMBAR)
+   ========================================== */
+
+/* Hilangkan outline default details */
+.match-card {
+  background: rgba(10, 20, 36, 0.6);
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  border-radius: 12px;
+  margin-bottom: 12px;
+  overflow: hidden;
+}
+
+.match-summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 18px 24px;
+  cursor: pointer;
+  user-select: none;
+  list-style: none;
+}
+
+.match-summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Outer Padding untuk Dropdown Inside */
+.match-card[open] {
+  padding-bottom: 16px;
+}
+
+/* Kotak Detail Dalam (Gaya Gambar Roster) */
+.match-details-box {
+  margin: 0 16px;
+  padding: 16px 20px;
+  background: rgba(5, 14, 26, 0.8);
+  border: 1px solid #00f2fe;
+  border-radius: 12px;
+  box-shadow: inset 0 0 10px rgba(0, 242, 254, 0.05);
+  font-family: 'Orbitron', sans-serif;
+}
+
+/* Judul Header Dalam Kotak */
+.box-title {
+  font-size: 13px;
+  font-weight: 800;
+  color: #00f2fe;
+  letter-spacing: 1.5px;
+  padding-bottom: 10px;
+  margin-bottom: 12px;
+  border-bottom: 1px dashed rgba(255, 255, 255, 0.2);
+  text-transform: uppercase;
+}
+
+/* Baris Informasi (Label & Nilai) */
+.detail-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 13px;
+}
+
+.detail-row:last-child {
+  margin-bottom: 0;
+}
+
+.detail-label {
+  color: #7b8f9a;
+  font-weight: 600;
+}
+
+.detail-value {
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.highlight-cyan {
+  color: #00f2fe;
+}
