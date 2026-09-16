@@ -238,24 +238,25 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
-  gap: 12px;
+  gap: 15px;
+  margin-top: 15px;
 }
 
+/* Card Sponsor Lonjong (Pill Shape) */
 .sponsor-card {
-  background: rgba(15, 23, 42, 0.6);
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 8px 16px;
-  border-radius: 8px;
-  color: #64748b;
-  font-family: 'Orbitron', sans-serif;
-  font-weight: 800;
-  font-size: 12px;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
+  padding: 6px 20px 6px 8px; /* Padding kanan lebih luas agar serasi */
+  background: rgba(0, 20, 35, 0.65);
+  border: 1px solid rgba(0, 242, 254, 0.4);
+  border-radius: 50px; /* Menjadikan bentuk card lonjong sempurna */
+  color: #fff;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  box-shadow: 0 0 10px rgba(0, 242, 254, 0.15); /* Efek glow tipis */
+  transition: all 0.3s ease;
 }
 
 .sponsor-card:hover {
@@ -271,6 +272,15 @@ body {
   background: #00f2fe;
   border-radius: 50%;
   box-shadow: 0 0 6px #00f2fe;
+}
+
+/* Logo Sponsor Bulat di Dalam Card */
+.sponsor-logo {
+  width: 36px;
+  height: 36px;
+  object-fit: cover;
+  border-radius: 50%; /* Membuat gambar menjadi bulat sempurna */
+  border: 1px solid rgba(0, 242, 254, 0.5);
 }
 
 /* --- TEAM GRID --- */
