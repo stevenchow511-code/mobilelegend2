@@ -523,3 +523,14 @@ body {
   font-weight: 700;
   font-size: 14px;
 }
+
+/* Mengatur ukuran dan tampilan logo tim pengganti angka */
+.team-logo {
+  width: 32px;
+  height: 32px;
+  object-fit: contain;
+  border-radius: 6px;
+  background: rgba(0, 242, 254, 0.1);
+  padding: 2px;
+  border: 1px solid rgba(0, 242, 254, 0.3);
+}
