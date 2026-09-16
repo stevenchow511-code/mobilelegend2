@@ -1,0 +1,1490 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Klasemen Group D - Official Portal</title>
+
+  <link rel="icon" type="image/png" href="...">
+
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+
+    /* =========================================
+       KLASEMEN - TAMBAHAN KHUSUS
+       Mengikuti style.css utama website
+    ========================================= */
+
+    .standings-intro {
+      background:
+        linear-gradient(
+          135deg,
+          rgba(0, 242, 254, 0.12),
+          rgba(79, 172, 254, 0.04)
+        );
+
+      border: 1px solid rgba(0, 242, 254, 0.35);
+
+      border-radius: 12px;
+
+      padding: 20px;
+
+      margin-bottom: 20px;
+
+      text-align: center;
+
+      box-shadow:
+        0 0 20px rgba(0, 242, 254, 0.08);
+    }
+
+    .standings-title {
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 24px;
+
+      font-weight: 900;
+
+      color: #00f2fe;
+
+      text-shadow:
+        0 0 15px rgba(0, 242, 254, 0.5);
+
+      letter-spacing: 2px;
+
+      margin-bottom: 6px;
+    }
+
+    .standings-subtitle {
+      color: #94a3b8;
+
+      font-size: 13px;
+
+      letter-spacing: 1px;
+    }
+
+
+    /* =========================================
+       SUMMARY
+    ========================================= */
+
+    .standing-summary {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(4, 1fr);
+
+      gap: 12px;
+
+      margin-bottom: 20px;
+
+    }
+
+    .summary-card {
+
+      background:
+        rgba(30, 41, 59, 0.5);
+
+      border: 1px solid
+        rgba(255, 255, 255, 0.08);
+
+      border-radius: 10px;
+
+      padding: 15px;
+
+      text-align: center;
+
+      transition: all 0.3s ease;
+
+    }
+
+    .summary-card:hover {
+
+      border-color:
+        rgba(0, 242, 254, 0.45);
+
+      background:
+        rgba(0, 242, 254, 0.06);
+
+      transform: translateY(-2px);
+
+      box-shadow:
+        0 0 15px
+        rgba(0, 242, 254, 0.1);
+
+    }
+
+    .summary-number {
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 22px;
+
+      font-weight: 900;
+
+      color: #00f2fe;
+
+      text-shadow:
+        0 0 10px rgba(0, 242, 254, 0.4);
+
+    }
+
+    .summary-label {
+
+      margin-top: 5px;
+
+      font-size: 10px;
+
+      color: #64748b;
+
+      font-weight: 700;
+
+      letter-spacing: 1px;
+
+    }
+
+
+    /* =========================================
+       TABLE CONTAINER
+    ========================================= */
+
+    .standings-container {
+
+      background:
+        rgba(30, 41, 59, 0.4);
+
+      border: 1px solid
+        rgba(255, 255, 255, 0.08);
+
+      border-radius: 12px;
+
+      overflow: hidden;
+
+      box-shadow:
+        0 10px 25px rgba(0, 0, 0, 0.25);
+
+    }
+
+
+    /* =========================================
+       TABLE HEADER
+    ========================================= */
+
+    .standings-header {
+
+      display: grid;
+
+      grid-template-columns:
+        55px
+        minmax(180px, 1fr)
+        60px
+        60px
+        60px
+        90px
+        80px
+        105px;
+
+      align-items: center;
+
+      background:
+        linear-gradient(
+          90deg,
+          rgba(0, 242, 254, 0.12),
+          rgba(79, 172, 254, 0.03)
+        );
+
+      border-bottom:
+        1px solid rgba(0, 242, 254, 0.2);
+
+      padding: 13px 15px;
+
+      color: #64748b;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 9px;
+
+      font-weight: 800;
+
+      letter-spacing: 1px;
+
+      text-align: center;
+
+    }
+
+    .standings-header div:nth-child(2) {
+      text-align: left;
+    }
+
+
+    /* =========================================
+       TEAM ROW
+    ========================================= */
+
+    .standing-row {
+
+      display: grid;
+
+      grid-template-columns:
+        55px
+        minmax(180px, 1fr)
+        60px
+        60px
+        60px
+        90px
+        80px
+        105px;
+
+      align-items: center;
+
+      padding: 15px;
+
+      border-bottom:
+        1px solid rgba(255, 255, 255, 0.05);
+
+      transition:
+        all 0.3s ease;
+
+      animation:
+        rowAppear 0.5s ease both;
+
+    }
+
+    .standing-row:last-child {
+      border-bottom: none;
+    }
+
+    .standing-row:hover {
+
+      background:
+        rgba(0, 242, 254, 0.06);
+
+      box-shadow:
+        inset 4px 0 0 #00f2fe;
+
+    }
+
+    @keyframes rowAppear {
+
+      from {
+
+        opacity: 0;
+
+        transform:
+          translateY(8px);
+
+      }
+
+      to {
+
+        opacity: 1;
+
+        transform:
+          translateY(0);
+
+      }
+
+    }
+
+
+    /* =========================================
+       POSITION
+    ========================================= */
+
+    .position {
+
+      text-align: center;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 17px;
+
+      font-weight: 900;
+
+      color: #64748b;
+
+    }
+
+    .position.first {
+
+      color: #fbbf24;
+
+      text-shadow:
+        0 0 12px
+        rgba(251, 191, 36, 0.6);
+
+    }
+
+    .position.second {
+
+      color: #d1d5db;
+
+    }
+
+    .position.third {
+
+      color: #d97706;
+
+    }
+
+
+    /* =========================================
+       TEAM INFO
+    ========================================= */
+
+    .standing-team {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      min-width: 0;
+
+    }
+
+    .team-logo {
+
+      width: 42px;
+
+      height: 42px;
+
+      flex-shrink: 0;
+
+      border-radius: 8px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      background:
+        linear-gradient(
+          135deg,
+          #00f2fe,
+          #4facfe
+        );
+
+      color: #030712;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 12px;
+
+      font-weight: 900;
+
+      box-shadow:
+        0 0 12px
+        rgba(0, 242, 254, 0.25);
+
+    }
+
+    .team-details {
+
+      min-width: 0;
+
+    }
+
+    .team-name {
+
+      color: #ffffff;
+
+      font-size: 14px;
+
+      font-weight: 800;
+
+      white-space: nowrap;
+
+      overflow: hidden;
+
+      text-overflow: ellipsis;
+
+    }
+
+    .team-tag {
+
+      color: #64748b;
+
+      font-size: 10px;
+
+      margin-top: 2px;
+
+      font-weight: 600;
+
+      letter-spacing: 1px;
+
+    }
+
+
+    /* =========================================
+       NUMBERS
+    ========================================= */
+
+    .table-number {
+
+      text-align: center;
+
+      color: #cbd5e1;
+
+      font-size: 14px;
+
+      font-weight: 700;
+
+    }
+
+    .table-number.win {
+
+      color: #10b981;
+
+    }
+
+    .table-number.loss {
+
+      color: #ef4444;
+
+    }
+
+
+    /* =========================================
+       GAME SCORE
+    ========================================= */
+
+    .game-score {
+
+      text-align: center;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      color: #cbd5e1;
+
+    }
+
+    .game-score .gw {
+
+      color: #10b981;
+
+    }
+
+    .game-score .gl {
+
+      color: #ef4444;
+
+    }
+
+
+    /* =========================================
+       POINT
+    ========================================= */
+
+    .points {
+
+      text-align: center;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 18px;
+
+      font-weight: 900;
+
+      color: #00f2fe;
+
+      text-shadow:
+        0 0 10px
+        rgba(0, 242, 254, 0.4);
+
+    }
+
+
+    /* =========================================
+       STATUS
+    ========================================= */
+
+    .status {
+
+      display: inline-flex;
+
+      justify-content: center;
+
+      align-items: center;
+
+      padding: 5px 9px;
+
+      border-radius: 20px;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 8px;
+
+      font-weight: 800;
+
+      letter-spacing: .5px;
+
+    }
+
+    .status-progress {
+
+      color: #00f2fe;
+
+      background:
+        rgba(0, 242, 254, 0.08);
+
+      border:
+        1px solid rgba(0, 242, 254, 0.3);
+
+    }
+
+    .status-qualified {
+
+      color: #10b981;
+
+      background:
+        rgba(16, 185, 129, 0.08);
+
+      border:
+        1px solid rgba(16, 185, 129, 0.3);
+
+    }
+
+    .status-eliminated {
+
+      color: #ef4444;
+
+      background:
+        rgba(239, 68, 68, 0.08);
+
+      border:
+        1px solid rgba(239, 68, 68, 0.3);
+
+    }
+
+
+    /* =========================================
+       LEGEND
+    ========================================= */
+
+    .standings-info {
+
+      margin-top: 15px;
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(2, 1fr);
+
+      gap: 12px;
+
+    }
+
+    .info-box {
+
+      background:
+        rgba(15, 23, 42, 0.6);
+
+      border:
+        1px solid rgba(255, 255, 255, 0.06);
+
+      border-radius: 10px;
+
+      padding: 14px 16px;
+
+    }
+
+    .info-box-title {
+
+      color: #00f2fe;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-size: 10px;
+
+      font-weight: 800;
+
+      letter-spacing: 1px;
+
+      margin-bottom: 7px;
+
+    }
+
+    .info-box p {
+
+      color: #64748b;
+
+      font-size: 12px;
+
+      line-height: 1.5;
+
+    }
+
+    .legend {
+
+      display: flex;
+
+      gap: 12px;
+
+      flex-wrap: wrap;
+
+      margin-top: 8px;
+
+    }
+
+    .legend-item {
+
+      display: flex;
+
+      align-items: center;
+
+      gap: 5px;
+
+      color: #94a3b8;
+
+      font-size: 11px;
+
+    }
+
+    .legend-dot {
+
+      width: 7px;
+
+      height: 7px;
+
+      border-radius: 50%;
+
+      background: #00f2fe;
+
+      box-shadow:
+        0 0 7px #00f2fe;
+
+    }
+
+    .legend-dot.green {
+
+      background: #10b981;
+
+      box-shadow:
+        0 0 7px #10b981;
+
+    }
+
+    .legend-dot.red {
+
+      background: #ef4444;
+
+      box-shadow:
+        0 0 7px #ef4444;
+
+    }
+
+
+    /* =========================================
+       MOBILE
+    ========================================= */
+
+    @media (max-width: 768px) {
+
+      .standing-summary {
+
+        grid-template-columns:
+          repeat(2, 1fr);
+
+      }
+
+      .standings-container {
+
+        overflow-x: auto;
+
+      }
+
+      .standings-header,
+      .standing-row {
+
+        min-width: 760px;
+
+      }
+
+      .standings-info {
+
+        grid-template-columns: 1fr;
+
+      }
+
+    }
+
+
+    @media (max-width: 480px) {
+
+      .standings-title {
+
+        font-size: 19px;
+
+      }
+
+      .standings-subtitle {
+
+        font-size: 11px;
+
+      }
+
+      .summary-number {
+
+        font-size: 18px;
+
+      }
+
+      .summary-label {
+
+        font-size: 9px;
+
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <div class="sidebar-menu">
+
+      <div class="brand-logo">
+        MLBB GROUP D
+      </div>
+
+      <a href="index.html" class="menu-item">
+        1.BERANDA
+      </a>
+
+      <a href="tim.html" class="menu-item">
+        2.DAFTAR TIM
+      </a>
+
+      <a href="jadwal.html" class="menu-item">
+        3.JADWAL MATCH
+      </a>
+
+      <a href="klasemen.html" class="menu-item active">
+        4.KLASEMEN
+      </a>
+
+      <a href="prizepool.html" class="menu-item">
+        5.PRIZEPOOL
+      </a>
+
+      <a href="rules.html" class="menu-item">
+        6.RULES TURNAMEN
+      </a>
+
+    </div>
+
+
+    <!-- =====================================
+         MAIN CONTENT
+    ====================================== -->
+
+    <div class="main-content">
+
+
+      <!-- HEADER -->
+
+      <div class="page-header">
+
+        <h2 class="page-title">
+          SEASON 1 TOURNAMENT MLBB GROUP D SL
+        </h2>
+
+        <span class="live-badge">
+          ●LIVE
+        </span>
+
+      </div>
+
+
+      <!-- INTRO -->
+
+      <div class="standings-intro">
+
+        <div class="standings-title">
+          KLASEMEN GROUP D
+        </div>
+
+        <div class="standings-subtitle">
+          OFFICIAL TOURNAMENT STANDINGS • SEASON 1
+        </div>
+
+      </div>
+
+
+      <!-- SUMMARY -->
+
+      <div class="standing-summary">
+
+
+        <div class="summary-card">
+
+          <div
+            class="summary-number"
+            id="totalTeams">
+            0
+          </div>
+
+          <div class="summary-label">
+            TOTAL TIM
+          </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+          <div
+            class="summary-number"
+            id="totalMatches">
+            0
+          </div>
+
+          <div class="summary-label">
+            MATCH SELESAI
+          </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+          <div
+            class="summary-number"
+            id="totalGames">
+            0
+          </div>
+
+          <div class="summary-label">
+            TOTAL GAME
+          </div>
+
+        </div>
+
+
+        <div class="summary-card">
+
+          <div class="summary-number">
+            GROUP D
+          </div>
+
+          <div class="summary-label">
+            CURRENT STAGE
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- =====================================
+           STANDINGS TABLE
+      ====================================== -->
+
+      <div class="standings-container">
+
+
+        <!-- HEADER -->
+
+        <div class="standings-header">
+
+          <div>
+            POS
+          </div>
+
+          <div>
+            TEAM
+          </div>
+
+          <div>
+            MP
+          </div>
+
+          <div>
+            W
+          </div>
+
+          <div>
+            L
+          </div>
+
+          <div>
+            GAME W/L
+          </div>
+
+          <div>
+            PTS
+          </div>
+
+          <div>
+            STATUS
+          </div>
+
+        </div>
+
+
+        <!-- DATA -->
+
+        <div id="standingsList"></div>
+
+
+      </div>
+
+
+      <!-- =====================================
+           INFORMATION
+      ====================================== -->
+
+      <div class="standings-info">
+
+
+        <div class="info-box">
+
+          <div class="info-box-title">
+            POINT SYSTEM
+          </div>
+
+          <p>
+            Poin klasemen dihitung berdasarkan
+            hasil kemenangan pertandingan.
+            Silakan sesuaikan sistem poin dengan
+            peraturan resmi turnamen.
+          </p>
+
+        </div>
+
+
+        <div class="info-box">
+
+          <div class="info-box-title">
+            STATUS GROUP
+          </div>
+
+          <p>
+            Pantau posisi setiap tim selama
+            pertandingan Group D berlangsung.
+          </p>
+
+          <div class="legend">
+
+            <div class="legend-item">
+
+              <span class="legend-dot"></span>
+
+              IN PROGRESS
+
+            </div>
+
+            <div class="legend-item">
+
+              <span class="legend-dot green"></span>
+
+              QUALIFIED
+
+            </div>
+
+            <div class="legend-item">
+
+              <span class="legend-dot red"></span>
+
+              ELIMINATED
+
+            </div>
+
+          </div>
+
+        </div>
+
+
+      </div>
+
+
+      <!-- =====================================
+           MARQUEE
+      ====================================== -->
+
+      <div class="marquee-bar">
+
+        <div class="marquee-track">
+
+
+          <div class="marquee-item">
+
+            <span class="m-icon">
+              🏆
+            </span>
+
+            KLASEMEN GROUP D:
+
+            <strong class="m-val">
+              SEASON 1
+            </strong>
+
+          </div>
+
+
+          <div class="marquee-item">
+
+            <span class="m-icon">
+              🎮
+            </span>
+
+            MODE MATCH:
+
+            <strong
+              class="m-val"
+              style="color:#10b981;">
+
+              5V5 DRAFT PICK
+
+            </strong>
+
+          </div>
+
+
+          <div class="marquee-item">
+
+            <span class="m-icon">
+              ⚡
+            </span>
+
+            STATUS:
+
+            <strong
+              class="m-val"
+              style="color:#ef4444;">
+
+              SEDANG BERLANGSUNG
+
+            </strong>
+
+          </div>
+
+
+          <!-- DUPLICATE -->
+
+          <div class="marquee-item">
+
+            <span class="m-icon">
+              🏆
+            </span>
+
+            KLASEMEN GROUP D:
+
+            <strong class="m-val">
+              SEASON 1
+            </strong>
+
+          </div>
+
+
+          <div class="marquee-item">
+
+            <span class="m-icon">
+              🎮
+            </span>
+
+            MODE MATCH:
+
+            <strong
+              class="m-val"
+              style="color:#10b981;">
+
+              5V5 DRAFT PICK
+
+            </strong>
+
+          </div>
+
+
+          <div class="marquee-item">
+
+            <span class="m-icon">
+              ⚡
+            </span>
+
+            STATUS:
+
+            <strong
+              class="m-val"
+              style="color:#ef4444;">
+
+              SEDANG BERLANGSUNG
+
+            </strong>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+  <!-- =====================================
+       JAVASCRIPT
+  ====================================== -->
+
+  <script>
+
+    /*
+      ============================================
+      DATA KLASEMEN
+
+      CUKUP UBAH BAGIAN INI SAJA
+      ============================================
+
+      mp     = Match Played
+      w      = Win
+      l      = Lose
+      gw     = Game Win
+      gl     = Game Lose
+      points = Total Poin
+      status = progress / qualified / eliminated
+    */
+
+
+    const teams = [
+
+      {
+        name: "EVOS GLORY",
+        tag: "EVOS",
+        logo: "EV",
+        mp: 3,
+        w: 2,
+        l: 1,
+        gw: 5,
+        gl: 3,
+        points: 6,
+        status: "progress"
+      },
+
+
+      {
+        name: "RRQ HOSHI",
+        tag: "RRQ",
+        logo: "RR",
+        mp: 3,
+        w: 2,
+        l: 1,
+        gw: 5,
+        gl: 2,
+        points: 6,
+        status: "progress"
+      },
+
+
+      {
+        name: "ONIC ESPORTS",
+        tag: "ONIC",
+        logo: "ON",
+        mp: 3,
+        w: 1,
+        l: 2,
+        gw: 3,
+        gl: 5,
+        points: 3,
+        status: "progress"
+      },
+
+
+      {
+        name: "ALTER EGO",
+        tag: "AE",
+        logo: "AE",
+        mp: 3,
+        w: 1,
+        l: 2,
+        gw: 2,
+        gl: 5,
+        points: 3,
+        status: "progress"
+      }
+
+    ];
+
+
+    /* =========================================
+       SORTING
+    ========================================= */
+
+    teams.sort(function(a, b) {
+
+      if (b.points !== a.points) {
+
+        return b.points - a.points;
+
+      }
+
+      if (b.w !== a.w) {
+
+        return b.w - a.w;
+
+      }
+
+      return b.gw - a.gw;
+
+    });
+
+
+    /* =========================================
+       STATUS
+    ========================================= */
+
+    function getStatus(status) {
+
+      if (status === "qualified") {
+
+        return "QUALIFIED";
+
+      }
+
+      if (status === "eliminated") {
+
+        return "ELIMINATED";
+
+      }
+
+      return "IN PROGRESS";
+
+    }
+
+
+    /* =========================================
+       RENDER
+    ========================================= */
+
+    const list =
+      document.getElementById("standingsList");
+
+
+    teams.forEach(function(team, index) {
+
+
+      const position =
+        index + 1;
+
+
+      let positionClass = "";
+
+
+      if (position === 1) {
+
+        positionClass = "first";
+
+      }
+
+      else if (position === 2) {
+
+        positionClass = "second";
+
+      }
+
+      else if (position === 3) {
+
+        positionClass = "third";
+
+      }
+
+
+      const row =
+        document.createElement("div");
+
+
+      row.className =
+        "standing-row";
+
+
+      row.style.animationDelay =
+        (index * 0.08) + "s";
+
+
+      row.innerHTML = `
+
+
+        <!-- POSITION -->
+
+        <div
+          class="position ${positionClass}">
+
+          ${position}
+
+        </div>
+
+
+        <!-- TEAM -->
+
+        <div class="standing-team">
+
+
+          <div class="team-logo">
+
+            ${team.logo}
+
+          </div>
+
+
+          <div class="team-details">
+
+            <div class="team-name">
+
+              ${team.name}
+
+            </div>
+
+
+            <div class="team-tag">
+
+              ${team.tag}
+
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+        <!-- MP -->
+
+        <div class="table-number">
+
+          ${team.mp}
+
+        </div>
+
+
+        <!-- WIN -->
+
+        <div class="table-number win">
+
+          ${team.w}
+
+        </div>
+
+
+        <!-- LOSE -->
+
+        <div class="table-number loss">
+
+          ${team.l}
+
+        </div>
+
+
+        <!-- GAME -->
+
+        <div class="game-score">
+
+          <span class="gw">
+            ${team.gw}
+          </span>
+
+          -
+
+          <span class="gl">
+            ${team.gl}
+          </span>
+
+        </div>
+
+
+        <!-- POINT -->
+
+        <div class="points">
+
+          ${team.points}
+
+        </div>
+
+
+        <!-- STATUS -->
+
+        <div style="text-align:center;">
+
+          <span
+            class="status status-${team.status}">
+
+            ${getStatus(team.status)}
+
+          </span>
+
+        </div>
+
+
+      `;
+
+
+      list.appendChild(row);
+
+    });
+
+
+    /* =========================================
+       SUMMARY CALCULATION
+    ========================================= */
+
+    document.getElementById(
+      "totalTeams"
+    ).textContent = teams.length;
+
+
+    const totalMatches =
+      teams.reduce(
+        function(total, team) {
+
+          return total + team.mp;
+
+        },
+        0
+      ) / 2;
+
+
+    document.getElementById(
+      "totalMatches"
+    ).textContent =
+      Math.floor(totalMatches);
+
+
+    const totalGames =
+      teams.reduce(
+        function(total, team) {
+
+          return total + team.gw;
+
+        },
+        0
+      );
+
+
+    document.getElementById(
+      "totalGames"
+    ).textContent =
+      totalGames;
+
+  </script>
+
+</body>
+</html>
