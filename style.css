@@ -640,3 +640,402 @@ body {
 .highlight-cyan {
   color: #00f2fe;
 }
+
+/* =========================
+   KLASEMEN PAGE
+========================= */
+
+.standings-intro {
+  margin-bottom: 20px;
+}
+
+.standings-intro h2 {
+  margin: 0 0 8px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  color: #00f2fe;
+  text-transform: uppercase;
+}
+
+.standings-intro p {
+  margin: 0;
+  color: rgba(255,255,255,0.65);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 16px;
+}
+
+/* =========================
+   GROUP SELECTOR
+========================= */
+
+.group-selector {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.group-btn {
+  position: relative;
+  padding: 20px 15px;
+  border: 1px solid rgba(0, 242, 254, 0.25);
+  border-radius: 14px;
+  background: rgba(0, 20, 35, 0.65);
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.25s ease;
+  overflow: hidden;
+}
+
+.group-btn:hover {
+  transform: translateY(-3px);
+  border-color: #00f2fe;
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.18);
+}
+
+.group-btn.active {
+  border-color: #00f2fe;
+  background: linear-gradient(
+    135deg,
+    rgba(0,242,254,0.18),
+    rgba(0,120,160,0.10)
+  );
+
+  box-shadow:
+    0 0 15px rgba(0,242,254,0.20),
+    inset 0 0 15px rgba(0,242,254,0.05);
+}
+
+.group-btn .group-name {
+  display: block;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 22px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.group-btn.active .group-name {
+  color: #00f2fe;
+}
+
+.group-btn .group-info {
+  display: block;
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
+  color: rgba(255,255,255,0.55);
+}
+
+/* =========================
+   CURRENT GROUP
+========================= */
+
+.current-group {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 15px;
+  padding: 15px 18px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,242,254,0.18);
+  background: rgba(0,0,0,0.20);
+}
+
+.current-group h3 {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #00f2fe;
+  text-transform: uppercase;
+}
+
+.current-group span {
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 15px;
+  color: rgba(255,255,255,0.60);
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  border-radius: 14px;
+  border: 1px solid rgba(0,242,254,0.18);
+  background: rgba(0,0,0,0.18);
+}
+
+.standings-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.standings-table th {
+  padding: 14px 10px;
+  background: rgba(0,242,254,0.08);
+  color: #00f2fe;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0,242,254,0.18);
+  white-space: nowrap;
+}
+
+.standings-table td {
+  padding: 14px 10px;
+  text-align: center;
+  color: rgba(255,255,255,0.85);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.standings-table tr:last-child td {
+  border-bottom: none;
+}
+
+.standings-table tbody tr {
+  transition: all 0.2s ease;
+}
+
+.standings-table tbody tr:hover {
+  background: rgba(0,242,254,0.05);
+}
+
+.position {
+  width: 55px;
+  font-family: 'Orbitron', sans-serif;
+  font-weight: 800;
+  color: #00f2fe !important;
+}
+
+.team-name {
+  text-align: left !important;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px !important;
+  color: #fff !important;
+  white-space: nowrap;
+}
+
+.points {
+  font-family: 'Orbitron', sans-serif;
+  color: #00f2fe !important;
+  font-weight: 900 !important;
+}
+
+.status {
+  display: inline-block;
+  padding: 5px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.status-progress {
+  color: #00f2fe;
+  background: rgba(0,242,254,0.10);
+  border: 1px solid rgba(0,242,254,0.25);
+}
+
+.status-qualified {
+  color: #7dffb2;
+  background: rgba(125,255,178,0.08);
+  border: 1px solid rgba(125,255,178,0.25);
+}
+
+.status-eliminated {
+  color: #ff7777;
+  background: rgba(255,70,70,0.08);
+  border: 1px solid rgba(255,70,70,0.25);
+}
+
+/* =========================
+   PLAYER STATS
+========================= */
+
+.player-section {
+  margin-top: 28px;
+}
+
+.player-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.player-section-title .icon {
+  font-size: 22px;
+}
+
+.player-section-title h3 {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  color: #00f2fe;
+  text-transform: uppercase;
+}
+
+.player-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.player-card {
+  position: relative;
+  padding: 18px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,242,254,0.16);
+  background: linear-gradient(
+    145deg,
+    rgba(0,30,45,0.75),
+    rgba(0,0,0,0.30)
+  );
+  overflow: hidden;
+  transition: all 0.25s ease;
+}
+
+.player-card:hover {
+  transform: translateY(-4px);
+  border-color: #00f2fe;
+  box-shadow: 0 0 22px rgba(0,242,254,0.16);
+}
+
+.player-card.first {
+  border-color: rgba(0,242,254,0.55);
+  box-shadow:
+    0 0 18px rgba(0,242,254,0.12),
+    inset 0 0 20px rgba(0,242,254,0.04);
+}
+
+.player-rank {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+  font-weight: 900;
+  color: #00f2fe;
+}
+
+.player-avatar {
+  width: 58px;
+  height: 58px;
+  margin-bottom: 12px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 25px;
+  background: rgba(0,242,254,0.08);
+  border: 1px solid rgba(0,242,254,0.25);
+  box-shadow: 0 0 14px rgba(0,242,254,0.10);
+}
+
+.player-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+  font-weight: 800;
+  color: #fff;
+  margin-bottom: 5px;
+}
+
+.player-team {
+  font-family: 'Rajdhani', sans-serif;
+  color: rgba(255,255,255,0.55);
+  font-size: 14px;
+  margin-bottom: 13px;
+}
+
+.player-stat {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.07);
+}
+
+.player-stat span:first-child {
+  color: rgba(255,255,255,0.55);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 14px;
+}
+
+.player-stat span:last-child {
+  color: #00f2fe;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 18px;
+  font-weight: 900;
+}
+
+/* =========================
+   INFO
+========================= */
+
+.standings-info {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.info-box {
+  padding: 17px;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.20);
+  border: 1px solid rgba(0,242,254,0.12);
+}
+
+.info-box h4 {
+  margin: 0 0 8px;
+  color: #00f2fe;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 13px;
+}
+
+.info-box p {
+  margin: 0;
+  color: rgba(255,255,255,0.62);
+  font-family: 'Rajdhani', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 768px) {
+  .group-selector {
+    grid-template-columns: 1fr;
+  }
+
+  .player-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .standings-info {
+    grid-template-columns: 1fr;
+  }
+
+  .current-group {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .group-btn {
+    padding: 17px 12px;
+  }
+
+  .group-btn .group-name {
+    font-size: 19px;
+  }
+}
