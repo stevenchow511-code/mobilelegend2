@@ -1282,7 +1282,7 @@ body {
   display: inline-block;
   white-space: nowrap;
   /* Atur durasi di sini: makin kecil angkanya (misal 10s), makin cepat jalannya */
-  animation: marquee-move 5s linear infinite; 
+  animation: marquee-move 12s linear infinite; 
 }
 
 /* Keyframes untuk pergerakan teks */
