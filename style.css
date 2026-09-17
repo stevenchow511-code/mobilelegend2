@@ -1355,3 +1355,99 @@ body {
   /* Ubah jarak antar teks di sini (misal dari 60px/100px menjadi 24px) */
   padding-right: 18px; 
 }
+
+/* ==========================================
+   RESPONSIVE MOBILE STYLES (Max-Width: 768px)
+========================================== */
+@media (max-width: 768px) {
+
+  /* 1. LAYOUT & SIDEBAR CONTAINER */
+  .container {
+    flex-direction: column; /* Mengubah sidebar & konten jadi tumpuk atas-bawah */
+    padding: 10px;
+  }
+
+  .sidebar-menu {
+    width: 100%;
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+  }
+
+  .brand-logo {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .menu-item {
+    font-size: 11px;
+    padding: 8px 12px;
+    flex: 1 1 calc(50% - 10px); /* Membagi menu jadi 2 kolom di HP */
+    text-align: center;
+  }
+
+  /* 2. MAIN CONTENT */
+  .main-content {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .page-title {
+    font-size: 18px;
+    text-align: center;
+  }
+
+  /* 3. JADWAL MATCH (CARD) */
+  .match-card {
+    flex-direction: column; /* Menumpuk info tim dan box hasil */
+    align-items: stretch;
+    padding: 12px;
+    gap: 14px;
+  }
+
+  .match-summary {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+  }
+
+  .match-teams {
+    font-size: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .match-time {
+    align-self: center;
+    font-size: 10px;
+    padding: 4px 10px;
+  }
+
+  .match-details-box {
+    width: 100%; /* Box detail melebar penuh di HP */
+    box-sizing: border-box;
+  }
+
+  /* 4. MARQUEE RUNNING TEXT */
+  .marquee-bar {
+    padding: 8px 0;
+  }
+
+  .marquee-item {
+    font-size: 11px;
+    padding-right: 20px;
+  }
+
+  /* 5. SPONSOR CARD */
+  .sponsors-container {
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .sponsor-card {
+    width: 100%; /* Kotak sponsor menyesuaikan lebar HP */
+    max-width: 250px;
+  }
+}
