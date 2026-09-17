@@ -1294,3 +1294,41 @@ body {
     transform: translateX(-100%);
   }
 }
+
+/* =========================
+   MARQUEE MULTI-ITEM FIX
+========================= */
+
+.marquee-bar {
+  width: 100%;
+  overflow: hidden;
+  background: rgba(0, 242, 254, 0.08);
+  border: 1px solid rgba(0, 242, 254, 0.2);
+  border-radius: 8px;
+  padding: 10px 0;
+  margin-bottom: 20px;
+}
+
+.marquee-track {
+  display: flex; /* Memaksa item di dalamnya berjejer ke samping */
+  width: max-content; /* Memastikan lebar track mengikuti seluruh teks */
+  white-space: nowrap;
+  animation: marquee-move 12s linear infinite;
+}
+
+.marquee-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 50px; /* Jarak antara teks utama dan teks duplikasi */
+}
+
+/* Animasi Seamless (Mulus tanpa jeda) */
+@keyframes marquee-move {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Menggeser persis setengah lebar total untuk efek seamless */
+  }
+}
