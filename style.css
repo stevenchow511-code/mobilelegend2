@@ -1296,7 +1296,7 @@ body {
 }
 
 /* =========================
-   MARQUEE MULTI-ITEM FIX
+   MARQUEE SMOOTH LOOP FIX
 ========================= */
 
 .marquee-bar {
@@ -1310,17 +1310,28 @@ body {
 }
 
 .marquee-track {
-  display: flex; /* Memaksa item di dalamnya berjejer ke samping */
-  width: max-content; /* Memastikan lebar track mengikuti seluruh teks */
+  display: flex;
+  width: max-content; /* Memastikan panjang elemen mengikuti teks utuh */
   white-space: nowrap;
-  animation: marquee-move 12s linear infinite;
+  /* Atur durasi di sini (misal 15s) jika ingin lebih cepat/lambat */
+  animation: marquee-smooth 15s linear infinite; 
 }
 
 .marquee-item {
-  display: inline-flex;
+  display: flex;
   align-items: center;
   gap: 8px;
-  padding-right: 50px; /* Jarak antara teks utama dan teks duplikasi */
+  padding-right: 60px; /* Jarak pas antara teks utama & teks duplikasi */
+}
+
+/* Animasi menggeser tepat dari teks 1 ke awal teks 2 */
+@keyframes marquee-smooth {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%); /* Geser tepat 50% untuk perputaran tanpa jeda */
+  }
 }
 
 /* Animasi Seamless (Mulus tanpa jeda) */
