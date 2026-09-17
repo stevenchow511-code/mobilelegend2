@@ -1343,3 +1343,15 @@ body {
     transform: translateX(-50%); /* Menggeser persis setengah lebar total untuk efek seamless */
   }
 }
+
+/* =========================
+   MARQUEE GAP FIX
+========================= */
+
+.marquee-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* Ubah jarak antar teks di sini (misal dari 60px/100px menjadi 24px) */
+  padding-right: 24px; 
+}
