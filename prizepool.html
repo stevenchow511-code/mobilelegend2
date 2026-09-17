@@ -3,33 +3,93 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Prizepool - MLBB GROUP D</title>
+  <title>PRIZEPOOL - MLBB GROUP D</title>
   <link rel="icon" type="image/png" href="....">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* CSS Tambahan Khusus Special Awards / Hadiah Savage */
+    .special-prize-section {
+      margin-top: 30px;
+    }
+
+    .section-subtitle {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 14px;
+      font-weight: 800;
+      color: #00f2fe;
+      letter-spacing: 1.5px;
+      padding: 6px 14px;
+      background: rgba(0, 242, 254, 0.08);
+      border-left: 4px solid #00f2fe;
+      border-radius: 4px;
+      margin-bottom: 12px;
+      display: inline-block;
+      text-transform: UPPERCASE;
+    }
+
+    .prize-item.rank-special {
+      border: 1px solid rgba(255, 0, 85, 0.4);
+      background: rgba(255, 0, 85, 0.08);
+      box-shadow: 0 0 10px rgba(255, 0, 85, 0.15);
+    }
+
+    .prize-item.rank-special span:first-child {
+      color: #ff0055;
+      font-weight: 800;
+    }
+  </style>
 </head>
 <body>
+
   <div class="container">
+    
+    <!-- Sidebar Menu -->
     <div class="sidebar-menu">
       <div class="brand-logo" style="font-family:'Orbitron',sans-serif; font-size:16px; font-weight:900; color:#fff; text-align:center; padding-bottom:15px; border-bottom:1px solid rgba(255,255,255,0.1); letter-spacing:2px; background:linear-gradient(135deg,#fff,#00f2fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">MLBB GROUP D</div>
-      <a href="index.html" class="menu-item">1.BERANDA</a>
-      <a href="tim.html" class="menu-item">2.DAFTAR TIM</a>
-      <a href="jadwal.html" class="menu-item">3.JADWAL MATCH</a>
-      <a href="prizepool.html" class="menu-item active">4.PRIZEPOOL</a>
-	  <a href="klasmen.html" class="menu-item">5.KLASMEN</a>
-      <a href="rules.html" class="menu-item">6.RULES TURNAMEN</a>
+      <a href="index.html" class="menu-item">1. BERANDA</a>
+      <a href="tim.html" class="menu-item">2. DAFTAR TIM</a>
+      <a href="jadwal.html" class="menu-item">3. JADWAL MATCH</a>
+      <a href="klasmen.html" class="menu-item">4. KLASMEN</a>
+      <a href="prizepool.html" class="menu-item active">5. PRIZEPOOL</a>
+      <a href="rules.html" class="menu-item">6. RULES TURNAMEN</a>
     </div>
 
+    <!-- Main Content -->
     <div class="main-content">
+      
+      <!-- Total Prizepool Main Card -->
       <div class="total-prize-card">
         <div class="total-title">TOTAL PRIZEPOOL</div>
-        <div class="total-amount">Rp 10.000.000</div>
+        <div class="total-amount">RP 10.000.000</div>
       </div>
+
+      <!-- Main Tournament Winners -->
       <div class="prize-list">
-        <div class="prize-item rank-1"><span>🥇 JUARA 1</span> <span>Rp 5.000.000 + Trophy</span></div>
-        <div class="prize-item rank-2"><span>🥈 JUARA 2</span> <span>Rp 3.000.000</span></div>
-        <div class="prize-item rank-3"><span>🥉 JUARA 3</span> <span>Rp 2.000.000</span></div>
+        <div class="prize-item rank-1"><span>🥇 JUARA 1</span> <span>RP 5.000.000 + TROPHY</span></div>
+        <div class="prize-item rank-2"><span>🥈 JUARA 2</span> <span>RP 3.000.000</span></div>
+        <div class="prize-item rank-3"><span>🥉 JUARA 3</span> <span>RP 2.000.000</span></div>
       </div>
+
+      <!-- Special Awards Section (Savage & MVP) -->
+      <div class="special-prize-section">
+        <div class="section-subtitle">⚡ SPECIAL AWARDS</div>
+        <div class="prize-list">
+          <!-- Hadiah Savage -->
+          <div class="prize-item rank-special">
+            <span>🔥 SAVAGE AWARD</span> 
+            <span>RP 500.000 / SAVAGE</span>
+          </div>
+          <!-- Hadiah MVP (Opsional) -->
+          <div class="prize-item rank-special">
+            <span>👑 FINAL MVP</span> 
+            <span>RP 300.000</span>
+          </div>
+        </div>
+      </div>
+
     </div>
+
   </div>
+
 </body>
 </html>
