@@ -3,10 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Klasemen | MLBB GROUP D</title>
-
-  <!-- Panggilan file CSS terpisah -->
   <link rel="stylesheet" href="style.css">
 </head>
 
@@ -45,26 +42,25 @@
         ⚔️ GROUP A & GROUP B &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
         🎮 MOBILE LEGENDS &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
         🔥 TOURNAMENT SEASON 1 &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
-        🏆 PRIZEPOOL BESAR &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp;
       </div>
     </div>
 
     <!-- INTRO -->
     <div class="standings-intro">
       <h2>KLASEMEN TURNAMEN</h2>
-      <p>Pilih grup untuk melihat klasemen dan statistik pemain.</p>
+      <p>Pilih grup untuk melihat klasemen tim.</p>
     </div>
 
     <!-- GROUP BUTTON -->
     <div class="group-selector">
       <button class="group-btn active" id="groupAButton" onclick="showGroup('A')">
         <span class="group-name">GROUP A</span>
-        <span class="group-info">Lihat Klasemen & Statistik</span>
+        <span class="group-info">Lihat Klasemen</span>
       </button>
 
       <button class="group-btn" id="groupBButton" onclick="showGroup('B')">
         <span class="group-name">GROUP B</span>
-        <span class="group-info">Lihat Klasemen & Statistik</span>
+        <span class="group-info">Lihat Klasemen</span>
       </button>
     </div>
 
@@ -93,22 +89,48 @@
       </table>
     </div>
 
-    <!-- TOP MVP -->
+    <!-- GLOBAL TOP 10 MVP -->
     <section class="player-section">
       <div class="player-section-title">
         <div class="icon">🏆</div>
-        <h3>TOP MVP</h3>
+        <h3>GLOBAL TOP 10 MVP (ALL GROUPS)</h3>
       </div>
-      <div class="player-grid" id="mvpGrid"></div>
+      <div class="player-table-wrapper">
+        <table class="player-table">
+          <thead>
+            <tr>
+              <th style="text-align:center;">#</th>
+              <th>PLAYER</th>
+              <th>TEAM</th>
+              <th style="text-align:center;">GROUP</th>
+              <th style="text-align:right;">TOTAL MVP</th>
+            </tr>
+          </thead>
+          <tbody id="globalMvpBody"></tbody>
+        </table>
+      </div>
     </section>
 
-    <!-- TOP SAVAGE -->
+    <!-- GLOBAL TOP 10 SAVAGE -->
     <section class="player-section">
       <div class="player-section-title">
         <div class="icon">⚡</div>
-        <h3>TOP SAVAGE</h3>
+        <h3>GLOBAL TOP 10 SAVAGE (ALL GROUPS)</h3>
       </div>
-      <div class="player-grid" id="savageGrid"></div>
+      <div class="player-table-wrapper">
+        <table class="player-table">
+          <thead>
+            <tr>
+              <th style="text-align:center;">#</th>
+              <th>PLAYER</th>
+              <th>TEAM</th>
+              <th style="text-align:center;">GROUP</th>
+              <th style="text-align:right;">TOTAL SAVAGE</th>
+            </tr>
+          </thead>
+          <tbody id="globalSavageBody"></tbody>
+        </table>
+      </div>
     </section>
 
     <!-- INFO -->
@@ -118,8 +140,6 @@
         <p>
           Menang mendapatkan 3 poin.
           Kalah mendapatkan 0 poin.
-          Urutan klasemen dapat ditentukan berdasarkan
-          jumlah kemenangan dan Game W/L.
         </p>
       </div>
 
@@ -147,14 +167,14 @@
       { team: "ALTER EGO", mp: 3, w: 1, l: 2, gw: 2, gl: 5, points: 3, status: "progress" }
     ],
     mvp: [
-      { name: "PLAYER MVP 1", team: "EVOS GLORY", value: 8 },
-      { name: "PLAYER MVP 2", team: "RRQ HOSHI", value: 6 },
-      { name: "PLAYER MVP 3", team: "ONIC ESPORTS", value: 5 }
+      { name: "ALBERTT", team: "EVOS GLORY", group: "A", value: 8 },
+      { name: "SKYLAR", team: "RRQ HOSHI", group: "A", value: 6 },
+      { name: "SANZ", team: "ONIC ESPORTS", group: "A", value: 5 },
+      { name: "PAJATO", team: "ALTER EGO", group: "A", value: 3 },
+      { name: "KIBOY", team: "ONIC ESPORTS", group: "A", value: 2 }
     ],
     savage: [
-      { name: "PLAYER SAVAGE 1", team: "EVOS GLORY", value: 3 },
-      { name: "PLAYER SAVAGE 2", team: "RRQ HOSHI", value: 2 },
-      { name: "PLAYER SAVAGE 3", team: "ONIC ESPORTS", value: 1 }
+      { name: "ALBERTT", team: "EVOS GLORY", group: "A", value: 3 },
     ]
   };
 
@@ -167,14 +187,14 @@
       { team: "NAVI", mp: 3, w: 0, l: 3, gw: 1, gl: 6, points: 0, status: "progress" }
     ],
     mvp: [
-      { name: "PLAYER MVP 1", team: "BIGETRON", value: 9 },
-      { name: "PLAYER MVP 2", team: "DEWA UNITED", value: 7 },
-      { name: "PLAYER MVP 3", team: "GEEK FAM", value: 4 }
+      { name: "KENNN", team: "BIGETRON", group: "B", value: 9 },
+      { name: "REY", team: "DEWA UNITED", group: "B", value: 7 },
+      { name: "ABOY", team: "GEEK FAM", group: "B", value: 4 },
+      { name: "MORENO", team: "BIGETRON", group: "B", value: 4 },
+      { name: "SOLO", team: "NAVI", group: "B", value: 1 }
     ],
     savage: [
-      { name: "PLAYER SAVAGE 1", team: "BIGETRON", value: 4 },
-      { name: "PLAYER SAVAGE 2", team: "DEWA UNITED", value: 2 },
-      { name: "PLAYER SAVAGE 3", team: "GEEK FAM", value: 1 }
+      { name: "KENNN", team: "BIGETRON", group: "B", value: 4 }
     ]
   };
 
@@ -186,24 +206,25 @@
     });
   }
 
-  function createPlayerCards(data, containerId, statName) {
-    const container = document.getElementById(containerId);
-    container.innerHTML = "";
+  /* REUSABLE FUNCTION UNTUK RENDER TABEL TOP 10 PLAYER (MVP / SAVAGE) */
+  function renderGlobalPlayerStats(dataKey, containerId) {
+    const combinedData = [...groupA[dataKey], ...groupB[dataKey]];
+    combinedData.sort((a, b) => b.value - a.value);
+    const top10 = combinedData.slice(0, 10);
 
-    data.forEach((player, index) => {
-      const card = document.createElement("div");
-      card.className = "player-card" + (index === 0 ? " first" : "");
-      card.innerHTML = `
-        <div class="player-rank">#${index + 1}</div>
-        <div class="player-avatar">${index === 0 ? "👑" : "🎮"}</div>
-        <div class="player-name">${player.name}</div>
-        <div class="player-team">${player.team}</div>
-        <div class="player-stat">
-          <span>${statName}</span>
-          <span>${player.value}</span>
-        </div>
+    const tbody = document.getElementById(containerId);
+    tbody.innerHTML = "";
+
+    top10.forEach((player, index) => {
+      const row = document.createElement("tr");
+      row.innerHTML = `
+        <td class="rank">${index === 0 ? "👑" : index + 1}</td>
+        <td class="p-name">${player.name}</td>
+        <td class="p-team">${player.team}</td>
+        <td class="p-group">GROUP ${player.group}</td>
+        <td class="p-stat">${player.value}</td>
       `;
-      container.appendChild(card);
+      tbody.appendChild(row);
     });
   }
 
@@ -246,12 +267,12 @@
       `;
       body.appendChild(row);
     });
-
-    createPlayerCards(data.mvp, "mvpGrid", "MVP");
-    createPlayerCards(data.savage, "savageGrid", "SAVAGE");
   }
 
+  /* INITIAL LOAD */
   showGroup("A");
+  renderGlobalPlayerStats("mvp", "globalMvpBody");
+  renderGlobalPlayerStats("savage", "globalSavageBody");
 </script>
 
 </body>

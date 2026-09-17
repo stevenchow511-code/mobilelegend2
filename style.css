@@ -1039,3 +1039,206 @@ body {
     font-size: 19px;
   }
 }
+/* =========================
+   PLAYER STATS (COMPACT TABLE)
+========================= */
+
+.player-section {
+  margin-top: 28px;
+}
+
+.player-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.player-section-title .icon {
+  font-size: 20px;
+}
+
+.player-section-title h3 {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  color: #00f2fe;
+  text-transform: uppercase;
+}
+
+/* Tabel MVP Kompak untuk 10 Player */
+.player-table-wrapper {
+  width: 100%;
+  max-height: 380px; /* Batas tinggi dengan scroll jika data banyak */
+  overflow-y: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 242, 254, 0.18);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.player-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.player-table th {
+  position: sticky;
+  top: 0;
+  padding: 10px 12px;
+  background: rgba(0, 30, 45, 0.95);
+  color: #00f2fe;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+  text-align: left;
+  z-index: 2;
+}
+
+.player-table td {
+  padding: 8px 12px; /* Ukuran baris lebih tipis/ringkas */
+  color: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.player-table tr:hover {
+  background: rgba(0, 242, 254, 0.05);
+}
+
+.player-table .rank {
+  width: 50px;
+  font-family: 'Orbitron', sans-serif;
+  color: #00f2fe;
+  font-weight: 800;
+  text-align: center;
+}
+
+.player-table .p-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  color: #fff;
+}
+
+.player-table .p-team {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+
+.player-table .p-group {
+  text-align: center;
+  color: rgba(0, 242, 254, 0.7);
+  font-size: 12px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.player-table .p-stat {
+  text-align: right;
+  font-family: 'Orbitron', sans-serif;
+  color: #00f2fe;
+  font-weight: 800;
+}
+
+/* =========================
+   PLAYER STATS (COMPACT TABLES)
+========================= */
+
+.player-section {
+  margin-top: 28px;
+}
+
+.player-section-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.player-section-title .icon {
+  font-size: 20px;
+}
+
+.player-section-title h3 {
+  margin: 0;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 16px;
+  color: #00f2fe;
+  text-transform: uppercase;
+}
+
+/* Tabel Player Kompak (Dapat digunakan untuk Top MVP & Top Savage) */
+.player-table-wrapper {
+  width: 100%;
+  max-height: 380px; /* Area scroll jika data lebih dari 10 */
+  overflow-y: auto;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 242, 254, 0.18);
+  background: rgba(0, 0, 0, 0.25);
+}
+
+.player-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Rajdhani', sans-serif;
+}
+
+.player-table th {
+  position: sticky;
+  top: 0;
+  padding: 10px 12px;
+  background: rgba(0, 30, 45, 0.95);
+  color: #00f2fe;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  border-bottom: 1px solid rgba(0, 242, 254, 0.2);
+  text-align: left;
+  z-index: 2;
+}
+
+.player-table td {
+  padding: 8px 12px;
+  color: rgba(255, 255, 255, 0.85);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.player-table tr:hover {
+  background: rgba(0, 242, 254, 0.05);
+}
+
+.player-table .rank {
+  width: 50px;
+  font-family: 'Orbitron', sans-serif;
+  color: #00f2fe;
+  font-weight: 800;
+  text-align: center;
+}
+
+.player-table .p-name {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 12px;
+  color: #fff;
+}
+
+.player-table .p-team {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 13px;
+}
+
+.player-table .p-group {
+  text-align: center;
+  color: rgba(0, 242, 254, 0.7);
+  font-size: 12px;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.player-table .p-stat {
+  text-align: right;
+  font-family: 'Orbitron', sans-serif;
+  color: #00f2fe;
+  font-weight: 800;
+}
