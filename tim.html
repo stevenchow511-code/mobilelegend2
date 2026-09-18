@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Tim Participant - MLBB GROUP D</title>
-  <link rel="icon" type="image/png" href="....">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <!-- Menghubungkan ke file CSS terpisah -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -13,35 +14,39 @@
     
     <!-- Sidebar Menu -->
     <div class="sidebar-menu">
-      <div class="brand-logo" style="font-family:'Orbitron',sans-serif; font-size:16px; font-weight:900; text-align:center; padding-bottom:15px; border-bottom:1px solid rgba(255,255,255,0.1); letter-spacing:2px; background:linear-gradient(135deg,#fff,#00f2fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">MLBB GROUP D</div>
-      <a href="index.html" class="menu-item">1.BERANDA</a>
-      <a href="tim.html" class="menu-item active">2.DAFTAR TIM</a>
-      <a href="jadwal.html" class="menu-item">3.JADWAL MATCH</a>
-	  <a href="klasmen.html" class="menu-item">4.KLASMEN</a>
-	  <a href="prizepool.html" class="menu-item">5.PRIZEPOOL</a>
-      <a href="rules.html" class="menu-item">6.RULES TURNAMEN</a>
-
+      <div class="brand-logo">MLBB GROUP D</div>
+      <a href="index.html" class="menu-item">1. BERANDA</a>
+      <a href="tim.html" class="menu-item active">2. DAFTAR TIM</a>
+      <a href="jadwal.html" class="menu-item">3. JADWAL MATCH</a>
+      <a href="klasmen.html" class="menu-item">4. KLASMEN</a>
+      <a href="prizepool.html" class="menu-item">5. PRIZEPOOL</a>
+      <a href="rules.html" class="menu-item">6. RULES TURNAMEN</a>
     </div>
+
     <!-- Main Content -->
     <div class="main-content">
       <div class="page-header">
-        <h2 class="page-title">DAFTAR TEAM</h2>
+        <h2 class="page-title">DAFTAR TEAM PER GRUP</h2>
       </div>
 
-      <!-- Grid Pilihan Tim -->
-      <div class="team-grid">
+      <!-- ================= GRUP A ================= -->
+      <div class="group-section">
+        <div class="group-title">
+          GRUP A
+          <span class="badge">5 TIM</span>
+        </div>
         
-        <!-- Tim 01 (EVOS ESPORTS) -->
-			<div class="team-card-wrapper" onclick="toggleRoster(this)">
-			<div class="team-card">
-			<!-- Ganti angka dengan logo -->
-			<img src="https://i.ibb.co/CpykDr0L/3de15121608ab7205169d4c9fd018d66.png" alt="EVOS" class="team-logo">
-			<span class="team-name">TIM 1</span>
-			<span class="chevron-icon">▼</span>
-		</div>
-          <div class="roster-dropdown">
-            <div class="roster-inner">
-              <div class="roster-header">TIM 1</div>
+        <div class="team-grid">
+          
+          <!-- Tim 01 -->
+          <div class="team-card-wrapper" onclick="toggleRoster(this)">
+            <div class="team-card">
+              <img src="https://i.ibb.co/CpykDr0L/3de15121608ab7205169d4c9fd018d66.png" alt="Logo" class="team-logo">
+              <span class="team-name">TIM 1</span>
+              <span class="chevron-icon">&#9660;</span>
+            </div>
+            <div class="roster-dropdown">
+              <div class="roster-header">ROSTER TIM 1</div>
               <div class="roster-row"><span>Jungler</span> <strong>OKKY</strong></div>
               <div class="roster-row"><span>EXP Lane</span> <strong>AKSAN</strong></div>
               <div class="roster-row"><span>Mid Lane</span> <strong>IMANUEL</strong></div>
@@ -49,19 +54,16 @@
               <div class="roster-row"><span>Roamer</span> <strong>VINCENT</strong></div>
             </div>
           </div>
-        </div>
 
-        <!-- Tim 02 -->
-			<div class="team-card-wrapper" onclick="toggleRoster(this)">
-			<div class="team-card">
-			<!-- Ganti angka dengan logo -->
-			<img src="URL_LOGO_EVOS.png" alt="EVOS" class="team-logo">
-			<span class="team-name">TIM 2</span>
-			<span class="chevron-icon">▼</span>
-          </div>
-          <div class="roster-dropdown">
-            <div class="roster-inner">
-              <div class="roster-header">TIM 2</div>
+          <!-- Tim 02 -->
+          <div class="team-card-wrapper" onclick="toggleRoster(this)">
+            <div class="team-card">
+              <img src="https://i.ibb.co/CpykDr0L/3de15121608ab7205169d4c9fd018d66.png" alt="Logo" class="team-logo">
+              <span class="team-name">TIM 2</span>
+              <span class="chevron-icon">&#9660;</span>
+            </div>
+            <div class="roster-dropdown">
+              <div class="roster-header">ROSTER TIM 2</div>
               <div class="roster-row"><span>Jungler</span> <strong>PAK ALI</strong></div>
               <div class="roster-row"><span>EXP Lane</span> <strong>M DWI</strong></div>
               <div class="roster-row"><span>Mid Lane</span> <strong>MANISHA</strong></div>
@@ -69,19 +71,16 @@
               <div class="roster-row"><span>Roamer</span> <strong>ANDREW</strong></div>
             </div>
           </div>
-        </div>
 
-        <!-- Tim 03 -->
-			<div class="team-card-wrapper" onclick="toggleRoster(this)">
-			<div class="team-card">
-			<!-- Ganti angka dengan logo -->
-			<img src="URL_LOGO_EVOS.png" alt="EVOS" class="team-logo">
-			<span class="team-name">TIM 3</span>
-			<span class="chevron-icon">▼</span>
-          </div>
-          <div class="roster-dropdown">
-            <div class="roster-inner">
-              <div class="roster-header">TIM 3</div>
+          <!-- Tim 03 -->
+          <div class="team-card-wrapper" onclick="toggleRoster(this)">
+            <div class="team-card">
+              <img src="https://i.ibb.co/CpykDr0L/3de15121608ab7205169d4c9fd018d66.png" alt="Logo" class="team-logo">
+              <span class="team-name">TIM 3</span>
+              <span class="chevron-icon">&#9660;</span>
+            </div>
+            <div class="roster-dropdown">
+              <div class="roster-header">ROSTER TIM 3</div>
               <div class="roster-row"><span>Jungler</span> <strong>SAKUL</strong></div>
               <div class="roster-row"><span>EXP Lane</span> <strong>JERRY</strong></div>
               <div class="roster-row"><span>Mid Lane</span> <strong>INA</strong></div>
@@ -89,19 +88,16 @@
               <div class="roster-row"><span>Roamer</span> <strong>DANIEL DARWIS</strong></div>
             </div>
           </div>
-        </div>
 
-        <!-- Tim 04 -->
-			<div class="team-card-wrapper" onclick="toggleRoster(this)">
-			<div class="team-card">
-			<!-- Ganti angka dengan logo -->
-			<img src="URL_LOGO_EVOS.png" alt="EVOS" class="team-logo">
-			<span class="team-name">TIM 4</span>
-			<span class="chevron-icon">▼</span>
-          </div>
-          <div class="roster-dropdown">
-            <div class="roster-inner">
-              <div class="roster-header">TIM 4</div>
+          <!-- Tim 04 -->
+          <div class="team-card-wrapper" onclick="toggleRoster(this)">
+            <div class="team-card">
+              <img src="https://i.ibb.co/CpykDr0L/3de15121608ab7205169d4c9fd018d66.png" alt="Logo" class="team-logo">
+              <span class="team-name">TIM 4</span>
+              <span class="chevron-icon">&#9660;</span>
+            </div>
+            <div class="roster-dropdown">
+              <div class="roster-header">ROSTER TIM 4</div>
               <div class="roster-row"><span>Jungler</span> <strong>JASON</strong></div>
               <div class="roster-row"><span>EXP Lane</span> <strong>JOEL</strong></div>
               <div class="roster-row"><span>Mid Lane</span> <strong>DAVID</strong></div>
@@ -109,19 +105,16 @@
               <div class="roster-row"><span>Roamer</span> <strong>GEO</strong></div>
             </div>
           </div>
-        </div>
 
-        <!-- Tim 05 -->
-			<div class="team-card-wrapper" onclick="toggleRoster(this)">
-			<div class="team-card">
-			<!-- Ganti angka dengan logo -->
-			<img src="URL_LOGO_EVOS.png" alt="EVOS" class="team-logo">
-			<span class="team-name">TIM 5</span>
-			<span class="chevron-icon">▼</span>
-          </div>
-          <div class="roster-dropdown">
-            <div class="roster-inner">
-              <div class="roster-header">TIM 5</div>
+          <!-- Tim 05 -->
+          <div class="team-card-wrapper" onclick="toggleRoster(this)">
+            <div class="team-card">
+              <img src="https://i.ibb.co/CpykDr0L/3de15121608ab7205169d4c9fd018d66.png" alt="Logo" class="team-logo">
+              <span class="team-name">TIM 5</span>
+              <span class="chevron-icon">&#9660;</span>
+            </div>
+            <div class="roster-dropdown">
+              <div class="roster-header">ROSTER TIM 5</div>
               <div class="roster-row"><span>Jungler</span> <strong>BAYU</strong></div>
               <div class="roster-row"><span>EXP Lane</span> <strong>DANIEL GIDEON</strong></div>
               <div class="roster-row"><span>Mid Lane</span> <strong>EFRIN</strong></div>
@@ -129,19 +122,28 @@
               <div class="roster-row"><span>Roamer</span> <strong>CELVIN</strong></div>
             </div>
           </div>
-        </div>
 
-        <!-- Tim 06 -->
-			<div class="team-card-wrapper" onclick="toggleRoster(this)">
-			<div class="team-card">
-			<!-- Ganti angka dengan logo -->
-			<img src="URL_LOGO_EVOS.png" alt="EVOS" class="team-logo">
-			<span class="team-name">TIM 6</span>
-			<span class="chevron-icon">▼</span>
-          </div>
-          <div class="roster-dropdown">
-            <div class="roster-inner">
-              <div class="roster-header">TIM 6</div>
+        </div>
+      </div>
+
+      <!-- ================= GRUP B ================= -->
+      <div class="group-section">
+        <div class="group-title">
+          GRUP B
+          <span class="badge">5 TIM</span>
+        </div>
+        
+        <div class="team-grid">
+
+          <!-- Tim 06 -->
+          <div class="team-card-wrapper" onclick="toggleRoster(this)">
+            <div class="team-card">
+              <img src="https://i.ibb.co/CpykDr0L/3de15121608ab7205169d4c9fd018d66.png" alt="Logo" class="team-logo">
+              <span class="team-name">TIM 6</span>
+              <span class="chevron-icon">&#9660;</span>
+            </div>
+            <div class="roster-dropdown">
+              <div class="roster-header">ROSTER TIM 6</div>
               <div class="roster-row"><span>Jungler</span> <strong>SANTRI</strong></div>
               <div class="roster-row"><span>EXP Lane</span> <strong>ARIF</strong></div>
               <div class="roster-row"><span>Mid Lane</span> <strong>YANTI</strong></div>
@@ -149,19 +151,16 @@
               <div class="roster-row"><span>Roamer</span> <strong>MARKUS</strong></div>
             </div>
           </div>
-        </div>
 
-        <!-- Tim 07 -->
-			<div class="team-card-wrapper" onclick="toggleRoster(this)">
-			<div class="team-card">
-			<!-- Ganti angka dengan logo -->
-			<img src="URL_LOGO_EVOS.png" alt="EVOS" class="team-logo">
-			<span class="team-name">TIM 7</span>
-			<span class="chevron-icon">▼</span>
-          </div>
-          <div class="roster-dropdown">
-            <div class="roster-inner">
-              <div class="roster-header">TIM 7</div>
+          <!-- Tim 07 -->
+          <div class="team-card-wrapper" onclick="toggleRoster(this)">
+            <div class="team-card">
+              <img src="https://i.ibb.co/CpykDr0L/3de15121608ab7205169d4c9fd018d66.png" alt="Logo" class="team-logo">
+              <span class="team-name">TIM 7</span>
+              <span class="chevron-icon">&#9660;</span>
+            </div>
+            <div class="roster-dropdown">
+              <div class="roster-header">ROSTER TIM 7</div>
               <div class="roster-row"><span>Jungler</span> <strong>STEVEN</strong></div>
               <div class="roster-row"><span>EXP Lane</span> <strong>JIMMY</strong></div>
               <div class="roster-row"><span>Mid Lane</span> <strong>JANSENT</strong></div>
@@ -169,19 +168,16 @@
               <div class="roster-row"><span>Roamer</span> <strong>BAIM</strong></div>
             </div>
           </div>
-        </div>
-		
-	        <!-- Tim 08 -->
-			<div class="team-card-wrapper" onclick="toggleRoster(this)">
-			<div class="team-card">
-			<!-- Ganti angka dengan logo -->
-			<img src="URL_LOGO_EVOS.png" alt="EVOS" class="team-logo">
-			<span class="team-name">TIM 8</span>
-			<span class="chevron-icon">▼</span>
-          </div>
-          <div class="roster-dropdown">
-            <div class="roster-inner">
-              <div class="roster-header">TIM 8</div>
+
+          <!-- Tim 08 -->
+          <div class="team-card-wrapper" onclick="toggleRoster(this)">
+            <div class="team-card">
+              <img src="https://i.ibb.co/CpykDr0L/3de15121608ab7205169d4c9fd018d66.png" alt="Logo" class="team-logo">
+              <span class="team-name">TIM 8</span>
+              <span class="chevron-icon">&#9660;</span>
+            </div>
+            <div class="roster-dropdown">
+              <div class="roster-header">ROSTER TIM 8</div>
               <div class="roster-row"><span>Jungler</span> <strong>RICHARD</strong></div>
               <div class="roster-row"><span>EXP Lane</span> <strong>BUDI</strong></div>
               <div class="roster-row"><span>Mid Lane</span> <strong>RIDHA</strong></div>
@@ -189,19 +185,16 @@
               <div class="roster-row"><span>Roamer</span> <strong>RAJA</strong></div>
             </div>
           </div>
-        </div>	
 
-	        <!-- Tim 09 -->
-			<div class="team-card-wrapper" onclick="toggleRoster(this)">
-			<div class="team-card">
-			<!-- Ganti angka dengan logo -->
-			<img src="URL_LOGO_EVOS.png" alt="EVOS" class="team-logo">
-			<span class="team-name">TIM 9</span>
-			<span class="chevron-icon">▼</span>
-          </div>
-          <div class="roster-dropdown">
-            <div class="roster-inner">
-              <div class="roster-header">TIM 9</div>
+          <!-- Tim 09 -->
+          <div class="team-card-wrapper" onclick="toggleRoster(this)">
+            <div class="team-card">
+              <img src="https://i.ibb.co/CpykDr0L/3de15121608ab7205169d4c9fd018d66.png" alt="Logo" class="team-logo">
+              <span class="team-name">TIM 9</span>
+              <span class="chevron-icon">&#9660;</span>
+            </div>
+            <div class="roster-dropdown">
+              <div class="roster-header">ROSTER TIM 9</div>
               <div class="roster-row"><span>Jungler</span> <strong>KEVIN</strong></div>
               <div class="roster-row"><span>EXP Lane</span> <strong>TENIKI</strong></div>
               <div class="roster-row"><span>Mid Lane</span> <strong>ODEL</strong></div>
@@ -209,18 +202,15 @@
               <div class="roster-row"><span>Roamer</span> <strong>NANDOS</strong></div>
             </div>
           </div>
-        </div>
 
-	        <!-- Tim 10 -->
-			<div class="team-card-wrapper" onclick="toggleRoster(this)">
-			<div class="team-card">
-			<!-- Ganti angka dengan logo -->
-			<img src="URL_LOGO_EVOS.png" alt="EVOS" class="team-logo">
-			<span class="team-name">BANTAI KAMI BANG</span>
-			<span class="chevron-icon">▼</span>
-          </div>
-          <div class="roster-dropdown">
-            <div class="roster-inner">
+          <!-- Tim 10 -->
+          <div class="team-card-wrapper" onclick="toggleRoster(this)">
+            <div class="team-card">
+              <img src="https://i.ibb.co/CpykDr0L/3de15121608ab7205169d4c9fd018d66.png" alt="Logo" class="team-logo">
+              <span class="team-name">BANTAI KAMI BANG</span>
+              <span class="chevron-icon">&#9660;</span>
+            </div>
+            <div class="roster-dropdown">
               <div class="roster-header">BANTAI KAMI BANG</div>
               <div class="roster-row"><span>Jungler</span> <strong>KADAFI</strong></div>
               <div class="roster-row"><span>EXP Lane</span> <strong>AGUS S</strong></div>
@@ -229,8 +219,8 @@
               <div class="roster-row"><span>Roamer</span> <strong>BENNY</strong></div>
             </div>
           </div>
+
         </div>
-		
       </div>
 
     </div>
@@ -239,13 +229,11 @@
 
   <script>
     function toggleRoster(element) {
-      // Menutup kartu lain jika ada yang terbuka
       document.querySelectorAll('.team-card-wrapper').forEach(wrapper => {
         if (wrapper !== element) {
           wrapper.classList.remove('active');
         }
       });
-      // Toggle kartu yang diklik
       element.classList.toggle('active');
     }
   </script>
