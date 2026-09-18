@@ -1451,3 +1451,13 @@ body {
     max-width: 250px;
   }
 }
+
+.group-title {
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  color: #00f2fe;
+  border-left: 4px solid #00f2fe;
+  padding-left: 12px;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px rgba(0, 242, 254, 0.5);
+}
