@@ -1676,34 +1676,41 @@ body {
 }
 
 /* ==========================================================================
-   FEATURED SINGLE SPONSOR (LOGO BESAR)
+   FEATURED SINGLE SPONSOR (PROPORSIONAL)
    ========================================================================== */
 .sponsor-card.hero-sponsor {
-  flex-direction: column; /* Membuat teks berada di bawah logo */
-  padding: 30px 50px;
-  gap: 15px;
+  display: flex;
+  flex-direction: row; /* Ubah ke samping/horizontal */
+  align-items: center;
+  justify-content: center;
+  max-width: 420px; /* Batasi lebar maksimal agar tidak terlalu lebar */
+  margin: 0 auto; /* Posisi di tengah */
+  padding: 15px 30px;
+  gap: 20px;
   background: linear-gradient(145deg, #151d2a, #1a2436);
   border: 1px solid rgba(0, 242, 254, 0.3);
-  box-shadow: 0 0 25px rgba(0, 242, 254, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 242, 254, 0.1);
+  transition: all 0.25s ease;
 }
 
 .sponsor-card.hero-sponsor:hover {
   border-color: #00f2fe;
-  box-shadow: 0 0 35px rgba(0, 242, 254, 0.3);
-  transform: translateY(-5px);
+  box-shadow: 0 0 30px rgba(0, 242, 254, 0.25);
+  transform: translateY(-2px);
 }
 
-/* Ukuran Logo Sponsor Diperbesar */
+/* Ukuran Logo Diperkecil & Proporsional */
 .sponsor-card.hero-sponsor .sponsor-logo {
-  width: 120px;  /* Ubah angka ini jika ingin lebih besar/kecil */
-  height: 120px;
+  width: 65px;  
+  height: 65px;
   object-fit: contain;
 }
 
 /* Ukuran Teks Nama Sponsor */
 .sponsor-card.hero-sponsor span {
   font-family: 'Orbitron', sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 700;
   color: #00f2fe;
   letter-spacing: 1px;
