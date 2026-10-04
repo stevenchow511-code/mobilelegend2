@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BAGAN TURNAMEN 8 BESAR - MLBB GROUP D</title>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #07090e;
+      --card-bg: rgba(18, 24, 38, 0.85);
+      --card-border: rgba(255, 255, 255, 0.08);
+      --cyan-neon: #00f2fe;
+      --purple-neon: #9d4edd;
+      --gold-neon: #ffb703;
+      --red-neon: #ff0055;
+      --text-main: #f8fafc;
+      --text-muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Rajdhani', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      background-image: 
+        radial-gradient(circle at 10% 10%, rgba(0, 242, 254, 0.05) 0%, transparent 40%),
+        radial-gradient(circle at 90% 90%, rgba(157, 78, 221, 0.05) 0%, transparent 40%);
+      color: var(--text-main);
+      overflow-x: hidden;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    /* Sidebar Menu */
+    .sidebar-menu {
+      width: 220px;
+      background: rgba(13, 17, 23, 0.95);
+      border-right: 1px solid rgba(255, 255, 255, 0.05);
+      padding: 20px 12px;
+      flex-shrink: 0;
+    }
+
+    .brand-logo {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 14px;
+      font-weight: 900;
+      color: #fff;
+      text-align: center;
+      padding-bottom: 15px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      letter-spacing: 2px;
+      background: linear-gradient(135deg, #fff, var(--cyan-neon));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 20px;
+    }
+
+    .menu-item {
+      display: block;
+      color: var(--text-muted);
+      text-decoration: none;
+      padding: 10px 14px;
+      border-radius: 6px;
+      margin-bottom: 6px;
+      font-weight: 700;
+      font-size: 13px;
+      letter-spacing: 0.5px;
+      transition: all 0.3s ease;
+    }
+
+    .menu-item:hover, .menu-item.active {
+      background: linear-gradient(90deg, rgba(0, 242, 254, 0.15), transparent);
+      color: var(--cyan-neon);
+      border-left: 3px solid var(--cyan-neon);
+      padding-left: 18px;
+    }
+
+    /* Main Content */
+    .main-content {
+      flex: 1;
+      padding: 20px 30px;
+      width: calc(100% - 220px);
+    }
+
+    .page-header {
+      margin-bottom: 20px;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 10px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .page-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 18px;
+      letter-spacing: 1.5px;
+      color: #fff;
+      text-shadow: 0 0 12px rgba(0, 242, 254, 0.3);
+    }
+
+    .bracket-section-title {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 12px;
+      color: var(--cyan-neon);
+      margin: 15px 0 10px 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: 1px;
+    }
+
+    .bracket-section-title.lower {
+      color: var(--red-neon);
+    }
+
+    .bracket-section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(90deg, var(--card-border), transparent);
+    }
+
+    /* Bracket Layout Flex Container */
+    .bracket-wrapper {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      width: 100%;
+      position: relative;
+    }
+
+    .bracket-column {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      flex: 1;
+      min-width: 0;
+      position: relative;
+    }
+
+    .column-header {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 10px;
+      text-align: center;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: rgba(255, 255, 255, 0.03);
+      padding: 4px 0;
+      border-radius: 4px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    /* Match Card Design */
+    .match-box {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 8px;
+      overflow: hidden;
+      margin: 6px 0;
+      position: relative;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      cursor: pointer;
+      backdrop-filter: blur(5px);
+    }
+
+    .match-box:hover {
+      border-color: var(--cyan-neon);
+      box-shadow: 0 0 15px rgba(0, 242, 254, 0.25);
+      transform: scale(1.02);
+      z-index: 5;
+    }
+
+    .match-meta {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 3px 8px;
+      font-size: 9px;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      font-family: 'Orbitron', sans-serif;
+    }
+
+    .match-tag {
+      font-size: 8px;
+      padding: 1px 5px;
+      border-radius: 3px;
+      background: rgba(0, 242, 254, 0.1);
+      color: var(--cyan-neon);
+      border: 1px solid rgba(0, 242, 254, 0.2);
+    }
+
+    .team-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 10px;
+      font-size: 12px;
+      font-weight: 700;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+      transition: background 0.2s;
+    }
+
+    .team-row:last-child {
+      border-bottom: none;
+    }
+
+    .team-row.winner {
+      background: linear-gradient(90deg, rgba(0, 242, 254, 0.12), transparent);
+      color: #fff;
+    }
+
+    .team-row.winner .score {
+      color: var(--cyan-neon);
+      font-weight: 900;
+      text-shadow: 0 0 8px rgba(0, 242, 254, 0.6);
+    }
+
+    .team-name {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: 110px;
+      letter-spacing: 0.5px;
+    }
+
+    .score {
+      font-family: 'Orbitron', sans-serif;
+      font-size: 11px;
+      color: var(--text-muted);
+    }
+
+    /* Champion Card Special */
+    .champion-card {
+      border: 1px solid var(--gold-neon);
+      background: linear-gradient(135deg, rgba(255, 183, 3, 0.12), var(--card-bg));
+      text-align: center;
+      padding: 12px 6px;
+      border-radius: 8px;
+      box-shadow: 0 0 15px rgba(255, 183, 3, 0.2);
+      animation: pulseGlow 3s infinite alternate;
+    }
+
+    @keyframes pulseGlow {
+      0% { box-shadow: 0 0 10px rgba(255, 183, 3, 0.15); }
+      100% { box-shadow: 0 0 20px rgba(255, 183, 3, 0.35); }
+    }
+
+    .champion-title {
+      font-family: 'Orbitron', sans-serif;
+      color: var(--gold-neon);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1.5px;
+      margin-top: 4px;
+    }
+
+    /* Modal Details */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(6px);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal-content {
+      background: #111622;
+      border: 1px solid var(--cyan-neon);
+      width: 90%;
+      max-width: 380px;
+      border-radius: 10px;
+      padding: 20px;
+      box-shadow: 0 0 25px rgba(0, 242, 254, 0.3);
+    }
+
+    .modal-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 10px;
+      margin-bottom: 15px;
+    }
+
+    .close-btn {
+      cursor: pointer;
+      color: var(--text-muted);
+      font-size: 20px;
+      transition: color 0.2s;
+    }
+
+    .close-btn:hover {
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- Sidebar Menu -->
+    <div class="sidebar-menu">
+      <div class="brand-logo">MLBB GROUP D</div>
+      <a href="index.html" class="menu-item">1. BERANDA</a>
+      <a href="tim.html" class="menu-item">2. DAFTAR TIM</a>
+      <a href="jadwal.html" class="menu-item active">3. JADWAL MATCH</a>
+      <a href="klasmen.html" class="menu-item">4. KLASMEN</a>
+      <a href="prizepool.html" class="menu-item">5. PRIZEPOOL</a>
+      <a href="rules.html" class="menu-item">6. RULES TURNAMEN</a>
+	  <a href="jadwal8besar.html" class="menu-item">7. JADWAL 8 BESAR</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+      <div class="page-header">
+        <h2 class="page-title">DOUBLE ELIMINATION BRACKET</h2>
+      </div>
+
+      <!-- UPPER BRACKET -->
+      <div class="bracket-section-title">UPPER BRACKET</div>
+      <div class="bracket-wrapper">
+        
+        <!-- Upper Quarter Finals -->
+        <div class="bracket-column">
+          <div class="column-header">Quarter Finals (BO3)</div>
+          
+          <div class="match-box" onclick="showDetails('UB Match 1', 'OPUNG SQUAD', 2, 'WRSTF', 0, 'OPUNG SQUAD')">
+            <div class="match-meta"><span class="match-tag">UB M1</span><span>01 OKT</span></div>
+            <div class="team-row winner">
+              <span class="team-name">OPUNG SQUAD</span>
+              <span class="score">2</span>
+            </div>
+            <div class="team-row">
+              <span class="team-name">WRSTF</span>
+              <span class="score">0</span>
+            </div>
+          </div>
+
+          <div class="match-box" onclick="showDetails('UB Match 2', 'BANTAI KAMI BANG', 1, 'NAKAMA X', 2, 'NAKAMA X')">
+            <div class="match-meta"><span class="match-tag">UB M2</span><span>01 OKT</span></div>
+            <div class="team-row">
+              <span class="team-name">BANTAI KAMI...</span>
+              <span class="score">1</span>
+            </div>
+            <div class="team-row winner">
+              <span class="team-name">NAKAMA X</span>
+              <span class="score">2</span>
+            </div>
+          </div>
+
+          <div class="match-box" onclick="showDetails('UB Match 3', 'JEDAG JEDUG', 0, 'SENGGOL KAMI BANG', 0, '-')">
+            <div class="match-meta"><span class="match-tag">UB M3</span><span>02 OKT</span></div>
+            <div class="team-row">
+              <span class="team-name">JEDAG JEDUG</span>
+              <span class="score">0</span>
+            </div>
+            <div class="team-row">
+              <span class="team-name">SENGGOL KA...</span>
+              <span class="score">0</span>
+            </div>
+          </div>
+
+          <div class="match-box" onclick="showDetails('UB Match 4', 'BAND LYLIA MAGE', 0, 'MPO X PAY', 0, '-')">
+            <div class="match-meta"><span class="match-tag">UB M4</span><span>02 OKT</span></div>
+            <div class="team-row">
+              <span class="team-name">BAND LYLIA...</span>
+              <span class="score">0</span>
+            </div>
+            <div class="team-row">
+              <span class="team-name">MPO X PAY</span>
+              <span class="score">0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upper Semi Finals -->
+        <div class="bracket-column">
+          <div class="column-header">Semi Finals (BO3)</div>
+          
+          <div class="match-box" onclick="showDetails('UB Semi 1', 'OPUNG SQUAD', 0, 'NAKAMA X', 0, '-')">
+            <div class="match-meta"><span class="match-tag">UB SF1</span><span>03 OKT</span></div>
+            <div class="team-row">
+              <span class="team-name">OPUNG SQUAD</span>
+              <span class="score">0</span>
+            </div>
+            <div class="team-row">
+              <span class="team-name">NAKAMA X</span>
+              <span class="score">0</span>
+            </div>
+          </div>
+
+          <div class="match-box" onclick="showDetails('UB Semi 2', 'TBD', 0, 'TBD', 0, '-')">
+            <div class="match-meta"><span class="match-tag">UB SF2</span><span>03 OKT</span></div>
+            <div class="team-row">
+              <span class="team-name">TBD</span>
+              <span class="score">0</span>
+            </div>
+            <div class="team-row">
+              <span class="team-name">TBD</span>
+              <span class="score">0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Upper Final -->
+        <div class="bracket-column">
+          <div class="column-header">Upper Final (BO3)</div>
+          
+          <div class="match-box" onclick="showDetails('Upper Final', 'TBD', 0, 'TBD', 0, '-')">
+            <div class="match-meta"><span class="match-tag">UB FINAL</span><span>04 OKT</span></div>
+            <div class="team-row">
+              <span class="team-name">TBD</span>
+              <span class="score">0</span>
+            </div>
+            <div class="team-row">
+              <span class="team-name">TBD</span>
+              <span class="score">0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Grand Final & Champion -->
+        <div class="bracket-column">
+          <div class="column-header">Grand Final (BO5)</div>
+          
+          <div class="match-box" style="border-color: var(--gold-neon);" onclick="showDetails('Grand Final', 'Winner UB', 0, 'Winner LB', 0, '-')">
+            <div class="match-meta"><span class="match-tag" style="color:var(--gold-neon); border-color:var(--gold-neon);">GRAND FINAL</span><span>05 OKT</span></div>
+            <div class="team-row">
+              <span class="team-name">TBD (UB)</span>
+              <span class="score">0</span>
+            </div>
+            <div class="team-row">
+              <span class="team-name">TBD (LB)</span>
+              <span class="score">0</span>
+            </div>
+          </div>
+
+          <div class="champion-card">
+            <div style="font-size: 16px;">🏆</div>
+            <div class="champion-title">CHAMPION</div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- LOWER BRACKET -->
+      <div class="bracket-section-title lower">LOWER BRACKET</div>
+      <div class="bracket-wrapper">
+        
+        <!-- Lower Round 1 -->
+        <div class="bracket-column">
+          <div class="column-header">Lower Round 1</div>
+          
+          <div class="match-box" onclick="showDetails('LB Round 1 - M1', 'WRSTF', 0, 'BANTAI KAMI BANG', 0, '-')">
+            <div class="match-meta"><span class="match-tag" style="color:var(--red-neon); border-color:rgba(255,0,85,0.3);">LB R1-M1</span><span>03 OKT</span></div>
+            <div class="team-row">
+              <span class="team-name">WRSTF</span>
+              <span class="score">0</span>
+            </div>
+            <div class="team-row">
+              <span class="team-name">BANTAI KAMI...</span>
+              <span class="score">0</span>
+            </div>
+          </div>
+
+          <div class="match-box" onclick="showDetails('LB Round 1 - M2', 'TBD', 0, 'TBD', 0, '-')">
+            <div class="match-meta"><span class="match-tag" style="color:var(--red-neon); border-color:rgba(255,0,85,0.3);">LB R1-M2</span><span>03 OKT</span></div>
+            <div class="team-row">
+              <span class="team-name">TBD</span>
+              <span class="score">0</span>
+            </div>
+            <div class="team-row">
+              <span class="team-name">TBD</span>
+              <span class="score">0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lower Round 2 -->
+        <div class="bracket-column">
+          <div class="column-header">Lower Semi Finals</div>
+          
+          <div class="match-box" onclick="showDetails('LB Semi 1', 'TBD', 0, 'TBD', 0, '-')">
+            <div class="match-meta"><span class="match-tag" style="color:var(--red-neon); border-color:rgba(255,0,85,0.3);">LB SF1</span><span>04 OKT</span></div>
+            <div class="team-row">
+              <span class="team-name">TBD</span>
+              <span class="score">0</span>
+            </div>
+            <div class="team-row">
+              <span class="team-name">TBD</span>
+              <span class="score">0</span>
+            </div>
+          </div>
+
+          <div class="match-box" onclick="showDetails('LB Semi 2', 'TBD', 0, 'TBD', 0, '-')">
+            <div class="match-meta"><span class="match-tag" style="color:var(--red-neon); border-color:rgba(255,0,85,0.3);">LB SF2</span><span>04 OKT</span></div>
+            <div class="team-row">
+              <span class="team-name">TBD</span>
+              <span class="score">0</span>
+            </div>
+            <div class="team-row">
+              <span class="team-name">TBD</span>
+              <span class="score">0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Lower Final -->
+        <div class="bracket-column">
+          <div class="column-header">Lower Final</div>
+          
+          <div class="match-box" onclick="showDetails('Lower Final', 'TBD', 0, 'TBD', 0, '-')">
+            <div class="match-meta"><span class="match-tag" style="color:var(--red-neon); border-color:rgba(255,0,85,0.3);">LB FINAL</span><span>05 OKT</span></div>
+            <div class="team-row">
+              <span class="team-name">TBD</span>
+              <span class="score">0</span>
+            </div>
+            <div class="team-row">
+              <span class="team-name">TBD</span>
+              <span class="score">0</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Spacer Kolom Kosong -->
+        <div class="bracket-column"></div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Modal Details -->
+  <div class="modal" id="matchModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modalTitle" style="font-family:'Orbitron'; font-size:14px; color:var(--cyan-neon);">MATCH DETAILS</h3>
+        <span class="close-btn" onclick="closeModal()">&times;</span>
+      </div>
+      <div style="margin-bottom: 15px;">
+        <p style="color:var(--text-muted); font-size:11px; letter-spacing:1px;">HASIL SKOR</p>
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px; font-size:15px; font-weight:bold;">
+          <span id="mTeam1">Team A</span>
+          <span id="mScore" style="color:var(--cyan-neon); font-family:'Orbitron'; font-size:16px;">0 - 0</span>
+          <span id="mTeam2">Team B</span>
+        </div>
+      </div>
+      <div>
+        <p style="color:var(--text-muted); font-size:11px; letter-spacing:1px;">PEMENANG</p>
+        <p id="mWinner" style="color:#fff; font-size:14px; font-weight:bold; margin-top:4px;">-</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function showDetails(matchTitle, t1, s1, t2, s2, winner) {
+      document.getElementById('modalTitle').innerText = matchTitle;
+      document.getElementById('mTeam1').innerText = t1;
+      document.getElementById('mTeam2').innerText = t2;
+      document.getElementById('mScore').innerText = s1 + ' - ' + s2;
+      document.getElementById('mWinner').innerText = winner;
+      document.getElementById('matchModal').style.display = 'flex';
+    }
+
+    function closeModal() {
+      document.getElementById('matchModal').style.display = 'none';
+    }
+
+    window.onclick = function(event) {
+      var modal = document.getElementById('matchModal');
+      if (event.target == modal) {
+        modal.style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>
