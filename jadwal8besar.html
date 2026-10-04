@@ -50,12 +50,12 @@
 
     .brand-logo {
       font-family: 'Orbitron', sans-serif;
-      font-size: 14px;
+      font-size: 16px;
       font-weight: 900;
       color: #fff;
       text-align: center;
       padding-bottom: 15px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       letter-spacing: 2px;
       background: linear-gradient(135deg, #fff, var(--cyan-neon));
       -webkit-background-clip: text;
@@ -182,6 +182,10 @@
       z-index: 5;
     }
 
+    .match-box.gold-border {
+      border-color: var(--gold-neon);
+    }
+
     .match-meta {
       background: rgba(0, 0, 0, 0.5);
       padding: 3px 8px;
@@ -201,6 +205,16 @@
       background: rgba(0, 242, 254, 0.1);
       color: var(--cyan-neon);
       border: 1px solid rgba(0, 242, 254, 0.2);
+    }
+
+    .match-tag.gold {
+      color: var(--gold-neon);
+      border-color: var(--gold-neon);
+    }
+
+    .match-tag.red {
+      color: var(--red-neon);
+      border-color: rgba(255, 0, 85, 0.3);
     }
 
     .team-row {
@@ -272,8 +286,11 @@
     .modal {
       display: none;
       position: fixed;
-      top: 0; left: 0; width: 100%; height: 100%;
-      background: rgba(0,0,0,0.85);
+      top: 0; 
+      left: 0; 
+      width: 100%; 
+      height: 100%;
+      background: rgba(0, 0, 0, 0.85);
       backdrop-filter: blur(6px);
       justify-content: center;
       align-items: center;
@@ -299,6 +316,44 @@
       margin-bottom: 15px;
     }
 
+    .modal-title {
+      font-family: 'Orbitron', sans-serif; 
+      font-size: 14px; 
+      color: var(--cyan-neon);
+    }
+
+    .modal-body-section {
+      margin-bottom: 15px;
+    }
+
+    .modal-label {
+      color: var(--text-muted); 
+      font-size: 11px; 
+      letter-spacing: 1px;
+    }
+
+    .modal-score-row {
+      display: flex; 
+      justify-content: space-between; 
+      align-items: center; 
+      margin-top: 8px; 
+      font-size: 15px; 
+      font-weight: bold;
+    }
+
+    .modal-score-val {
+      color: var(--cyan-neon); 
+      font-family: 'Orbitron', sans-serif; 
+      font-size: 16px;
+    }
+
+    .modal-winner-val {
+      color: #fff; 
+      font-size: 14px; 
+      font-weight: bold; 
+      margin-top: 4px;
+    }
+
     .close-btn {
       cursor: pointer;
       color: var(--text-muted);
@@ -315,22 +370,22 @@
 
   <div class="container">
     
-    <!-- Sidebar Menu Exclusivity -->
+    <!-- Sidebar Menu -->
     <div class="sidebar-menu">
-      <div class="brand-logo" style="font-family:'Orbitron',sans-serif; font-size:16px; font-weight:900; color:#fff; text-align:center; padding-bottom:15px; border-bottom:1px solid rgba(255,255,255,0.1); letter-spacing:2px; background:linear-gradient(135deg,#fff,#00f2fe); -webkit-background-clip:text; -webkit-text-fill-color:transparent;">MLBB GROUP D</div>
-      <a href="index.html" class="menu-item active">1.BERANDA</a>
-      <a href="tim.html" class="menu-item">2.DAFTAR TIM </a>
-      <a href="jadwal.html" class="menu-item">3.JADWAL MATCH</a>
-	  <a href="klasmen.html" class="menu-item">4.KLASMEN</a>
-	   <a href="prizepool.html" class="menu-item">5.PRIZEPOOL</a>
-      <a href="rules.html" class="menu-item">6.RULES TURNAMEN</a>
-	  <a href="jadwal8besar.html" class="menu-item">7.JADWAL 8 BESAR</a>
+      <div class="brand-logo">MLBB GROUP D</div>
+      <a href="index.html" class="menu-item">1. BERANDA</a>
+      <a href="tim.html" class="menu-item">2. DAFTAR TIM</a>
+      <a href="jadwal.html" class="menu-item">3. JADWAL MATCH</a>
+      <a href="klasmen.html" class="menu-item">4. KLASMEN</a>
+      <a href="prizepool.html" class="menu-item">5. PRIZEPOOL</a>
+      <a href="rules.html" class="menu-item">6. RULES TURNAMEN</a>
+      <a href="jadwal8besar.html" class="menu-item active">7. JADWAL 8 BESAR</a>
     </div>
 
     <!-- Main Content -->
     <div class="main-content">
       <div class="page-header">
-        <h2 class="page-title">DOUBLE ELIMINATION BRACKET</h2>
+        <h2 class="page-title">JADWAL 8 BESAR / BRACKET</h2>
       </div>
 
       <!-- UPPER BRACKET -->
@@ -341,50 +396,62 @@
         <div class="bracket-column">
           <div class="column-header">Quarter Finals (BO3)</div>
           
-          <div class="match-box" onclick="showDetails('UB Match 1', 'OPUNG SQUAD', 2, 'WRSTF', 0, 'OPUNG SQUAD')">
-            <div class="match-meta"><span class="match-tag">UB M1</span><span>01 OKT</span></div>
+          <div class="match-box" onclick="showDetails('UB Match 1', 'OPUNG SQUAD', 0, 'JEDAG JEDUG', 0, '-')">
+            <div class="match-meta">
+              <span class="match-tag">UB M1</span>
+              <span>04 OKT</span>
+            </div>
             <div class="team-row winner">
               <span class="team-name">OPUNG SQUAD</span>
-              <span class="score">2</span>
-            </div>
-            <div class="team-row">
-              <span class="team-name">WRSTF</span>
               <span class="score">0</span>
             </div>
-          </div>
-
-          <div class="match-box" onclick="showDetails('UB Match 2', 'BANTAI KAMI BANG', 1, 'NAKAMA X', 2, 'NAKAMA X')">
-            <div class="match-meta"><span class="match-tag">UB M2</span><span>01 OKT</span></div>
-            <div class="team-row">
-              <span class="team-name">BANTAI KAMI...</span>
-              <span class="score">1</span>
-            </div>
-            <div class="team-row winner">
-              <span class="team-name">NAKAMA X</span>
-              <span class="score">2</span>
-            </div>
-          </div>
-
-          <div class="match-box" onclick="showDetails('UB Match 3', 'JEDAG JEDUG', 0, 'SENGGOL KAMI BANG', 0, '-')">
-            <div class="match-meta"><span class="match-tag">UB M3</span><span>02 OKT</span></div>
             <div class="team-row">
               <span class="team-name">JEDAG JEDUG</span>
               <span class="score">0</span>
             </div>
+          </div>
+
+          <div class="match-box" onclick="showDetails('UB Match 2', 'WRSTF ', 0, 'NAKAMA X', 0, '-')">
+            <div class="match-meta">
+              <span class="match-tag">UB M2</span>
+              <span>04 OKT</span>
+            </div>
             <div class="team-row">
-              <span class="team-name">SENGGOL KA...</span>
+              <span class="team-name">WRSTF </span>
+              <span class="score">0</span>
+            </div>
+            <div class="team-row winner">
+              <span class="team-name">NAKAMA X</span>
               <span class="score">0</span>
             </div>
           </div>
 
-          <div class="match-box" onclick="showDetails('UB Match 4', 'BAND LYLIA MAGE', 0, 'MPO X PAY', 0, '-')">
-            <div class="match-meta"><span class="match-tag">UB M4</span><span>02 OKT</span></div>
+          <div class="match-box" onclick="showDetails('UB Match 3', 'SENGGOL KAMI BANG', 0, 'MPO X PAY', 0, '-')">
+            <div class="match-meta">
+              <span class="match-tag">UB M3</span>
+              <span>04 OKT</span>
+            </div>
             <div class="team-row">
-              <span class="team-name">BAND LYLIA...</span>
+              <span class="team-name">SENGGOL KAMI BANG</span>
               <span class="score">0</span>
             </div>
             <div class="team-row">
               <span class="team-name">MPO X PAY</span>
+              <span class="score">0</span>
+            </div>
+          </div>
+
+          <div class="match-box" onclick="showDetails('UB Match 4', 'BANTAI KAMI BANG', 0, 'BAND LYLIA MAGE', 0, '-')">
+            <div class="match-meta">
+              <span class="match-tag">UB M4</span>
+              <span>04 OKT</span>
+            </div>
+            <div class="team-row">
+              <span class="team-name">BANTAI KAMI BANG</span>
+              <span class="score">0</span>
+            </div>
+            <div class="team-row">
+              <span class="team-name">BAND LYLIA MAGE</span>
               <span class="score">0</span>
             </div>
           </div>
@@ -394,26 +461,32 @@
         <div class="bracket-column">
           <div class="column-header">Semi Finals (BO3)</div>
           
-          <div class="match-box" onclick="showDetails('UB Semi 1', 'OPUNG SQUAD', 0, 'NAKAMA X', 0, '-')">
-            <div class="match-meta"><span class="match-tag">UB SF1</span><span>03 OKT</span></div>
+          <div class="match-box" onclick="showDetails('UB Semi 1', '-', 0, '-', 0, '-')">
+            <div class="match-meta">
+              <span class="match-tag">UB SF1</span>
+              <span>- OKT</span>
+            </div>
             <div class="team-row">
-              <span class="team-name">OPUNG SQUAD</span>
+              <span class="team-name">-</span>
               <span class="score">0</span>
             </div>
             <div class="team-row">
-              <span class="team-name">NAKAMA X</span>
+              <span class="team-name">-</span>
               <span class="score">0</span>
             </div>
           </div>
 
-          <div class="match-box" onclick="showDetails('UB Semi 2', 'TBD', 0, 'TBD', 0, '-')">
-            <div class="match-meta"><span class="match-tag">UB SF2</span><span>03 OKT</span></div>
+          <div class="match-box" onclick="showDetails('UB Semi 2', '-', 0, '-', 0, '-')">
+            <div class="match-meta">
+              <span class="match-tag">UB SF2</span>
+              <span>- OKT</span>
+            </div>
             <div class="team-row">
-              <span class="team-name">TBD</span>
+              <span class="team-name">-</span>
               <span class="score">0</span>
             </div>
             <div class="team-row">
-              <span class="team-name">TBD</span>
+              <span class="team-name">-</span>
               <span class="score">0</span>
             </div>
           </div>
@@ -423,14 +496,17 @@
         <div class="bracket-column">
           <div class="column-header">Upper Final (BO3)</div>
           
-          <div class="match-box" onclick="showDetails('Upper Final', 'TBD', 0, 'TBD', 0, '-')">
-            <div class="match-meta"><span class="match-tag">UB FINAL</span><span>04 OKT</span></div>
+          <div class="match-box" onclick="showDetails('Upper Final', '-', 0, '-', 0, '-')">
+            <div class="match-meta">
+              <span class="match-tag">UB FINAL</span>
+              <span>- OKT</span>
+            </div>
             <div class="team-row">
-              <span class="team-name">TBD</span>
+              <span class="team-name">-</span>
               <span class="score">0</span>
             </div>
             <div class="team-row">
-              <span class="team-name">TBD</span>
+              <span class="team-name">-</span>
               <span class="score">0</span>
             </div>
           </div>
@@ -440,14 +516,17 @@
         <div class="bracket-column">
           <div class="column-header">Grand Final (BO5)</div>
           
-          <div class="match-box" style="border-color: var(--gold-neon);" onclick="showDetails('Grand Final', 'Winner UB', 0, 'Winner LB', 0, '-')">
-            <div class="match-meta"><span class="match-tag" style="color:var(--gold-neon); border-color:var(--gold-neon);">GRAND FINAL</span><span>05 OKT</span></div>
+          <div class="match-box gold-border" onclick="showDetails('Grand Final', 'Winner UB', 0, 'Winner LB', 0, '-')">
+            <div class="match-meta">
+              <span class="match-tag gold">GRAND FINAL</span>
+              <span>- OKT</span>
+            </div>
             <div class="team-row">
-              <span class="team-name">TBD (UB)</span>
+              <span class="team-name">- (UB)</span>
               <span class="score">0</span>
             </div>
             <div class="team-row">
-              <span class="team-name">TBD (LB)</span>
+              <span class="team-name">- (LB)</span>
               <span class="score">0</span>
             </div>
           </div>
@@ -468,26 +547,32 @@
         <div class="bracket-column">
           <div class="column-header">Lower Round 1</div>
           
-          <div class="match-box" onclick="showDetails('LB Round 1 - M1', 'WRSTF', 0, 'BANTAI KAMI BANG', 0, '-')">
-            <div class="match-meta"><span class="match-tag" style="color:var(--red-neon); border-color:rgba(255,0,85,0.3);">LB R1-M1</span><span>03 OKT</span></div>
+          <div class="match-box" onclick="showDetails('LB Round 1 - M1', '-', 0, '-', 0, '-')">
+            <div class="match-meta">
+              <span class="match-tag red">LB R1-M1</span>
+              <span>- OKT</span>
+            </div>
             <div class="team-row">
-              <span class="team-name">WRSTF</span>
+              <span class="team-name">-</span>
               <span class="score">0</span>
             </div>
             <div class="team-row">
-              <span class="team-name">BANTAI KAMI...</span>
+              <span class="team-name">-</span>
               <span class="score">0</span>
             </div>
           </div>
 
-          <div class="match-box" onclick="showDetails('LB Round 1 - M2', 'TBD', 0, 'TBD', 0, '-')">
-            <div class="match-meta"><span class="match-tag" style="color:var(--red-neon); border-color:rgba(255,0,85,0.3);">LB R1-M2</span><span>03 OKT</span></div>
+          <div class="match-box" onclick="showDetails('LB Round 1 - M2', '-', 0, '-', 0, '-')">
+            <div class="match-meta">
+              <span class="match-tag red">LB R1-M2</span>
+              <span>- OKT</span>
+            </div>
             <div class="team-row">
-              <span class="team-name">TBD</span>
+              <span class="team-name">-</span>
               <span class="score">0</span>
             </div>
             <div class="team-row">
-              <span class="team-name">TBD</span>
+              <span class="team-name">-</span>
               <span class="score">0</span>
             </div>
           </div>
@@ -497,26 +582,32 @@
         <div class="bracket-column">
           <div class="column-header">Lower Semi Finals</div>
           
-          <div class="match-box" onclick="showDetails('LB Semi 1', 'TBD', 0, 'TBD', 0, '-')">
-            <div class="match-meta"><span class="match-tag" style="color:var(--red-neon); border-color:rgba(255,0,85,0.3);">LB SF1</span><span>04 OKT</span></div>
+          <div class="match-box" onclick="showDetails('LB Semi 1', '-', 0, '-', 0, '-')">
+            <div class="match-meta">
+              <span class="match-tag red">LB SF1</span>
+              <span>- OKT</span>
+            </div>
             <div class="team-row">
-              <span class="team-name">TBD</span>
+              <span class="team-name">-</span>
               <span class="score">0</span>
             </div>
             <div class="team-row">
-              <span class="team-name">TBD</span>
+              <span class="team-name">-</span>
               <span class="score">0</span>
             </div>
           </div>
 
-          <div class="match-box" onclick="showDetails('LB Semi 2', 'TBD', 0, 'TBD', 0, '-')">
-            <div class="match-meta"><span class="match-tag" style="color:var(--red-neon); border-color:rgba(255,0,85,0.3);">LB SF2</span><span>04 OKT</span></div>
+          <div class="match-box" onclick="showDetails('LB Semi 2', '-', 0, '-', 0, '-')">
+            <div class="match-meta">
+              <span class="match-tag red">LB SF2</span>
+              <span>- OKT</span>
+            </div>
             <div class="team-row">
-              <span class="team-name">TBD</span>
+              <span class="team-name">-</span>
               <span class="score">0</span>
             </div>
             <div class="team-row">
-              <span class="team-name">TBD</span>
+              <span class="team-name">-</span>
               <span class="score">0</span>
             </div>
           </div>
@@ -526,14 +617,17 @@
         <div class="bracket-column">
           <div class="column-header">Lower Final</div>
           
-          <div class="match-box" onclick="showDetails('Lower Final', 'TBD', 0, 'TBD', 0, '-')">
-            <div class="match-meta"><span class="match-tag" style="color:var(--red-neon); border-color:rgba(255,0,85,0.3);">LB FINAL</span><span>05 OKT</span></div>
+          <div class="match-box" onclick="showDetails('Lower Final', '-', 0, '-', 0, '-')">
+            <div class="match-meta">
+              <span class="match-tag red">LB FINAL</span>
+              <span>- OKT</span>
+            </div>
             <div class="team-row">
-              <span class="team-name">TBD</span>
+              <span class="team-name">-</span>
               <span class="score">0</span>
             </div>
             <div class="team-row">
-              <span class="team-name">TBD</span>
+              <span class="team-name">-</span>
               <span class="score">0</span>
             </div>
           </div>
@@ -551,20 +645,20 @@
   <div class="modal" id="matchModal">
     <div class="modal-content">
       <div class="modal-header">
-        <h3 id="modalTitle" style="font-family:'Orbitron'; font-size:14px; color:var(--cyan-neon);">MATCH DETAILS</h3>
+        <h3 id="modalTitle" class="modal-title">MATCH DETAILS</h3>
         <span class="close-btn" onclick="closeModal()">&times;</span>
       </div>
-      <div style="margin-bottom: 15px;">
-        <p style="color:var(--text-muted); font-size:11px; letter-spacing:1px;">HASIL SKOR</p>
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-top:8px; font-size:15px; font-weight:bold;">
+      <div class="modal-body-section">
+        <p class="modal-label">HASIL SKOR</p>
+        <div class="modal-score-row">
           <span id="mTeam1">Team A</span>
-          <span id="mScore" style="color:var(--cyan-neon); font-family:'Orbitron'; font-size:16px;">0 - 0</span>
+          <span id="mScore" class="modal-score-val">0 - 0</span>
           <span id="mTeam2">Team B</span>
         </div>
       </div>
       <div>
-        <p style="color:var(--text-muted); font-size:11px; letter-spacing:1px;">PEMENANG</p>
-        <p id="mWinner" style="color:#fff; font-size:14px; font-weight:bold; margin-top:4px;">-</p>
+        <p class="modal-label">PEMENANG</p>
+        <p id="mWinner" class="modal-winner-val">-</p>
       </div>
     </div>
   </div>
@@ -585,10 +679,10 @@
 
     window.onclick = function(event) {
       var modal = document.getElementById('matchModal');
-      if (event.target == modal) {
+      if (event.target === modal) {
         modal.style.display = 'none';
       }
-    }
+    };
   </script>
 
 </body>
